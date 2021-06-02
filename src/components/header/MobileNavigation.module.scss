@@ -1,0 +1,28 @@
+@import './Links.module.scss';
+
+.mobilenav > * {
+    display: none;
+}
+
+.link_mobile {
+    @extend .link;
+}
+
+@media screen and (max-width: 660px) {
+
+    .mobile {
+        z-index: 3;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: 3.5rem;
+        background-color: white;
+        padding: 0 1.5rem;
+    }
+
+    .mobilenav > nav {
+        display: flex;
+    }
+
+}

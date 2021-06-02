@@ -1,0 +1,104 @@
+@import '../helpers/all';
+
+.container {
+    width: 1rem;
+    height: 1rem;
+}
+
+.logo {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    background: url('../../assets/img/logo-blue.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    &:hover {
+        background: url('../../assets/img/logo-red.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &_button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.hamburgerbtn {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+
+    &_lign {
+        display: flex;
+        width: 1rem;
+        height: 0.2rem;
+        background-color: $colorBlue;
+        border-radius: 1rem;
+    }
+
+    &_lign.header-hamburger-button-lign-open:nth-child(1) {
+        position: absolute;
+        transform: rotate(45deg);
+    }
+
+    &_lign.header-hamburger-button-lign-open:nth-child(2) {
+        opacity: 0;
+    }
+
+    &_lign.header-hamburger-button-lign-open:nth-child(3) {
+        position: absolute;
+        transform: rotate(-45deg);
+    } 
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    border: solid 3px $colorBlue;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &_text {
+        color: $colorBlue;
+        font-size: 15px;
+    }
+
+    &:hover{
+        border: solid 3px $colorRed;
+
+        & > .language_text {
+            color: $colorRed;
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+
+    .logo {
+        z-index: 2;
+    }
+    .hamburgerbtn{
+        display: flex;
+        z-index: 2  ;
+    }
+
+    .language {
+        display: none;
+    }
+
+}

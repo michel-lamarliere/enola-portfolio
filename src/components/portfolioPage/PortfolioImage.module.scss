@@ -1,0 +1,43 @@
+@import '../helpers/all.scss';
+
+.image {
+    position: relative;
+    width: 16rem;
+    height: 11rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &_overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $colorBlue;
+        opacity: 0;
+        transition: 0.5s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &_text {
+            color: white;
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .image {
+        width: 10rem;
+        height: 7rem;
+        margin-bottom: 1rem;
+    }
+}

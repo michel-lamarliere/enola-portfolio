@@ -1,0 +1,99 @@
+@import '../../components/helpers/all.scss';
+
+.etapes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    color: $colorBlue;
+
+    &_title {
+        align-self: center;
+    }
+}
+
+.squares {
+    display: flex;
+    margin-top: 4rem;  
+
+    &_square {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 15rem;
+        height: 15rem;
+        padding-top: 1rem;
+        background-color: #F8DCC8;
+        overflow: scroll;
+
+        &_b {
+            @extend .squares_square;
+            background-color: #F7A28C;
+            overflow: scroll;
+        }
+
+        &_title {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            font-size: 20px;
+            margin-top: 1rem;
+            font-family: 'Futura PT Demi';
+            padding: 0 1rem 0 1rem;
+
+            &_link {
+                text-decoration: underline;
+            }
+
+            & > div:not(:last-of-type) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .etapes {
+        margin: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .squares {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+    
+        &_square {
+            width: 100%;
+    
+            &_text {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 660px) {
+    .squares {
+
+        &_square {
+
+            &_title {
+                margin-top: 0.5rem;
+            }
+
+            &_text {
+                padding: 0 0.5rem;
+                font-size: 18px;
+            }
+        }
+    }
+}

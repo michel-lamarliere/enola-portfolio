@@ -1,0 +1,11 @@
+@import '../helpers/all';
+
+.display {
+    display: inline;
+}
+
+@media screen and (max-width: 660px) {
+    .display { 
+        display: none;
+    }
+}
