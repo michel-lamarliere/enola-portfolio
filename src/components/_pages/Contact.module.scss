@@ -98,8 +98,11 @@ button {
 
 .envoye {
     display: flex;
-    gap: 1rem;
     align-items: center;
+
+    & > div:not(:last-child) {
+        margin-right: 1.4rem;
+    }
 }
 
 iframe {

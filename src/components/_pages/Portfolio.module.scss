@@ -18,6 +18,9 @@
 
 @media screen and (max-width: 670px) {
     .portfolio {
-        gap: 1.4rem;
+
+        & > div:not(:last-child) {
+            margin-bottom: 1.4rem;
+        }
     }
 }
