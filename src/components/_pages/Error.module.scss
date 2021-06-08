@@ -7,7 +7,7 @@
     justify-content: center;
     height: 73.6vh;
     color: $colorRed;
-    grid-gap: 5rem;
+    gap: 5rem;
 }
 
 .sorry {
@@ -24,7 +24,7 @@
 @media screen and (max-width: 850px) {
 
     .container {
-        grid-gap: 2.5rem;
+        gap: 2.5rem;
     }
     
     .sorry {
