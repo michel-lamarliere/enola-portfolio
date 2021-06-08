@@ -6,11 +6,11 @@ function Footer() {
     return (
         <div className={classes.footer}>
             <div className={classes.socials}>
-                <div className={[classes.socials_logo, classes.socials_logo_instagram].join(' ')}>
-                    <a href="https://www.instagram.com/enola.louge/" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>
-                </div>
                 <div className={[classes.socials_logo, classes.socials_logo_facebook].join(' ')}>
                     <a href="https://www.facebook.com/enolalouge.designs/" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>                
+                </div>
+                <div className={[classes.socials_logo, classes.socials_logo_instagram].join(' ')}>
+                    <a href="https://www.instagram.com/enola.louge/" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>
                 </div>
                 <div className={[classes.socials_logo, classes.socials_logo_behance].join(' ')}>
                     <a href="https://www.behance.net/enolalouge1" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>

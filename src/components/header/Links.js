@@ -18,14 +18,13 @@ function Links(props) {
                 <NavLine />
                 <Link to='/portfolio' className={classes.link} onClick={props.onClick}>Portfolio</Link>
                 <NavLine />
-                <Link to='/services' className={classes.link} onClick={props.onClick}>Services</Link>
+                <Link to='/services' className={classes.link} onClick={props.onClick} >Services</Link>
                 <NavLine />
-                <Link to='/about' className={classes.link} onClick={props.onClick}>À Propos</Link>
+                <Link to='/about' className={classes.link} onClick={props.onClick}>À propos</Link>
                 <NavLine />
                 <Link to='/contact' className={classes.link} onClick={props.onClick}>Contact</Link>
                 <NavLine />
                 {props.languageLink}
-                <NavLine />
             </nav>
             {props.language}
         </nav>

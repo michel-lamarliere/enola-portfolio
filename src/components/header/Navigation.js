@@ -1,6 +1,6 @@
 import classes from './Navigation.module.scss'
 import Links from './Links';
-import { LogoBtn , LanguageBtn} from './Buttons';
+import { LogoBtn , LanguageBtn} from './HeaderButtons';
 
 
 function Navigation() {

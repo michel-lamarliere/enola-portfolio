@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import classes from './MobileNavigation.module.scss';
 import Links from './Links';
-import { LogoBtn, HamburgerBtn, LanguageText } from './Buttons';
-import Overlay from '../layout/Overlay';
+import { LogoBtn, HamburgerBtn, LanguageBtn } from './HeaderButtons';
+import Overlay from '../__layout/Overlay';
 
 function MobileNavigation() {
     
-    
     const [openned, open] = useState(false);
-    
+
     function NoScroll() {
         if (openned) {
-            document.body.style.overflow = 'hidden'
+            document.body.style.overflow = 'hidden';
+
         } else {
             document.body.style.overflow = 'visible';
         }
@@ -21,12 +21,12 @@ function MobileNavigation() {
     return (
         <div className={classes.mobilenav}>
             <div className={classes.mobile}>
-                <LogoBtn onClick={() => open(!openned)}/>
-                <HamburgerBtn onClick={() => open(!openned)}/>
+                <LogoBtn />
+                <HamburgerBtn className={`${openned ? 'HeaderButtons_open__3NOUb ': ''}`} onClick={() => open(!openned)}/>
             </div>
-            <NoScroll/>
+            <NoScroll />
             { openned && <Overlay />}
-            { openned && <Links onClick={() => open(!openned)} languageLink={<LanguageText className={classes.link_mobile} onClick={() => open(!openned)}/>}/>}
+            { openned && <Links onClick={() => open(!openned)} languageLink={<LanguageBtn onClick={() => open(!openned)}/>}/>}
         </div>
     )
 }

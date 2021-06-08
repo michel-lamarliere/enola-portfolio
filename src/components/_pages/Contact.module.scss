@@ -1,0 +1,140 @@
+@import '../../components/__helpers/all.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 15rem;
+    margin-top: 0;
+    height: 120vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email {
+   color: $colorRed; 
+   font-size: 25px;
+   align-self: flex-start;
+   font-family: "Futura PT Bold";
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 16rem;
+    margin-top: 1.5rem;
+    color: $colorBlue;
+    font-family: 'Futura PT Demi';
+    font-size: 20px;
+}
+
+label {
+    align-self: flex-start;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: solid 0.075rem $colorBlue;
+    font-size: 20px;
+    font-family: 'Futura PT Demi';
+    color: $colorBlue;
+
+    &::placeholder {
+        opacity: 1;
+    }
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+button {
+    align-self: flex-start;
+    width: 3.5rem;
+    height: 1rem;
+    color: white;
+    background-color: $colorBlue;
+    border: 0;
+    border-radius: 0.5rem;
+    font-family: 'Futura PT Bold';
+    cursor: pointer;
+
+    &:hover {
+        background-color: $colorRed;
+    }
+}
+
+.pdf {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    color: $colorRed;
+    font-size: 20px;
+
+
+    &_logo {
+        position: relative;
+        background-image: url('../../assets/icons/pdf.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 1rem;
+        width: 1rem;
+        margin-left: 0.2rem;
+        cursor: pointer;
+    }
+
+    &_link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.envoye {
+    display: flex;
+    grid-gap: 1rem;
+    align-items: center;
+}
+
+iframe {
+    display: none;
+}
+
+@media screen and (max-width:660px) {
+    .container {
+        margin-top: 0;
+        height: 100%;
+    }
+    
+    .email {
+        align-self: center;
+        margin-top: 1.5rem;
+        font-size: 20px;
+    }
+
+    button {
+        width: 4rem;
+        height: 1rem;
+        align-self: center;
+        font-size: 16px;
+    }
+
+    .pdf {
+        font-size: 15px;
+        flex-direction: column;
+        
+        &_logo {
+            margin-top: 0.66rem;
+            margin-left: 0rem;
+            width: 1.23rem;
+            height: 1.33rem;
+        }
+    }
+}
