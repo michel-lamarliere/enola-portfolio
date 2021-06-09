@@ -104,8 +104,12 @@
         cursor: pointer;
     }
 
-    &:hover{
+    &:hover {
         border: solid 0.1rem $colorRed;
+
+        & > .language_text {
+            color: $colorRed;
+        }
     }
 }
 

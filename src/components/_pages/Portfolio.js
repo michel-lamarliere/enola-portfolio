@@ -13,7 +13,7 @@ function Portfolio() {
     
     useEffect(() => {
         window.scrollTo(0, 0)
-        const portfolio = db.collection('portfolio').get()
+        const portfolio = db.collection('portfolio').orderBy("id", "desc").get()
         .then(querySnapshot => {
             const data = querySnapshot.docs.map(doc => doc.data());
             let projectsList = [];

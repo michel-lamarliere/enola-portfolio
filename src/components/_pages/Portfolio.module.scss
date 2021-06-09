@@ -19,7 +19,7 @@
 @media screen and (max-width: 670px) {
     .portfolio {
 
-        & > div:not(:last-child) {
+        & > *:not(:last-child) {
             margin-bottom: 1.4rem;
         }
     }

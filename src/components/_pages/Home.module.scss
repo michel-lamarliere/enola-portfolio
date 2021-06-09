@@ -73,6 +73,10 @@
         flex-direction: row;
         justify-content: space-between;
         margin-top: 3.63rem;  
+
+        & > a:not(:last-child) {
+            margin-bottom: 1.4rem;
+        }
     }
 
     &_more {

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { CenteredContainer } from '../__layout/Containers';
 import Etapes from '../services/Etapes';
 import Presentation from '../services/Presentation';
@@ -5,6 +6,11 @@ import classes from './Services.module.scss';
 import { Together } from '../__multiple/Buttons';
 
 function Services() {
+
+    useEffect(() => {
+		window.scrollTo(0, 0)
+	  }, [])
+
     return (
         <CenteredContainer>
             <Presentation/>

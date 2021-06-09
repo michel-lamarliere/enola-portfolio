@@ -7,13 +7,14 @@
         max-width: 8.8rem;
         max-height: 6.25rem;
         cursor: pointer;
-    }
 
+    }
+    
     &_img {
         width: 100%;
         height: auto;
         cursor: pointer;
-
+        
         &_overlay {
             position: absolute;
             top: 0;

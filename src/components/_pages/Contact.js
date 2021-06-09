@@ -7,36 +7,54 @@ import pdf from '../../assets/docs/questionnaire.pdf';
 
 function Contact(props) {
 
-    const [sent, setSent ] = useState(false)
+    const [sent, setSent ] = useState(false);
+
+    const [formValues, setFormValues] = useState({
+        name: '',
+        email: '',
+        attachment: '',
+        message: '',
+    });
     
     useEffect(() => {
 		window.scrollTo(0, 0)
-    }, [sent])
+    }, [])
 
-    const clearInputs = () => {
+    const handleInputChange = (event) => {
+        setFormValues((prevProps) => ({
+            ...prevProps,
+            [event.target.name]: event.target.value
+        }));
+    }
+
+    const handleSubmit = (event) => {
+        setSent(true);
+
         setTimeout(() => {
             setSent(false);
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('attachment').value = '';
-            document.getElementById('message').value = '';
+            setFormValues(() => ({
+                name: '',
+                email: '',
+                attachment: '',
+                message: '',
+            }));
         }, 2000)
-        console.log(sent);
+
     }
         
     return (    
         <CenteredContainer>
             <div className={classes.container}>
                 <div className={classes.email}>contact@enolalouge.com</div>
-                <form className={classes.form} action="https://formsubmit.co/enola.louge@icloud.com" method="POST" encType="multipart/form-data" target="frame">  
+                <form className={classes.form} onSubmit={handleSubmit} action="https://formsubmit.co/michel.lamarliere@icloud.com" method="POST" encType="multipart/form-data" target="frame">  
                     <input type="hidden" name="_captcha" value="false"></input>
                     <input type="hidden" name="_subject" value="Nouveau message !"></input>
-                    <input type="text" id="name" name="name" placeholder="Nom" required></input>
-                    <input type="email" id="email" name="email" placeholder="Email" required></input>
-                    <input type="file" id ="attachment" name="attachment" accept="image/png, image/jpeg pdf"></input>
-                    <textarea id="message" name="message" rows="4" placeholder="Message" style={{position: 'relative'}}></textarea>
+                    <input type="text" id="name" name="name" placeholder="Nom" onChange={handleInputChange} value={formValues.name} required></input>
+                    <input type="email" id="email" name="email" placeholder="Email" onChange={handleInputChange} value={formValues.email} required></input>
+                    <input type="file" id ="attachment" name="attachment" accept="image/png, image/jpeg pdf" onChange={handleInputChange} value={formValues.attachment} required></input>
+                    <textarea id="message" name="message" rows="4" placeholder="Message" onChange={handleInputChange} value={formValues.message} required></textarea>
                     <div className={classes.envoye}>
-                        <button type="submit" onClick={() => {setSent(true) ; clearInputs()}}>Envoyer</button>
+                        <button type="submit">Envoyer</button>
                         {sent && <div className={classes.envoye_text}>Message Envoyé !</div>}
                     </div>
                 </form>

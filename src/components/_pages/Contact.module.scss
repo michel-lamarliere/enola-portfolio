@@ -100,7 +100,7 @@ button {
     display: flex;
     align-items: center;
 
-    & > div:not(:last-child) {
+    & > *:not(:last-child) {
         margin-right: 1.4rem;
     }
 }

@@ -7,7 +7,10 @@
     justify-content: center;
     height: 73.6vh;
     color: $colorRed;
-    gap: 5rem;
+    
+    & > *:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
 }
 
 .sorry {
@@ -24,7 +27,10 @@
 @media screen and (max-width: 850px) {
 
     .container {
-        gap: 2.5rem;
+        
+        & > *:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
     }
     
     .sorry {
