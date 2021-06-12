@@ -18,7 +18,7 @@ import LastProjects from '../home/LastProjects';
 function Home() {
 
     const [projectsList, setProjectsList] = useState();
-    
+
     useEffect(() => {
         const portfolio = db.collection('portfolio').orderBy("id", "desc").get()
         .then(querySnapshot => {
@@ -43,9 +43,9 @@ function Home() {
                         <div className={classes.main_services}>
                             <div className={classes.main_services_text}>Identité visuelle</div>
                             <div className={classes.main_services_dot}></div>
-                            <div className={classes.main_services_text}>Impression</div>
+                            <div className={classes.main_services_text}>Packaging</div>
                             <div className={classes.main_services_dot}></div>
-                            <div className={classes.main_services_text}>Supports web</div>
+                            <div className={classes.main_services_text}>Web Design</div>
                         </div>
                     </div>
                 </CenteredContainer>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.scss';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
@@ -13,19 +13,20 @@ import Services from './components/_pages/Services';
 import Project from './components/portfolio/Project';
 
 function App() {
-
   	return (
 		<BrowserRouter>
 			<Header />
-			<Route exact path='/' component={Home} />
-			<Route exact path='/portfolio' component={Portfolio} />
-			<Route path='/portfolio/:id' component={Project} />
-			<Route path='/about' component={About} />
-			<Route path='/services' component={Services} />
-			<Route path='/contact' component={Contact} />
-			<Route path='/thankyou' component={ThankYou} />
-			<Route path='/error' component={Error} />
-			<Route path='/legal' component={Legal} />
+			<Switch>
+				<Route exact path='/' component={Home} />
+				<Route exact path='/portfolio' component={Portfolio} />
+				<Route path='/portfolio/:id' component={Project} />
+				<Route path='/about' component={About} />
+				<Route path='/services' component={Services} />
+				<Route path='/contact' component={Contact} />
+				<Route path='/thankyou' component={ThankYou} />
+				<Route path='/error' component={Error} />
+				<Route path='/legal' component={Legal} />
+			</Switch>
 			<Footer />
 		</BrowserRouter>
   	);

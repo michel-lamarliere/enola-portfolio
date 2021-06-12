@@ -10,14 +10,14 @@
 
 .title {
     margin-top: 1rem;
-    font-family: 'Futura PT Bold';
+    font-family: $fontBold;
     font-size: 20px;
     color: $colorBlue;
 }
 
 .subtitle {
     margin-top: 1rem;
-    font-family: 'Futura PT Heavy';
+    font-family: $fontHeavy;
     font-size: 18px;
     color: $colorBlue;
     text-indent: 1rem;
@@ -25,7 +25,7 @@
 
 .para {
     text-indent: 0;
-    font-family: 'Futura PT Demi';
+    font-family: $fontDemi;
     margin-top: 1rem;
     color: $colorBlue;
     font-size: 16px;

@@ -29,7 +29,7 @@
 
     &_header {
         display: flex;
-        width: 50%;
+        width: 40%;
         justify-content: space-evenly;
         align-items: center;
         margin-bottom: 1rem;
@@ -48,9 +48,9 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        
+
         &_text {
-            font-family: 'Futura PT Demi';
+            font-family: $fontDemi;
             font-size: 25px;
         }
 
@@ -60,7 +60,7 @@
             background-color: $colorBlue;
             border-radius: 50%;
         }
-    } 
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -78,20 +78,25 @@
         }
     }
 
-    .square { 
+    .square {
         width: 100%;
         border: none;
-        justify-content: center;
-        height: 10rem;
+        justify-content: space-between;
+        height: auto;
         border-top: solid 0.15rem $colorRed;
-        
+
         &_header {
             flex-direction: column;
+            justify-content: center;
             width: 100%;
-            
+            margin-bottom: 0.25rem;
+
+            &_logo {
+                margin-bottom: 0.45rem;
+            }
+
             &_title {
-                font-size: 25px;
-                margin-bottom: 0.5rem;
+                font-size: 25px;;
             }
         }
 
@@ -110,6 +115,6 @@
         &:last-child {
             border-bottom: solid 0.15rem $colorRed;
         }
-        
+
     }
 }

@@ -13,10 +13,10 @@
 }
 
 .email {
-   color: $colorRed; 
+   color: $colorRed;
    font-size: 25px;
    align-self: flex-start;
-   font-family: "Futura PT Bold";
+   font-family: $fontBold;
 }
 
 .form {
@@ -27,7 +27,7 @@
     height: 16rem;
     margin-top: 1.5rem;
     color: $colorBlue;
-    font-family: 'Futura PT Demi';
+    font-family: $fontDemi;
     font-size: 20px;
 }
 
@@ -40,7 +40,7 @@ input, textarea {
     padding: 0.5rem;
     border: solid 0.075rem $colorBlue;
     font-size: 20px;
-    font-family: 'Futura PT Demi';
+    font-family: $fontDemi;
     color: $colorBlue;
 
     &::placeholder {
@@ -60,7 +60,7 @@ button {
     background-color: $colorBlue;
     border: 0;
     border-radius: 0.5rem;
-    font-family: 'Futura PT Bold';
+    font-family: $fontBold;
     cursor: pointer;
 
     &:hover {
@@ -114,7 +114,7 @@ iframe {
         margin-top: 0;
         height: 100%;
     }
-    
+
     .email {
         align-self: center;
         margin-top: 1.5rem;
@@ -131,7 +131,7 @@ iframe {
     .pdf {
         font-size: 15px;
         flex-direction: column;
-        
+
         &_logo {
             margin-top: 0.66rem;
             margin-left: 0rem;

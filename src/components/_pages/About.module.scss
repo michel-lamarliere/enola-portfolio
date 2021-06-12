@@ -21,6 +21,7 @@
 
     &_title {
         color: $colorRed;
+        font-family: $fontExtraBold;
     }
 
     &_para {
@@ -86,12 +87,12 @@
         height: 100%;
         width: 100%;
         max-width: 31.8rem;
-        
+
         &_title {
             margin-top: 1rem;
             text-align: center;
         }
-        
+
         &_para {
             margin: 2rem auto 0 auto;
             font-size: 20px;
@@ -99,8 +100,11 @@
     }
 
     .button {
+        width: 6.66rem;
+        height: 1.33rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
+        font-size: 16px;
     }
 }
 
@@ -119,11 +123,12 @@
 
         &_title {
             margin: 0;
+            font-size: 25px;
         }
 
         &_para {
             margin-top: 1rem;
-            font-size: 0.75rem;
+            font-size: 16px;
 
             & > div:not(:last-child) {
                 margin-bottom: 1rem;

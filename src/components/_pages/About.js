@@ -13,7 +13,7 @@ function About() {
                 <div className={classes.text}>
                     <div className={classes.text_title}>Qui suis-je?</div>
                     <div className={classes.text_para}>
-                        <div>Je m’appelle Enola et l’art sous toutes ses formes.</div>
+                        <div>Je m’appelle Enola et l’art sous toutes ses formes me passionne.</div>
                         <div>Diplômée d’un bac ES et d’une licence AES, j’ai mis du temps avant de trouver ma voie.</div>
                         <div>Depuis que je me suis réorientée pour devenir graphiste, je suis sur un petit nuage et je m’épanoui chaque jours à réaliser de nouveaux projets riches, uniques et variés.</div>
                         <div>Étant à mon compte, je gère mon emploi du temps comme je l’entend et peux donner le temps nécessaire à vos projets.</div>

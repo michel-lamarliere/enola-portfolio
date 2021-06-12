@@ -1,7 +1,7 @@
 import classes from './Presentation.module.scss';
 import imgBranding from '../../assets/icons/branding.svg'
 import imgWeb from '../../assets/img/web.svg'
-import imgPrint from '../../assets/icons/print.svg'
+import imgPackaging from '../../assets/icons/packaging.svg'
 
 function Presentation() {
     return (
@@ -25,7 +25,7 @@ function Presentation() {
                 <div className={classes.square}>
                     <div className={classes.square_header}>
                         <div className={classes.square_header_logo} style={{backgroundImage: `url(${imgWeb})`}}></div>
-                        <div className={classes.square_header_title}>Supports web</div>
+                        <div className={classes.square_header_title}>Web Design</div>
                     </div>
                     <div className={classes.square_description}>
                         <div className={classes.square_description_text}>Maquette de site web</div>
@@ -37,17 +37,15 @@ function Presentation() {
                 </div>
                 <div className={classes.square}>
                     <div className={classes.square_header}>
-                        <div className={classes.square_header_logo} style={{backgroundImage: `url(${imgPrint})`}}></div>
-                        <div className={classes.square_header_title}>Impression</div>
+                        <div className={classes.square_header_logo} style={{backgroundImage: `url(${imgPackaging})`}}></div>
+                        <div className={classes.square_header_title}>Packaging</div>
                     </div>
                     <div className={classes.square_description}>
-                        <div className={classes.square_description_text}>Packaging</div>
+                        <div className={classes.square_description_text}>Design de packaging</div>
                         <div className={classes.square_description_dot}></div>
-                        <div className={classes.square_description_text}>Illustrations</div>
+                        <div className={classes.square_description_text}>Couverture d'album/livre</div>
                         <div className={classes.square_description_dot}></div>
-                        <div className={classes.square_description_text}>Magazines, livres</div>
-                        <div className={classes.square_description_dot}></div>
-                        <div className={classes.square_description_text}>Flyers, menus</div>
+                        <div className={classes.square_description_text}>Menu de restaurant</div>
                     </div>
                 </div>
             </div>
