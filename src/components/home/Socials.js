@@ -1,4 +1,5 @@
 import classes from './Socials.module.scss';
+import { useLanguage } from '../../translations/LanguageContext.js';
 
 export function SocialsLink(props) {
     return (
@@ -7,9 +8,14 @@ export function SocialsLink(props) {
 }
 
 export function Socials(props) {
+    const english = useLanguage();
+
+    const text = {
+        socials: english ? 'My social networks' : 'Mes réseaux sociaux',
+    }
     return (
         <div className={classes.socials}>
-                <div className={classes.socials_title}>Mes réseaux sociaux</div>
+                <div className={classes.socials_title}>{text.socials}</div>
                 <div className={classes.socials_logos}>
                     {props.children}
                 </div>

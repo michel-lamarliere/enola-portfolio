@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useLanguage, useLanguageUpdate } from '../../translations/LanguageContext.js';
 import classes from './HeaderButtons.module.scss';
 
 export function LogoBtn(props) {
@@ -19,9 +20,14 @@ export function HamburgerBtn(props) {
 }
 
 export function LanguageBtn(props) {
+    const english = useLanguage();
+    const toggleLanguage = useLanguageUpdate();
+
+    let word = english ? 'FR' : 'EN';
+
     return (
         <div className={classes.language}>
-            <Link to='/error' className={classes.language_text} onClick={props.onClick}>EN</Link>
+            <a className={classes.language_text} onClick={toggleLanguage}>{word}</a>
         </div>
     )
 }

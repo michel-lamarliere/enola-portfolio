@@ -8,9 +8,9 @@ import { Together } from '../__multiple/Buttons';
 import Loading from '../__multiple/Loading';
 
 function Portfolio() {
-    
+
     const [projectsList, setProjectsList] = useState();
-    
+
     useEffect(() => {
         window.scrollTo(0, 0)
         const portfolio = db.collection('portfolio').orderBy("id", "desc").get()
@@ -35,7 +35,7 @@ function Portfolio() {
                 )) : <Loading/>}
             </div>
             <Together/>
-        </LargeContainer >
+        </LargeContainer>
     )
 }
 

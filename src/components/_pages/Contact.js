@@ -4,8 +4,11 @@ import { CenteredContainer } from '../__layout/Containers';
 import classes from './Contact.module.scss';
 import MerciDiv from '../__multiple/Merci';
 import pdf from '../../assets/docs/questionnaire.pdf';
+import pdf_en from '../../assets/docs/english_questionnaire.pdf';
+import { useLanguage } from '../../translations/LanguageContext.js';
 
 function Contact(props) {
+    const english = useLanguage();
 
     const [sent, setSent ] = useState(false);
 
@@ -15,7 +18,7 @@ function Contact(props) {
         attachment: '',
         message: '',
     });
-    
+
     useEffect(() => {
 		window.scrollTo(0, 0)
     }, [])
@@ -35,33 +38,44 @@ function Contact(props) {
             setFormValues(() => ({
                 name: '',
                 email: '',
-                attachment: '',
+                attachments: '',
                 message: '',
             }));
         }, 2000)
 
     }
-        
-    return (    
+
+    const text = {
+        input_name: english ? 'Name' : 'Nom',
+        input_email: english ? 'Email Address' : 'Email',
+        button_send: english ? 'Send' : 'Envoyer',
+        sent: english ? 'Message Sent!' : 'Message Envoyé',
+
+        pdf: english ? 'Client questionnaire to download' : 'Questionnaire client à télécharger',
+    }
+
+    return (
         <CenteredContainer>
             <div className={classes.container}>
                 <div className={classes.email}>contact@enolalouge.com</div>
-                <form className={classes.form} onSubmit={handleSubmit} action="https://formsubmit.co/michel.lamarliere@icloud.com" method="POST" encType="multipart/form-data" target="frame">  
+                <form className={classes.form} onSubmit={handleSubmit} action="https://formsubmit.co/enola.louge@icloud.com" method="POST" encType="multipart/form-data" target="frame">
                     <input type="hidden" name="_captcha" value="false"></input>
                     <input type="hidden" name="_subject" value="Nouveau message !"></input>
-                    <input type="text" id="name" name="name" placeholder="Nom" onChange={handleInputChange} value={formValues.name} required></input>
-                    <input type="email" id="email" name="email" placeholder="Email" onChange={handleInputChange} value={formValues.email} required></input>
-                    <input type="file" id ="attachment" name="attachment" accept="image/png, image/jpeg pdf" onChange={handleInputChange} value={formValues.attachment} required></input>
+                    <input type="text" id="name" name="name" placeholder={text.input_name} onChange={handleInputChange} value={formValues.name} required></input>
+                    <input type="email" id="email" name="email" placeholder={text.input_email} onChange={handleInputChange} value={formValues.email} required></input>
+                    <input type="file" id ="attachment" name="attachment" accept="image/png, image/jpeg pdf" onChange={handleInputChange} value={formValues.attachment}></input>
                     <textarea id="message" name="message" rows="4" placeholder="Message" onChange={handleInputChange} value={formValues.message} required></textarea>
                     <div className={classes.envoye}>
-                        <button type="submit">Envoyer</button>
-                        {sent && <div className={classes.envoye_text}>Message Envoyé !</div>}
+                        <button type="submit">{text.button_send}</button>
+                        {sent && <div className={classes.envoye_text}>{text.sent}</div>}
                     </div>
                 </form>
                 <div className={classes.pdf}>
-                Questionnaire client à télécharger
+                {text.pdf}
                     <div className={classes.pdf_logo}>
-                        <a href={pdf} className={classes.pdf_link} download></a>
+                        { english ?
+                            <a href={pdf_en} className={classes.pdf_link} download></a>
+                            : <a href={pdf} className={classes.pdf_link} download></a>}
                     </div>
                 </div>
                 <MerciDiv/>

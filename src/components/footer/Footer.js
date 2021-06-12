@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom';
 import classes from './Footer.module.scss'
+import { useLanguage } from '../../translations/LanguageContext.js';
 
 function Footer() {
+    const english = useLanguage();
+
+    const text = {
+        legal: english ? 'Legal Notice' : 'Mentions Légales'
+    }
 
     return (
         <div className={classes.footer}>
             <div className={classes.socials}>
                 <div className={[classes.socials_logo, classes.socials_logo_facebook].join(' ')}>
-                    <a href="https://www.facebook.com/enolalouge.designs/" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>                
+                    <a href="https://www.facebook.com/enolalouge.designs/" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>
                 </div>
                 <div className={[classes.socials_logo, classes.socials_logo_instagram].join(' ')}>
                     <a href="https://www.instagram.com/enola.louge/" className={classes.socials_logo_link} target="_blank" rel="noreferrer"></a>
@@ -21,7 +27,7 @@ function Footer() {
                 <div className={classes.links_separator}>|</div>
                 <Link className={classes.links_link} to="/contact">Contact</Link>
                 <div className={classes.links_separator}>|</div>
-                <Link className={classes.links_link} to="/legal">Mentions Légales</Link>
+                <Link className={classes.links_link} to="/legal">{text.legal}</Link>
             </div>
         </div>
     )

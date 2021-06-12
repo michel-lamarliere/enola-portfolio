@@ -14,8 +14,10 @@ import MerciDiv from '../__multiple/Merci'
 import db from '../../firebase';
 import Loading from '../__multiple/Loading';
 import LastProjects from '../home/LastProjects';
+import { useLanguage } from '../../translations/LanguageContext.js';
 
 function Home() {
+    const english = useLanguage();
 
     const [projectsList, setProjectsList] = useState();
 
@@ -32,6 +34,15 @@ function Home() {
         })
     }, [])
 
+    const text = {
+        presentation_one: english ? 'Brand Identity' : 'Identité visuelle',
+        presentation_two: 'Packaging',
+        presentation_three: 'Web Design',
+        projects: english ? 'My lastest projects' : 'Mes derniers projects',
+        button_more: english ? 'See More' : 'Voir Plus',
+        info: english ? 'Need informations or a quote ?' : "Besoin d'infos ou d'un devis ?",
+    }
+
     return (
         <div>
             <div className={classes.fond}></div>
@@ -41,17 +52,17 @@ function Home() {
                             <img src={mainImg} alt='image accueil' className={classes.main_image_img}></img>
                         </div>
                         <div className={classes.main_services}>
-                            <div className={classes.main_services_text}>Identité visuelle</div>
+                            <div className={classes.main_services_text}>{text.presentation_one}</div>
                             <div className={classes.main_services_dot}></div>
-                            <div className={classes.main_services_text}>Packaging</div>
+                            <div className={classes.main_services_text}>{text.presentation_two}</div>
                             <div className={classes.main_services_dot}></div>
-                            <div className={classes.main_services_text}>Web Design</div>
+                            <div className={classes.main_services_text}>{text.presentation_three}</div>
                         </div>
                     </div>
                 </CenteredContainer>
             <CenteredContainer>
                 <div className={classes.projects}>
-                    <div className={classes.projects_title}>Mes derniers projects</div>
+                    <div className={classes.projects_title}>{text.projects}</div>
                     <div className={classes.projects_images}>
                         {projectsList ? projectsList.slice(0, 3).map((doc) => (
                             <Link to={`/portfolio/:${doc.project_url}`} key={Math.random()}>
@@ -59,7 +70,7 @@ function Home() {
                             </Link>
                         )) : <Loading/>}
                     </div>
-                    <Link to='/portfolio' className={classes.projects_more}>Voir Plus</Link>
+                    <Link to='/portfolio' className={classes.projects_more}>{text.button_more}</Link>
                 </div>
                 <Socials>
                     <SocialsLink image_url={iconDribbble} link="https://dribbble.com/enolalouge"/>
@@ -69,7 +80,7 @@ function Home() {
                     <SocialsLink image_url={iconLinkedin} link="https://www.linkedin.com/in/enola-louge-76b76a1a2"/>
                 </Socials>
                 <div className={classes.contact}>
-                    <div className={classes.contact_title}>Besoin d'infos ou d'un devis ?</div>
+                    <div className={classes.contact_title}>{text.info}</div>
                     <ContactMe className={classes.contactme} />
                     <MerciDiv />
                 </div>
