@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useLanguage, useLanguageUpdate } from '../../translations/LanguageContext.js';
 import classes from './HeaderButtons.module.scss';
+import imageEn from '../../assets/icons/en.svg';
+import imageFr from '../../assets/icons/fr.svg';
 
 export function LogoBtn(props) {
     return (
@@ -27,7 +29,10 @@ export function LanguageBtn(props) {
 
     return (
         <div className={classes.language}>
-            <a className={classes.language_text} onClick={toggleLanguage}>{word}</a>
+        {english
+            ? <img className={classes.language_text} src={imageFr} onClick={toggleLanguage}></img>
+            : <img className={classes.language_text} src={imageEn} onClick={toggleLanguage}></img>
+        }
         </div>
     )
 }
