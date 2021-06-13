@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Home.module.scss';
-import mainImg from '../../assets/icons/accueil.svg';
+import mainImgFr from '../../assets/icons/accueil.svg';
+import mainImgEn from '../../assets/icons/home.svg';
 import iconLinkedin from '../../assets/icons/linkedin_blue.svg';
 import iconDribbble from '../../assets/icons/dribbble_blue.svg';
 import iconFacebook from '../../assets/icons/facebook_blue.svg';
@@ -49,7 +50,10 @@ function Home() {
                 <CenteredContainer>
                     <div className={classes.main}>
                         <div className={classes.main_image}>
-                            <img src={mainImg} alt='image accueil' className={classes.main_image_img}></img>
+                            {english
+                                ? <img src={mainImgEn} alt='image accueil' className={classes.main_image_img}></img>
+                                : <img src={mainImgFr} alt='image accueil' className={classes.main_image_img}></img>
+                            }
                         </div>
                         <div className={classes.main_services}>
                             <div className={classes.main_services_text}>{text.presentation_one}</div>

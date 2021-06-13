@@ -6,7 +6,8 @@ function Footer() {
     const english = useLanguage();
 
     const text = {
-        legal: english ? 'Legal Notice' : 'Mentions Légales'
+        legal: english ? 'Legal Notice' : 'Mentions Légales',
+        michel: english ? 'Developed by Michel Lamarlière' : 'Développé par Michel Lamarlière'
     }
 
     return (
@@ -29,6 +30,7 @@ function Footer() {
                 <div className={classes.links_separator}>|</div>
                 <Link className={classes.links_link} to="/legal">{text.legal}</Link>
             </div>
+            <a className={classes.michel} href='https://www.linkedin.com/in/michel-lamarli%C3%A8re-a8394a1b1/' target='_blank'>{text.michel}</a>
         </div>
     )
 }

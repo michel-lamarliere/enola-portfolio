@@ -28,8 +28,8 @@ function App() {
     				<Route path='/services' component={Services} />
     				<Route path='/contact' component={Contact} />
     				<Route path='/thankyou' component={ThankYou} />
-    				<Route path='*' component={Error} />
-    				<Route path='/legal' component={Legal} />
+                    <Route path='/legal' component={Legal} />
+                    <Route path='*' component={Error} />
     			</Switch>
     			<Footer />
     		</BrowserRouter>

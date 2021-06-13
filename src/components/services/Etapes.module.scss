@@ -23,12 +23,11 @@
         width: 100%;
         padding: 1rem 0;
         background-color: #F8DCC8;
-        overflow: scroll;
+        overflow: hidden;
 
         &_b {
             @extend .squares_square;
             background-color: #F7A28C;
-            overflow: scroll;
         }
 
         &_title {

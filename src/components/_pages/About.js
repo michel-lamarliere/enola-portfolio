@@ -13,14 +13,14 @@ function About() {
         who: english ? 'Who am I?' : 'Qui suis-je ?',
 
         one: english ? 'My name is Enola and I am passionate about art.' : 'Je m’appelle Enola et l’art sous toutes ses formes me passionne.',
-        two: english ? 'Graduated of an Administration Bachelor, I took a long time to find my vocation.' : 'Diplômée d’un Bac ES et d’une licence AES, j’ai mis du temps avant de trouver ma voie.',
-        three: english ? 'Since I changed my career path, I am fulfilled in my work. Every day, I take pleasure in carrying out new unique projects.' : 'Depuis que je me suis réorientée pour devenir graphiste, je suis sur un petit nuage et je m’épanoui chaque jours à réaliser de nouveaux projets uniques et variés.',
-        four: english ? 'Being self-employed, I manage my schedule as I want  and I can give the required attention to your projects.' : 'Étant à mon compte, je gère mon emploi du temps comme je l’entends et peux donner l’attention nécessaire à vos projets.',
-        five: english ? 'Discover the process for developing a project ' : 'Découvrez mes étapes pour l’élaboration d’un projet ',
+        two: english ? "After graduating with a Bachelor's Degree in Economics and Social Sciences, I felt that it wasn't meant for me." : 'Diplômée d’un Bac ES et d’une licence AES, j’ai mis du temps avant de trouver ma voie.',
+        three: english ? "I've since changed my career path, and now am rejoiced over finding my work fulfilling. Every day, I take a great amout of pleasure in carrying out new unique projects." : 'Depuis que je me suis réorientée pour devenir graphiste, je suis sur un petit nuage et je m’épanoui chaque jours à réaliser de nouveaux projets uniques et variés.',
+        four: english ? 'By being self-employed, I can manage my schedule properly and focus on your projects.' : 'Étant à mon compte, je gère mon emploi du temps comme je l’entends et peux donner l’attention nécessaire à vos projets.',
+        five: english ? 'Discover my process of developing a project ' : 'Découvrez mes étapes pour l’élaboration d’un projet ',
         five_link: english ? 'here' : 'ici',
-        six: english ? 'You wish to present your project to me and obtain a quote? Download my questionnaire' : 'Vous souhaitez me présenter votre projet et obtenir un devis ? Téléchargez mon questionnaire',
+        six: english ? 'If you wish to exchange with me about your project and/or obtain a quote? Download my questionnaire' : 'Vous souhaitez me présenter votre projet et obtenir un devis ? Téléchargez mon questionnaire',
         six_link: english ? 'here' : 'ici',
-        seven: english ? 'Looking forward to working with you!' : 'Hâte de travailler avec vous ! »',
+        seven: english ? "I'm looking forward to working with you!" : 'Hâte de travailler avec vous ! »',
 
         button: english ? 'Check my portfolio' : 'Voir mon portfolio',
     }
