@@ -39,7 +39,7 @@ function Home() {
         presentation_one: english ? 'Brand Identity' : 'Identité visuelle',
         presentation_two: 'Packaging',
         presentation_three: 'Web Design',
-        projects: english ? 'My lastest projects' : 'Mes derniers projects',
+        projects: english ? 'My latest projects' : 'Mes derniers projects',
         button_more: english ? 'See More' : 'Voir Plus',
         info: english ? 'Need informations or a quote ?' : "Besoin d'infos ou d'un devis ?",
     }
