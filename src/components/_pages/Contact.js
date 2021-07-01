@@ -63,8 +63,8 @@ function Contact(props) {
                     <input type="hidden" name="_subject" value="Nouveau message !"></input>
                     <input type="text" id="name" name="name" placeholder={text.input_name} onChange={handleInputChange} value={formValues.name} required></input>
                     <input type="email" id="email" name="email" placeholder={text.input_email} onChange={handleInputChange} value={formValues.email} required></input>
-                    <input type="file" id ="attachment" name="attachment" accept="image/png, image/jpeg pdf" onChange={handleInputChange} value={formValues.attachment}></input>
                     <textarea id="message" name="message" rows="4" placeholder="Message" onChange={handleInputChange} value={formValues.message} required></textarea>
+                    <input type="file" id="attachment" name="attachment" multiple="multiple" accept="image/png, image/jpeg pdf" onChange={handleInputChange} value={formValues.attachment}></input>
                     <div className={classes.envoye}>
                         <button type="submit">{text.button_send}</button>
                         {sent && <div className={classes.envoye_text}>{text.sent}</div>}
