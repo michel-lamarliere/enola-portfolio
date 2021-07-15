@@ -1,9 +1,9 @@
 import classes from './Project.module.scss';
 import { useEffect, useState } from 'react';
-import db from '../../firebase';
-import { CenteredContainer } from '../__layout/Containers';
-import { Together } from '../__multiple/Buttons';
-import Loading from '../__multiple/Loading';
+import db from '../../firebase/firebase';
+import { CenteredContainer } from '../UI/Containers';
+import { Together } from '../UI/Buttons';
+import Loading from '../UI/Loading';
 
 function Project() {
 

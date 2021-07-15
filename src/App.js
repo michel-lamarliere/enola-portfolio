@@ -1,21 +1,19 @@
-import { useEffect } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.scss';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import Home from './components/_pages/Home';
-import Portfolio from './components/_pages/Portfolio';
-import About from './components/_pages/About';
-import Error from './components/_pages/Error';
-import Legal from './components/_pages/Legal';
-import Contact from './components/_pages/Contact';
-import ThankYou from './components/_pages/ThankYou';
-import Services from './components/_pages/Services';
-import Project from './components/portfolio/Project';
-import { LanguageProvider } from './translations/LanguageContext.js';
+import Footer from './components/Layout/Footer/Footer';
+import Header from './components/Layout/Header/Header';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
+import About from './pages/About';
+import Error from './pages/Error';
+import Legal from './pages/Legal';
+import Contact from './pages/Contact';
+import ThankYou from './pages/ThankYou';
+import Services from './pages/Services';
+import Project from './components/Portfolio/Project';
+import { LanguageProvider } from './store/LanguageContext.js';
 
 function App() {
-
   	return (
         <LanguageProvider>
     		<BrowserRouter>
