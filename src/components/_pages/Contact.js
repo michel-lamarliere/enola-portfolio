@@ -42,7 +42,6 @@ function Contact(props) {
                 message: '',
             }));
         }, 2000)
-
     }
 
     const text = {
@@ -50,7 +49,6 @@ function Contact(props) {
         input_email: english ? 'Email Address' : 'Email',
         button_send: english ? 'Send' : 'Envoyer',
         sent: english ? 'Message Sent!' : 'Message Envoyé',
-
         pdf: english ? 'Client questionnaire to download' : 'Questionnaire client à télécharger',
     }
 

@@ -20,7 +20,7 @@ function About() {
         five_link: english ? 'here' : 'ici',
         six: english ? 'If you wish to exchange with me about your project and/or obtain a quote? Download my questionnaire' : 'Vous souhaitez me présenter votre projet et obtenir un devis ? Téléchargez mon questionnaire',
         six_link: english ? 'here' : 'ici',
-        seven: english ? "I'm looking forward to working with you!" : 'Hâte de travailler avec vous ! »',
+        seven: english ? "I'm looking forward to working with you!" : 'Hâte de travailler avec vous !',
 
         button: english ? 'Check my portfolio' : 'Voir mon portfolio',
     }

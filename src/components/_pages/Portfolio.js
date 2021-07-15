@@ -34,7 +34,7 @@ function Portfolio() {
                     </Link>
                 )) : <Loading/>}
             </div>
-            <Together/>
+            <Together />
         </LargeContainer>
     )
 }
