@@ -4,6 +4,7 @@ import classes from './About.module.scss';
 import img from '../assets/img/contact.png';
 import questionnaire from '../assets/docs/questionnaire.pdf';
 import { useLanguage } from '../store/LanguageContext.js'
+import { PortfolioBtn } from '../components/UI/Buttons';
 
 function About() {
 
@@ -21,8 +22,6 @@ function About() {
         six: english ? 'If you wish to exchange with me about your project and/or obtain a quote? Download my questionnaire' : 'Vous souhaitez me présenter votre projet et obtenir un devis ? Téléchargez mon questionnaire',
         six_link: english ? 'here' : 'ici',
         seven: english ? "I'm looking forward to working with you!" : 'Hâte de travailler avec vous !',
-
-        button: english ? 'Check my portfolio' : 'Voir mon portfolio',
     }
 
     return (
@@ -42,7 +41,7 @@ function About() {
                     </div>
                 </div>
             </div>
-            <Link to={'/portfolio'} className={classes.button}>{text.button}</Link>
+            <PortfolioBtn />
         </LargeContainer >
     )
 }

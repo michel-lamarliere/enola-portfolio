@@ -1,37 +1,58 @@
+import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.scss';
-import Footer from './components/Layout/Footer/Footer';
-import Header from './components/Layout/Header/Header';
-import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
-import About from './pages/About';
-import Error from './pages/Error';
-import Legal from './pages/Legal';
-import Contact from './pages/Contact';
-import ThankYou from './pages/ThankYou';
-import Services from './pages/Services';
-import Project from './components/Portfolio/Project';
-import { LanguageProvider } from './store/LanguageContext.js';
+import Layout from './components/layout/Layout';
+import Loading from './components/UI/Loading';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const Portfolio = React.lazy(() => import('./pages/Portfolio'));
+const About = React.lazy(() => import('./pages/About'));
+const Error = React.lazy(() => import('./pages/Error'));
+const Legal = React.lazy(() => import('./pages/Legal'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const ThankYou = React.lazy(() => import('./pages/ThankYou'));
+const Services = React.lazy(() => import('./pages/Services'));
+const Project = React.lazy(() => import('./pages/Project'));
 
 function App() {
   	return (
-        <LanguageProvider>
-    		<BrowserRouter>
-    			<Header />
-    			<Switch>
-    				<Route exact path='/' component={Home} />
-    				<Route exact path='/portfolio' component={Portfolio} />
-    				<Route path='/portfolio/:id' component={Project} />
-    				<Route path='/about' component={About} />
-    				<Route path='/services' component={Services} />
-    				<Route path='/contact' component={Contact} />
-    				<Route path='/thankyou' component={ThankYou} />
-                    <Route path='/legal' component={Legal} />
-                    <Route path='*' component={Error} />
-    			</Switch>
-    			<Footer />
-    		</BrowserRouter>
-        </LanguageProvider>
+        <BrowserRouter>
+            <Layout>
+                <Suspense fallback={
+                    <Loading />
+                }>
+                <Switch>
+                    <Route exact path='/'>
+                        <Home />
+                    </Route>
+                    <Route exact path='/portfolio'>
+                        <Portfolio />
+                    </Route>
+                    <Route path='/portfolio/:id'>
+                        <Project />
+                    </Route>
+                    <Route path='/about'>
+                        <About />
+                    </Route>
+                    <Route path='/services'>
+                        <Services />
+                    </Route>
+                    <Route path='/contact'>
+                        <Contact />
+                    </Route>
+                    <Route path='/thankyou'>
+                        <ThankYou />
+                    </Route>
+                    <Route path='/legal'>
+                        <Legal />
+                    </Route>
+                    <Route path='*'>
+                        <Error />
+                    </Route>
+                </Switch>
+                </Suspense>
+            </Layout>
+        </BrowserRouter>
   	);
 }
 

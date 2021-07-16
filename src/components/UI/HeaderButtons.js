@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage, useLanguageUpdate } from '../../store/LanguageContext.js';
+import { useOpenned, useOpennedUpdate } from '../../store/ModalContext.js'
 import classes from './HeaderButtons.module.scss';
 import imageEn from '../../assets/icons/en.svg';
 import imageFr from '../../assets/icons/fr.svg';
@@ -13,9 +14,11 @@ export function LogoBtn(props) {
 }
 
 export function HamburgerBtn(props) {
+    const openned = useOpenned();
+    const toggleOpenned = useOpennedUpdate();
 
     return (
-        <div className={[`${classes.hamburgerbtn} ${props.className}`].join(' ')} onClick={props.onClick}>
+        <div className={`${classes.hamburgerbtn} ${openned ? classes.open : ''}`} onClick={toggleOpenned}>
             <span className={classes.hamburgerbtn_lign}></span>
         </div>
     )

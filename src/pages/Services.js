@@ -3,7 +3,7 @@ import { CenteredContainer } from '../components/UI/Containers';
 import Etapes from '../components/Services/Etapes';
 import Presentation from '../components/Services/Presentation';
 import classes from './Services.module.scss';
-import { Together } from '../components/UI/Buttons';
+import { WorkTogetherBtn } from '../components/UI/Buttons';
 
 function Services() {
 
@@ -15,7 +15,7 @@ function Services() {
         <CenteredContainer>
             <Presentation/>
             <Etapes/>
-            <Together/>
+            <WorkTogetherBtn />
         </CenteredContainer>
     )
 }

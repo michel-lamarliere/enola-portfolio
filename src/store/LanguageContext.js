@@ -1,5 +1,4 @@
 import React , { useContext, useState, useEffect} from 'react';
-import Loading from '../components/UI/Loading.js'
 
 const LanguageContext = React.createContext();
 const LanguageUpdateContext = React.createContext();
@@ -13,8 +12,6 @@ export function useLanguageUpdate() {
 }
 
 export function LanguageProvider({ children }) {
-    const [loading, setLoading] = useState(true)
-
     let [english, setEnglish] = useState(false);
 
     useEffect(() => {
@@ -26,7 +23,6 @@ export function LanguageProvider({ children }) {
             english = false;
             setEnglish(english);
         }
-        setLoading(false)
     }, []);
 
     useEffect(() => {
@@ -40,7 +36,7 @@ export function LanguageProvider({ children }) {
     return (
         <LanguageContext.Provider value={english}>
             <LanguageUpdateContext.Provider value={toggleLanguage}>
-                {loading ? <Loading/> : <div>{ children }</div>}
+                <div>{ children }</div>
             </LanguageUpdateContext.Provider>
         </LanguageContext.Provider>
     )

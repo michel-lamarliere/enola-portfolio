@@ -9,7 +9,7 @@ import iconFacebook from '../assets/icons/facebook_blue.svg';
 import iconInstagram from '../assets/icons/instagram_blue.svg';
 import iconBehance from '../assets/icons/behance_blue.svg';
 import { CenteredContainer } from '../components/UI/Containers';
-import { ContactMe } from '../components/UI/Buttons';
+import { ContactMeBtn, SeeMoreBtn } from '../components/UI/Buttons';
 import { Socials, SocialsLink } from '../components/Homepage/Socials';
 import MerciDiv from '../components/UI/Merci'
 import db from '../firebase/firebase';
@@ -40,7 +40,6 @@ function Home() {
         presentation_two: 'Packaging',
         presentation_three: 'Web Design',
         projects: english ? 'My latest projects' : 'Mes derniers projects',
-        button_more: english ? 'See More' : 'Voir Plus',
         info: english ? 'Need informations or a quote ?' : "Besoin d'infos ou d'un devis ?",
     }
 
@@ -74,7 +73,7 @@ function Home() {
                             </Link>
                         )) : <Loading/>}
                     </div>
-                    <Link to='/portfolio' className={classes.projects_more}>{text.button_more}</Link>
+                    <SeeMoreBtn />
                 </div>
                 <Socials>
                     <SocialsLink image_url={iconDribbble} link="https://dribbble.com/enolalouge"/>
@@ -85,7 +84,7 @@ function Home() {
                 </Socials>
                 <div className={classes.contact}>
                     <div className={classes.contact_title}>{text.info}</div>
-                    <ContactMe className={classes.contactme} />
+                    <ContactMeBtn className={classes.contactme} />
                     <MerciDiv />
                 </div>
             </CenteredContainer>

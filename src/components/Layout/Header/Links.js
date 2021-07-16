@@ -10,9 +10,8 @@ export function NavLine() {
 
 function Links(props) {
     const english = useLanguage();
-    const toggleLanguage = useLanguageUpdate();
 
-    let words = {
+    let text = {
         accueil: english ? 'Home' : 'Accueil',
         about: english ? 'About': 'À propos'
     }
@@ -22,13 +21,13 @@ function Links(props) {
             {props.logo}
             <nav className={classes.navbar}>
                 <NavLine />
-                <Link to='/' className={classes.link} onClick={props.onClick}>{words.accueil}</Link>
+                <Link to='/' className={classes.link} onClick={props.onClick}>{text.accueil}</Link>
                 <NavLine />
                 <Link to='/portfolio' className={classes.link} onClick={props.onClick}>Portfolio</Link>
                 <NavLine />
                 <Link to='/services' className={classes.link} onClick={props.onClick}>Services</Link>
                 <NavLine />
-                <Link to='/about' className={classes.link} onClick={props.onClick}>{words.about}</Link>
+                <Link to='/about' className={classes.link} onClick={props.onClick}>{text.about}</Link>
                 <NavLine />
                 <Link to='/contact' className={classes.link} onClick={props.onClick}>Contact</Link>
                 <NavLine />

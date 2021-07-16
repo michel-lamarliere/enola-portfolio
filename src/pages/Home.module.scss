@@ -10,13 +10,13 @@
     background-image: url('../assets/img/fond_ordi.png');
     background-position: top;
     background-repeat: no-repeat;
-    margin: 0 2rem;
+    margin: 0rem;
     background-size: contain;
     z-index: -1;
 }
 
 .main {
-    height: 85vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -76,25 +76,6 @@
 
         & > a:not(:last-child) {
             margin-bottom: 0.66rem;
-        }
-    }
-
-    &_more {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 4.66rem;
-        height: 2rem;
-        margin-top: 3.2rem;
-        font-size: 20px;
-        border: solid 0.1rem $colorRed;
-        color: $colorRed;
-        border-radius: 1rem;
-        cursor: pointer;
-
-        &:hover {
-            background-color: $colorRed;
-            color: white;
         }
     }
 }
@@ -164,7 +145,6 @@
 
     .fond {
         background-image: url('../assets/img/fond_tel.png');
-        bottom: -5rem;
         margin: 0;
     }
 
@@ -217,16 +197,7 @@
                 max-height: 7.4rem;
             }
         }
-
-        &_more {
-            margin-top: 0.73rem;
-            width: 4rem;
-            height: 1.33rem;
-            font-size: 16px;
-        }
     }
-
-
 
     .contact {
         margin-top: 3.9rem;

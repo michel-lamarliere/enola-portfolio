@@ -1,9 +1,9 @@
 import classes from './Project.module.scss';
 import { useEffect, useState } from 'react';
-import db from '../../firebase/firebase';
-import { CenteredContainer } from '../UI/Containers';
-import { Together } from '../UI/Buttons';
-import Loading from '../UI/Loading';
+import db from '../firebase/firebase';
+import { CenteredContainer } from '../components/UI/Containers';
+import { WorkTogetherBtn } from '../components/UI/Buttons';
+import Loading from '../components/UI/Loading';
 
 function Project() {
 
@@ -35,7 +35,7 @@ function Project() {
                     <img key={Math.random()} className={classes.image} src={`${image}`}></img>
                     )) : <Loading />}
             </div>
-            <Together/>
+            <WorkTogetherBtn />
         </CenteredContainer>
     )
 }

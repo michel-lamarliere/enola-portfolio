@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import classes from './MobileNavigation.module.scss';
 import Links from './Links';
 import { LogoBtn, HamburgerBtn, LanguageBtn } from '../../UI/HeaderButtons';
 import Overlay from '../../UI/Overlay';
+import { useOpenned, useOpennedUpdate } from '../../../store/ModalContext';
 
 function MobileNavigation() {
-    
-    const [openned, open] = useState(false);
+    const openned = useOpenned();
+    const toggleOpenned = useOpennedUpdate();
 
     function NoScroll() {
         if (openned) {
@@ -21,12 +22,12 @@ function MobileNavigation() {
     return (
         <div className={classes.mobilenav}>
             <div className={classes.mobile}>
-                <LogoBtn />
-                <HamburgerBtn className={`${openned ? 'HeaderButtons_open__3NOUb ': ''}`} onClick={() => open(!openned)}/>
+                <LogoBtn onClick={toggleOpenned} />
+                <HamburgerBtn onClick={toggleOpenned} />
             </div>
             <NoScroll />
             { openned && <Overlay />}
-            { openned && <Links onClick={() => open(!openned)} languageLink={<LanguageBtn onClick={() => open(!openned)}/>}/>}
+            { openned && <Links onClick={toggleOpenned} languageLink={<LanguageBtn onClick={toggleOpenned} /> } />}
         </div>
     )
 }
