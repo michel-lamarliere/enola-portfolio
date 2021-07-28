@@ -28,13 +28,11 @@ export function LanguageBtn(props) {
     const english = useLanguage();
     const toggleLanguage = useLanguageUpdate();
 
-    let word = english ? 'FR' : 'EN';
-
     return (
         <div className={classes.language}>
             {english
-                ? <img className={classes.language_text} src={imageFr} onClick={toggleLanguage}></img>
-                : <img className={classes.language_text} src={imageEn} onClick={toggleLanguage}></img>
+                ? <img className={classes.language_text} src={imageFr} onClick={toggleLanguage} alt="Français"></img>
+                : <img className={classes.language_text} src={imageEn} onClick={toggleLanguage} alt="English"></img>
             }
         </div>
     )

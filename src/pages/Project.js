@@ -1,5 +1,6 @@
-import classes from './Project.module.scss';
 import { useEffect, useState } from 'react';
+import classes from './Project.module.scss';
+
 import db from '../firebase/firebase';
 import { CenteredContainer } from '../components/UI/Containers';
 import { WorkTogetherBtn } from '../components/UI/Buttons';
@@ -12,7 +13,7 @@ function Project() {
     const [imagesList, setImagesList] = useState();
 
     useEffect(() => {
-		window.scrollTo(0, 0)
+		window.scrollTo(0, 0);
         const images = db.collection('portfolio').doc(`${pathname}`).get()
         .then((doc) => {
             const imagesData = doc.data();
@@ -26,14 +27,14 @@ function Project() {
         .catch(err => {
             console.error(err)
         })
-    }, [])
+    }, []);
 
     return (
         <CenteredContainer>
             <div className={classes.images}>
                 {imagesList ? imagesList.map((image) => (
                     <img key={Math.random()} className={classes.image} src={`${image}`}></img>
-                    )) : <Loading />}
+                )) : <Loading />}
             </div>
             <WorkTogetherBtn />
         </CenteredContainer>

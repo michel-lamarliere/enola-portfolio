@@ -3,7 +3,7 @@ import { useLanguage } from '../../store/LanguageContext.js';
 
 export function SocialsLink(props) {
     return (
-        <a className={classes.socials_logos_logo}  style={{backgroundImage: `url('${props.image_url}')`}} href={props.link} target="_blank"></a>
+        <a className={classes.socials_logos_logo}  style={{backgroundImage: `url('${props.image_url}')`}} href={props.link} target="_blank" rel="noreferrer"></a>
     )
 }
 
