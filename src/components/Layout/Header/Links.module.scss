@@ -1,0 +1,98 @@
+@import '../../Helpers/all';
+
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.03rem;
+    background-color: white;
+}
+
+.navbar {
+    justify-content: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link {
+    font-size: 25px;
+    padding: 0.66rem;
+    color: $colorBlue;
+
+    &:hover {
+        color: $colorRed;
+    }
+}
+
+.lign {
+    display: none;
+    height: 0.1rem;
+    width: 100%;
+    background-color: $colorBlue;
+}
+
+@media screen and (max-width: 870px) {
+    .link {
+        padding: 0.66rem;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .link {
+        padding: 0.4rem;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .header {
+        height: 2.93rem;
+    }
+
+    .navbar {
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        top: 0rem;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 2;
+
+        &_active {
+            display: flex;
+        }
+
+        &_language {
+            display: flex;
+        }
+
+        &_lign {
+            display: flex;
+        }
+    }
+
+    &_hamburger-button {
+        display: flex;
+    }
+
+    .link {
+        text-align: center;
+        padding: 0.25rem;
+        margin: 0.25rem;
+        font-size: 25px;
+    }
+
+    .lign {
+        display: flex;
+        height: 0.1rem;
+        width: 100%;
+        background-color: $colorBlue;
+    }
+}

@@ -1,4 +1,4 @@
-@import '../__helpers/all.scss';
+@import '../Helpers/all.scss';
 
 .container {
     position: relative;
@@ -13,6 +13,10 @@
     height: auto;
     cursor: pointer;
 }
+
+.placeholder {
+    border: solid 2px $colorBlue;
+ }
 
 .overlay {
     position: absolute;
@@ -42,7 +46,6 @@
 
 @media screen and (max-width: 850px) {
     .container {
-        margin: 0 1.26rem;
         max-height: auto;
         margin-bottom: 1.4rem;
     }
@@ -51,6 +54,6 @@
 @media screen and (max-width: 600px) {
     .container {
         max-width: 100%;
-        margin: 0 1.26rem;
+        margin: 0;
     }
 }

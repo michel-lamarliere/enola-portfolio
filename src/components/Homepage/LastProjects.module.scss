@@ -1,0 +1,38 @@
+@import '../../components/Helpers/all.scss';
+
+.images {
+
+    &_container {
+        position: relative;
+        max-width: 8.8rem;
+        max-height: 6.25rem;
+        cursor: pointer;
+
+    }
+    
+    &_img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        
+        &_overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0.15rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $colorBlue;
+            font-size: 20px;
+            color: white;
+            opacity: 0;
+            transition: 0.5s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }       
+}

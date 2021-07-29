@@ -1,8 +1,8 @@
+import { Link } from 'react-router-dom';
 import classes from './Etapes.module.scss';
 import pdf from '../../assets/docs/questionnaire.pdf'
 import pdf_en from '../../assets/docs/english_questionnaire.pdf';
-import { Link } from 'react-router-dom';
-import { useLanguage } from '../../translations/LanguageContext.js';
+import { useLanguage } from '../../store/LanguageContext.js';
 
 function Etapes() {
 
@@ -26,7 +26,7 @@ function Etapes() {
         creation_two: english ? '7. I present to you my creations and then adjust until you find the design that fits you.' : '7. Je vous présente mes créations et m’adapte jusqu’à ce que vous trouviez le design qui vous convient.',
 
         sending: english ? 'Sending' : 'Envoi',
-        sending_one: english ? '8. Once everything is approved, I will send to you the desired elements in the correct formats.' : '8. Une fois que tout est approuvé il ne me reste plus qu’à vous envoyer les éléments dans les formats adéquates.',
+        sending_one: english ? '8. Once everything is approved, I will send to you the desired elements in the correct formats.' : '8. Une fois que tout est approuvé il ne me reste plus qu’à vous envoyer les éléments dans les formats adéquats.',
         sending_two: english ? '9. I provide you with a PDF which explains how to use all these documents.' : '9. Je vous fournis également un PDF qui explique comment utiliser tous ces documents.',
         sending_three: english ? '10. You can now manage these creations in complete autonomy.' : '10. À présent vous pouvez gérer ces créations en toute autonomie.',
     }

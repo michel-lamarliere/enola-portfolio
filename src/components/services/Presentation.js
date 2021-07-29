@@ -2,7 +2,7 @@ import classes from './Presentation.module.scss';
 import imgBranding from '../../assets/icons/branding.svg'
 import imgWeb from '../../assets/icons/web.svg'
 import imgPackaging from '../../assets/icons/packaging.svg'
-import { useLanguage } from '../../translations/LanguageContext.js'
+import { useLanguage } from '../../store/LanguageContext.js'
 
 function Presentation() {
     const english = useLanguage();
@@ -14,11 +14,11 @@ function Presentation() {
         identity_three: english ? 'Business Card' : 'Cartes de visites',
         identity_four: english ? 'Stationery' : 'Papeterie',
 
-        design_one : english ? 'Website design ' : 'Maquette de site web',
+        design_one : english ? 'Website design' : 'Maquette de site web',
         design_two : english ? 'App design' : 'Application mobile',
         design_three : english ? 'Social media design' : 'Visuels pour réseaux sociaux',
 
-        packaging_one: english ? 'Packaging design ' : 'Design de packaging',
+        packaging_one: english ? 'Packaging design' : 'Design de packaging',
         packaging_two: english ? 'Book and album cover design' : 'Couverture d’album/livre',
         packaging_three: english ? 'Menu design' : 'Menu de restaurant',
     }
