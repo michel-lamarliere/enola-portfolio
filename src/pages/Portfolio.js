@@ -19,7 +19,6 @@ function Portfolio() {
             let projectsList = [];
             projectsList.push(...data);
             setProjectsList(projectsList);
-            console.log(projectsList);
         })
         .catch(err => {
             console.error(err);
