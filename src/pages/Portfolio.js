@@ -48,7 +48,7 @@ function Portfolio() {
             <div className={classes.portfolio} style={loaded ? {display: 'flex'} : {display: 'none'}}>
                 {loading}
             </div>
-            {!loaded ? <Loading /> : ''}
+            {!loaded && <Loading />}
             <WorkTogetherBtn />
         </LargeContainer>
     )
