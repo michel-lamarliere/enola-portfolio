@@ -10,12 +10,12 @@ import iconInstagram from '../assets/icons/instagram_blue.svg';
 import iconBehance from '../assets/icons/behance_blue.svg';
 import { CenteredContainer } from '../components/UI/Containers';
 import { ContactMeBtn, SeeMoreBtn } from '../components/UI/Buttons';
-import { Socials, SocialsLink } from '../components/Homepage/Socials';
+import { Socials, SocialsLink } from '../components/_homepage/Socials';
 import MerciDiv from '../components/UI/Merci'
 import db from '../firebase/firebase';
 import Loading from '../components/UI/Loading';
-import LastProjects from '../components/Homepage/LastProjects';
-import { useLanguage } from '../store/LanguageContext.js';
+import LastProjects from '../components/_homepage/LastProjects';
+import { useLanguage } from '../store/language-context.js';
 
 function Home() {
     const english = useLanguage();

@@ -1,5 +1,5 @@
 import classes from './Socials.module.scss';
-import { useLanguage } from '../../store/LanguageContext.js';
+import { useLanguage } from '../../store/language-context.js';
 
 export function SocialsLink(props) {
     return (

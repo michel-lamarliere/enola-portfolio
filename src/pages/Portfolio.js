@@ -6,7 +6,7 @@ import db from '../firebase/firebase';
 import Loading from '../components/UI/Loading';
 import { LargeContainer } from '../components/UI/Containers';
 import { WorkTogetherBtn } from '../components/UI/Buttons';
-import PortfolioImage, { PortfolioImageLoading } from '../components/Portfolio/PortfolioImage';
+import PortfolioImage, { PortfolioImageLoading } from '../components/_portfolio/PortfolioImage';
 
 function Portfolio() {
     const [projectsList, setProjectsList] = useState();

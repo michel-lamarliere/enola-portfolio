@@ -2,7 +2,7 @@ import classes from './Presentation.module.scss';
 import imgBranding from '../../assets/icons/branding.svg'
 import imgWeb from '../../assets/icons/web.svg'
 import imgPackaging from '../../assets/icons/packaging.svg'
-import { useLanguage } from '../../store/LanguageContext.js'
+import { useLanguage } from '../../store/language-context.js'
 
 function Presentation() {
     const english = useLanguage();

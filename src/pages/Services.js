@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { CenteredContainer } from '../components/UI/Containers';
-import Etapes from '../components/Services/Etapes';
-import Presentation from '../components/Services/Presentation';
+import Etapes from '../components/_services/Etapes';
+import Presentation from '../components/_services/Presentation';
 import classes from './Services.module.scss';
 import { WorkTogetherBtn } from '../components/UI/Buttons';
 

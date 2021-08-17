@@ -1,6 +1,6 @@
 import { CenteredContainer } from '../components/UI/Containers';
 import classes from './Error.module.scss';
-import { useLanguage } from '../store/LanguageContext.js';
+import { useLanguage } from '../store/language-context.js';
 
 function Error() {
     const english = useLanguage();

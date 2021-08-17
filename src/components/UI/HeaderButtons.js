@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useLanguage, useLanguageUpdate } from '../../store/LanguageContext.js';
-import { useOpenned, useOpennedUpdate } from '../../store/ModalContext.js'
+import { useLanguage, useLanguageUpdate } from '../../store/language-context.js';
+import { useOpenned, useOpennedUpdate } from '../../store/modal-context.js'
 import classes from './HeaderButtons.module.scss';
 import imageEn from '../../assets/icons/en.svg';
 import imageFr from '../../assets/icons/fr.svg';

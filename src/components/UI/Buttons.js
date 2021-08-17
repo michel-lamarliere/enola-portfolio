@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './Buttons.module.scss';
-import { useLanguage } from '../../store/LanguageContext.js'
+import { useLanguage } from '../../store/language-context.js'
 
 export function WorkTogetherBtn(props) {
     const english = useLanguage();

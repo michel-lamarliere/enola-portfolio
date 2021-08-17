@@ -1,6 +1,6 @@
 import classes from './Links.module.scss'
 import { Link } from 'react-router-dom';
-import { useLanguage, useLanguageUpdate } from '../../../store/LanguageContext.js'
+import { useLanguage, useLanguageUpdate } from '../../../store/language-context.js'
 
 export function NavLine() {
     return (

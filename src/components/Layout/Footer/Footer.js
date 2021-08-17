@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './Footer.module.scss'
-import { useLanguage } from '../../../store/LanguageContext.js';
+import { useLanguage } from '../../../store/language-context.js';
 
 function Footer() {
     const english = useLanguage();

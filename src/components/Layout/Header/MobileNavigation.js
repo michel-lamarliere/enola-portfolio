@@ -1,9 +1,8 @@
-import { useState, useContext } from 'react';
 import classes from './MobileNavigation.module.scss';
 import Links from './Links';
 import { LogoBtn, HamburgerBtn, LanguageBtn } from '../../UI/HeaderButtons';
 import Overlay from '../../UI/Overlay';
-import { useOpenned, useOpennedUpdate } from '../../../store/ModalContext';
+import { useOpenned, useOpennedUpdate } from '../../../store/modal-context';
 
 function MobileNavigation() {
     const openned = useOpenned();

@@ -3,7 +3,7 @@ import { LargeContainer } from '../components/UI/Containers';
 import classes from './About.module.scss';
 import img from '../assets/img/contact.png';
 import questionnaire from '../assets/docs/questionnaire.pdf';
-import { useLanguage } from '../store/LanguageContext.js'
+import { useLanguage } from '../store/language-context.js'
 import { PortfolioBtn } from '../components/UI/Buttons';
 
 function About() {

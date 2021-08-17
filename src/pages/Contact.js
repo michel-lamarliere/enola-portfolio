@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState} from 'react';
 import classes from './Contact.module.scss';
 import { CenteredContainer } from '../components/UI/Containers';
-import { useLanguage } from '../store/LanguageContext.js';
+import { useLanguage } from '../store/language-context.js';
 import MerciDiv from '../components/UI/Merci';
 import { FormBtn } from '../components/UI/Buttons';
 import Input, { Textarea } from '../components/UI/Input';

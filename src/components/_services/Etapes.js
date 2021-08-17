@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import classes from './Etapes.module.scss';
 import pdf from '../../assets/docs/questionnaire.pdf'
 import pdf_en from '../../assets/docs/english_questionnaire.pdf';
-import { useLanguage } from '../../store/LanguageContext.js';
+import { useLanguage } from '../../store/language-context.js';
 
 function Etapes() {
 
