@@ -28,11 +28,7 @@ function Para(props) {
     )
 }
 
-function Legal() {
-    useEffect(() => {
-		window.scrollTo(0, 0)
-	  }, [])
-	  
+function Legal() {  
     return (
         <CenteredContainer>
             <div className={classes.legal}>

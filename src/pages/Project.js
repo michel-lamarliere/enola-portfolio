@@ -15,7 +15,6 @@ function Project() {
 	const [imagesList, setImagesList] = useState();
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
 		const images = db
 			.collection('portfolio')
 			.doc(`${pathname}`)

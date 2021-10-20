@@ -21,10 +21,6 @@ function Contact(props) {
         message: '',
     });
 
-    useEffect(() => {
-		window.scrollTo(0, 0)
-    }, [])
-
     const handleInputChange = (event) => {
         setFormValues((prevProps) => ({
             ...prevProps,

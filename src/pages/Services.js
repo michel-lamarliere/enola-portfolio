@@ -6,11 +6,6 @@ import classes from './Services.module.scss';
 import { WorkTogetherBtn } from '../components/UI/Buttons';
 
 function Services() {
-
-    useEffect(() => {
-		window.scrollTo(0, 0)
-	  }, [])
-
     return (
         <CenteredContainer>
             <Presentation/>
