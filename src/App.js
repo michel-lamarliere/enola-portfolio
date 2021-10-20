@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import Layout from './components/Layout/Layout';
 import Loading from './components/UI/Loading';
