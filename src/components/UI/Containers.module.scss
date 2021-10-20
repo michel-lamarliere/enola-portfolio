@@ -1,20 +1,21 @@
 .centered {
-    z-index: 2;
-    max-width: 31.8rem;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+	z-index: 2;
+	width: 100%;
+	max-width: 31.8rem;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .large {
-    max-width: 58.5rem;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+	max-width: 58.5rem;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media screen and (max-width: 1000px) {
-    .centered {
-        padding: 0 1.26rem;
-    }
+	.centered {
+		padding: 0 1.26rem;
+	}
 }

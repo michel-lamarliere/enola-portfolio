@@ -1,44 +1,47 @@
 @import '../helpers/all.scss';
 
+.wrapper {
+	display: flex;
+	min-height: calc(100vh - calc(4.03rem + 5.33rem));
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-	flex: 1;
-    color: $colorRed;
-    
-    & > *:not(:last-child) {
-        margin-bottom: 2.5rem;
-    }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2.5rem;
+	color: $colorRed;
+	flex-grow: 1;
 }
 
 .sorry {
-    font-size: 50px;
+	font-size: 50px;
 }
 
 .construction {
-    width: 90%;
-    text-align: center;
-    font-size: 35px;
+	width: 90%;
+	text-align: center;
+	font-size: 35px;
 }
 
+@media screen and (max-width: 660px) {
+	.wrapper {
+		min-height: calc(100vh - calc(3.5rem + 4.66rem));
+	}
+}
 
 @media screen and (max-width: 850px) {
+	.container {
+		gap: 1rem;
+	}
 
-    .container {
-        
-        & > *:not(:last-child) {
-            margin-bottom: 2.5rem;
-        }
-    }
-    
-    .sorry {
-        font-size: 30px;
-    }
+	.sorry {
+		font-size: 30px;
+	}
 
-    .construction {
-        text-align: center;
-        font-size: 20px;
-    }
+	.construction {
+		text-align: center;
+		font-size: 20px;
+	}
 }
