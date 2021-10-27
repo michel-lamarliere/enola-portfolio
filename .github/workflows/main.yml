@@ -23,4 +23,4 @@ jobs:
       with:
         server: ftp://enolalouge.com
         username: u688071411
-        password: ${{ secrets.password }}
+        password: ${{ secrets.ftp_password }}
