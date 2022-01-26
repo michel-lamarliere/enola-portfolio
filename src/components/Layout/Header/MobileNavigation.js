@@ -5,30 +5,34 @@ import Overlay from '../../UI/Overlay';
 import { useOpenned, useOpennedUpdate } from '../../../store/modal-context';
 
 function MobileNavigation() {
-    const openned = useOpenned();
-    const toggleOpenned = useOpennedUpdate();
+	const openned = useOpenned();
+	const toggleOpenned = useOpennedUpdate();
 
-    function NoScroll() {
-        if (openned) {
-            document.body.style.overflow = 'hidden';
+	function NoScroll() {
+		if (openned) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'visible';
+		}
+		return null;
+	}
 
-        } else {
-            document.body.style.overflow = 'visible';
-        }
-        return null;
-    }
-
-    return (
-        <div className={classes.mobilenav}>
-            <div className={classes.mobile}>
-                <LogoBtn onClick={toggleOpenned} />
-                <HamburgerBtn onClick={toggleOpenned} />
-            </div>
-            <NoScroll />
-            { openned && <Overlay />}
-            { openned && <Links onClick={toggleOpenned} languageLink={<LanguageBtn onClick={toggleOpenned} /> } />}
-        </div>
-    )
+	return (
+		<div className={classes.mobilenav}>
+			<div className={classes.mobile}>
+				<LogoBtn />
+				<HamburgerBtn onClick={toggleOpenned} />
+			</div>
+			<NoScroll />
+			{openned && <Overlay />}
+			{openned && (
+				<Links
+					onClick={toggleOpenned}
+					languageLink={<LanguageBtn onClick={toggleOpenned} />}
+				/>
+			)}
+		</div>
+	);
 }
 
 export default MobileNavigation;
