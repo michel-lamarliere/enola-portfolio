@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import classes from './Project.module.scss';
 
 import db from '../firebase/firebase';
@@ -10,14 +11,13 @@ import { Redirect } from 'react-router-dom';
 function Project() {
 	const [error, setError] = useState(false);
 	const [loaded, setLoaded] = useState(false);
-	const pathnameRaw = window.location.pathname;
-	const pathname = pathnameRaw.slice(12);
+	const { project } = useParams();
 	const [imagesList, setImagesList] = useState();
 
-	useEffect(() => {
-		const images = db
+	const getProject = async () => {
+		await db
 			.collection('portfolio')
-			.doc(`${pathname}`)
+			.doc(project)
 			.get()
 			.then((doc) => {
 				const imagesData = doc.data();
@@ -25,7 +25,9 @@ function Project() {
 				const imagesList = [];
 				for (let i = 0; i < dataLength; i++) {
 					imagesList.push(
-						imagesData.project_images[Object.keys(imagesData.project_images)[i]]
+						imagesData.project_images[
+							Object.keys(imagesData.project_images)[i]
+						]
 					);
 				}
 				setImagesList(imagesList);
@@ -37,34 +39,39 @@ function Project() {
 		setTimeout(() => {
 			setLoaded(true);
 		}, 1500);
+	};
+
+	useEffect(() => {
+		getProject();
 	}, []);
 
-	let redirect =
-			<>      
-                {imagesList &&
-                    imagesList.map((image, index) => (
-                        <img
-                            key={Math.random()}
-                            className={classes.image}
-                            src={image}
-                            alt={`project ${index}`}
-                        ></img>
-                ))}
-			</>
-    
-    if (error) {
-        redirect = <Redirect to='/error' />;
+	let redirect = (
+		<>
+			{imagesList &&
+				imagesList.map((image, index) => (
+					<img
+						key={Math.random()}
+						className={classes.image}
+						src={image}
+						alt={`project ${index}`}
+					/>
+				))}
+		</>
+	);
+
+	if (error) {
+		redirect = <Redirect to='/error' />;
 	}
-    
-    return (
-        <CenteredContainer>
-            <div className={classes.images}>
-                { !loaded && <Loading />}
-                {redirect}
-            </div>
-            <WorkTogetherBtn />
-        </CenteredContainer>
-    )
+
+	return (
+		<CenteredContainer>
+			<div className={classes.images}>
+				{!loaded && <Loading />}
+				{redirect}
+			</div>
+			<WorkTogetherBtn />
+		</CenteredContainer>
+	);
 }
 
 export default Project;

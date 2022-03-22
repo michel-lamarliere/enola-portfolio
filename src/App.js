@@ -25,7 +25,7 @@ function App() {
 					<Route exact path='/portfolio'>
 						<Portfolio />
 					</Route>
-					<Route path='/portfolio/:id'>
+					<Route path='/portfolio/:project'>
 						<Project />
 					</Route>
 					<Route path='/about'>
