@@ -1,0 +1,84 @@
+@import 'helpers/styles/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: 'AllRoundGothic';
+  font-size: 24px;
+  font-weight: normal;
+  color: $colorAccent;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  height: 4rem;
+
+  &--static {
+    @include h1;
+    line-height: 1.25rem;
+  }
+
+  &--dynamic {
+    @include h1;
+    text-indent: 4rem;
+    line-height: 2.25rem;
+  }
+}
+
+.image {
+  justify-self: center;
+  max-width: 16.5rem;
+  height: 16.5rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  // REMOVE WHEN IMAGE IS PROVIDED
+  background-color: #7D7C8E;
+
+  &--desktop {
+    display: none;
+  }
+}
+
+.description {
+  @include p1;
+  margin-top: 1.5rem;
+}
+
+.button {
+  margin-top: 1.75rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .wrapper {
+    flex-direction: row;
+    gap: 6.2rem;
+  }
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 22rem;
+  }
+
+  .image {
+    grid-area: image;
+    width: 40rem;
+    height: 40rem;
+    max-width: 40rem;
+    max-height: 40rem;
+    margin-top: 0;
+
+    &--mobile {
+      display: none;
+    }
+
+    &--desktop {
+      display: flex;
+    }
+  }
+}

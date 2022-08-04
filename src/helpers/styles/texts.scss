@@ -1,35 +1,41 @@
+// t1-gros-titres EXTRA_BOLD
 @mixin h1 {
-  font-family: 'Poppins';
   font-weight: 800;
   font-size: 36px;
 }
 
+// t2-titres BOLD
 @mixin h2 {
   font-weight: 700;
   font-size: 22px;
 }
 
+// t3-sous-titres SEMI_BOLD
 @mixin h3 {
   font-weight: 600;
   font-size: 16px;
 }
 
+// p1-texte-important MEDIUM
 @mixin p1 {
   font-weight: 500;
   font-size: 14px;
 }
 
+// p2-petit-texte REGULAR
 @mixin p2 {
   font-weight: 400;
   font-size: 12px;
 }
 
+// p3-gros-texte LIGHT
 @mixin p3 {
   font-weight: 300;
   font-style: normal;
   font-size: 16px;
 }
 
+// p2-mentions-spéciales LIGHT_ITALIC
 @mixin p4 {
   font-weight: 300;
   font-style: italic;
