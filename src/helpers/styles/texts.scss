@@ -1,0 +1,37 @@
+@mixin h1 {
+  font-family: 'Poppins';
+  font-weight: 800;
+  font-size: 36px;
+}
+
+@mixin h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+@mixin h3 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@mixin p1 {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@mixin p2 {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+@mixin p3 {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+}
+
+@mixin p4 {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 12px;
+}

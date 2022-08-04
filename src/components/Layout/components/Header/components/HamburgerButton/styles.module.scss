@@ -1,0 +1,51 @@
+.wrapper {
+  position: relative;
+}
+
+.lines {
+  display: grid;
+  place-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border-radius: 0.25rem;
+
+  &__line {
+    display: block;
+    width: 1rem;
+    height: 0.15rem;
+    border-radius: 1rem;
+    background-color: black;
+    transition: all 0.2s ease-in-out;
+    content: '';
+
+    &:before {
+      @extend .lines__line;
+      position: absolute;
+      transform: translateY(-0.33rem);
+    }
+
+    &:after {
+      @extend .lines__line;
+      position: absolute;
+      transform: translateY(0.33rem);
+    }
+  }
+}
+
+
+.wrapper.wrapper--opened {
+  & .lines__line {
+    background: transparent;
+  }
+
+  & .lines__line::before {
+    transform: rotate(45deg);
+    background: black;
+  }
+
+  & .lines__line::after {
+    transform: rotate(-45deg);
+    background: black;
+  }
+}

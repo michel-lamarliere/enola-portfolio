@@ -1,0 +1,18 @@
+.wrapper {
+  height: 4.6rem;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.logo-button {
+  width: 1.25rem;
+  height: 1rem;
+
+  & > img {
+    width: 1.25rem;
+    height: 1rem;
+  }
+}
