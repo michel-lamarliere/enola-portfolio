@@ -1,17 +1,18 @@
 import React from "react";
 
-import MainContainer from "components/containers/MainContainer";
 import Main from "./components/Main";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
 
 import classes from "./styles.module.scss";
 
 const Home: React.FC = () => {
   return (
-    <MainContainer>
-      <div className={classes.wrapper}>
-        <Main />
-      </div>
-    </MainContainer>
+    <div className={classes.wrapper}>
+      <Main />
+      <Services />
+      <Contact />
+    </div>
   );
 };
 

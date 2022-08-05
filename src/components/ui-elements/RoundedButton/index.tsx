@@ -1,14 +1,39 @@
 import React from "react";
 
 import classes from "./styles.module.scss";
+import { Link } from "react-router-dom";
 
-interface Props {
-  className?: string;
-  type?: "button" | "submit";
-  text: string;
+export enum RoundedButtonTypes {
+  LINK = "link",
+  BUTTON = "button",
+  SUBMIT = "submit",
 }
 
+type commonProps = {
+  text: string;
+  className?: string;
+};
+
+type conditionalProps =
+  | {
+      type: RoundedButtonTypes.LINK;
+      to: string;
+    }
+  | {
+      type: RoundedButtonTypes.SUBMIT | RoundedButtonTypes.BUTTON;
+    };
+
+type Props = commonProps & conditionalProps;
+
 const RoundedButton: React.FC<Props> = (props) => {
+  if (props.type === RoundedButtonTypes.LINK) {
+    return (
+      <Link to={props.to} className={`${classes.wrapper} ${props.className}`}>
+        {props.text}
+      </Link>
+    );
+  }
+
   return (
     <button
       className={`${classes.wrapper} ${props.className}`}
@@ -17,10 +42,6 @@ const RoundedButton: React.FC<Props> = (props) => {
       {props.text}
     </button>
   );
-};
-
-RoundedButton.defaultProps = {
-  type: "button",
 };
 
 export default RoundedButton;
