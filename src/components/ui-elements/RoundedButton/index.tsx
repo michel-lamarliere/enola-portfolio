@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import classes from "./styles.module.scss";
-import { Link } from "react-router-dom";
 
 export enum RoundedButtonTypes {
   LINK = "link",
@@ -21,6 +21,7 @@ type conditionalProps =
     }
   | {
       type: RoundedButtonTypes.SUBMIT | RoundedButtonTypes.BUTTON;
+      onClick: (event: any) => void;
     };
 
 type Props = commonProps & conditionalProps;
@@ -38,6 +39,7 @@ const RoundedButton: React.FC<Props> = (props) => {
     <button
       className={`${classes.wrapper} ${props.className}`}
       type={props.type}
+      onClick={props.onClick}
     >
       {props.text}
     </button>

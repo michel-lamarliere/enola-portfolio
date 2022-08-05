@@ -57,6 +57,7 @@ const Main: React.FC = () => {
             type={RoundedButtonTypes.BUTTON}
             className={classes.button}
             text={"Télécharger mon CV"}
+            onClick={() => {}}
           />
         </div>
         <div className={`${classes.image} ${classes["image--desktop"]}`} />

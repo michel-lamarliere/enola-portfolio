@@ -28,8 +28,8 @@ const Services: React.FC = () => {
     <div className={classes.wrapper}>
       <div className={classes.title}>Mes services</div>
       <ul className={classes.services}>
-        {services.map((service) => (
-          <div className={classes.services__item}>
+        {services.map((service, index) => (
+          <div className={classes.services__item} key={+index}>
             <img
               src={service.icon}
               alt={service.title}
@@ -41,7 +41,7 @@ const Services: React.FC = () => {
       </ul>
       <RoundedButton
         type={RoundedButtonTypes.LINK}
-        to={""}
+        to={"/a-propos"}
         text={"En savoir plus"}
         className={classes.button}
       />
