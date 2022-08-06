@@ -18,7 +18,6 @@ const App: React.FC = () => {
   const mobileMenuState = useSelector((state: RootState) => state.mobileMenu);
 
   const [windowWidth, setWindowWidth] = useState(0);
-  const [path, setPath] = useState("");
 
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
@@ -29,25 +28,18 @@ const App: React.FC = () => {
   }, [location, mobileMenuState.isOpen, windowWidth, dispatch]);
 
   useEffect(() => {
-    if (location.pathname !== path) {
-      dispatch(CLOSE_MOBILE_MENU());
-    }
-
-    setPath(location.pathname);
-  }, [dispatch, location, path]);
+    dispatch(CLOSE_MOBILE_MENU());
+  }, [location]);
 
   useEffect(() => {
     if (mobileMenuState.isOpen) {
-      const root = document.getElementById("root");
-
-      root!.style.overflow = "hidden";
-      root!.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
     }
 
     if (!mobileMenuState.isOpen) {
-      const root = document.getElementById("root");
-
-      root!.style.overflow = "visible";
+      document.body.style.overflow = "visible";
+      document.body.style.height = "auto";
     }
   }, [mobileMenuState.isOpen]);
 

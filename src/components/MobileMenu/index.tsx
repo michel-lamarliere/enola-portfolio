@@ -36,7 +36,7 @@ const MobileMenu: React.FC = () => {
             </div>
           </button>
           <ul className={classes["main-links"]}>
-            <CustomNavLink to={"/"} text={"Accueil"} />
+            <CustomNavLink to={"/accueil"} text={"Accueil"} />
             <CustomNavLink to={"/projets"} text={"Projets"} />
             <CustomNavLink to={"/a-propos"} text={"À propos"} />
           </ul>

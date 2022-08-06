@@ -19,7 +19,7 @@ const DesktopNavbar: React.FC<Props> = (props) => {
         <EnolaLougeLogo className={classes["logo-button__icon"]} />
       </Link>
       <div className={classes["main-links"]}>
-        <CustomNavLink to={"/"} text={"Accueil"} />
+        <CustomNavLink to={"/accueil"} text={"Accueil"} />
         <CustomNavLink to={"/projets"} text={"Projets"} />
         <CustomNavLink to={"/a-propos"} text={"À propos"} />
       </div>

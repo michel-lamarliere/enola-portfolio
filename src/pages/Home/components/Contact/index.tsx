@@ -39,9 +39,11 @@ const Contact: React.FC = () => {
     }
 
     if (location.pathname === "/accueil/contact") {
-      formRef.current.scrollIntoView({
-        behavior: "smooth",
-      });
+      setTimeout(() => {
+        formRef.current.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 300);
     }
   }, [formRef, location]);
 
