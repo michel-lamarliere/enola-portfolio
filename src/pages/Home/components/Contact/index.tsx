@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
   const formValidationSchema = object().shape({
     name: string()
       .trim()
-      .min(2, "2 caractère minimum.")
+      .min(2, "2 caractères minimum.")
       .max(30, "30 caractères maximum.")
       .required("Champ requis."),
     emailAddress: string()

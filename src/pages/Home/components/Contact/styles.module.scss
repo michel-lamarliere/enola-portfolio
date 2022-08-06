@@ -61,6 +61,7 @@
 
     &__button {
       margin-top: 0.35rem;
+      background-color: $colorAccent;
     }
 
     &__server-response {
@@ -68,6 +69,7 @@
       color: $colorAccent;
 
       &--error {
+        color: $colorAccent2;
       }
     }
   }

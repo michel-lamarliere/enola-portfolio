@@ -34,6 +34,7 @@ const Input: React.FC<Props> = (props) => {
           value={props.value}
           onChange={props.onChange}
           onBlur={props.onBlur}
+          id={props.name}
         />
       );
       break;
@@ -49,6 +50,7 @@ const Input: React.FC<Props> = (props) => {
           value={props.value}
           onChange={props.onChange}
           onBlur={props.onBlur}
+          id={props.name}
         />
       );
       break;
@@ -56,6 +58,7 @@ const Input: React.FC<Props> = (props) => {
 
   return (
     <div className={classes.wrapper}>
+      <label htmlFor={props.name} />
       {content}
       <div className={classes["error-text"]}>
         {showError && props.errorText}
