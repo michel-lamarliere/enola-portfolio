@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import MainContainer from "../../../containers/MainContainer";
-
 import elLogo from "assets/icons/enola-louge_logo.svg";
 import behanceIcon from "assets/icons/behance.svg";
 import instagramIcon from "assets/icons/instagram.svg";
@@ -70,7 +68,6 @@ const Footer: React.FC = () => {
               Développement par Michel Lamarlière
             </div>
           </div>
-          {/*<span />*/}
         </div>
       </div>
     </div>

@@ -22,6 +22,7 @@ type conditionalProps =
   | {
       type: RoundedButtonTypes.SUBMIT | RoundedButtonTypes.BUTTON;
       onClick: (event: any) => void;
+      disabled?: boolean;
     };
 
 type Props = commonProps & conditionalProps;
@@ -37,6 +38,7 @@ const RoundedButton: React.FC<Props> = (props) => {
 
   return (
     <button
+      disabled={props.disabled}
       className={`${classes.wrapper} ${props.className}`}
       type={props.type}
       onClick={props.onClick}

@@ -69,6 +69,7 @@
 
   .footer {
     flex-direction: column;
+    padding: 6rem 3rem 2rem 3rem;
   }
 
   .wrapper {
@@ -83,7 +84,7 @@
     justify-content: space-between;
 
     &__el-logo {
-
+      width: 2.7rem;
     }
 
     &__socials {

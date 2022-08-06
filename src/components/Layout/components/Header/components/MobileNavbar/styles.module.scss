@@ -1,6 +1,8 @@
+@import 'helpers/styles/variables';
+
 .wrapper {
   height: 4.6rem;
-  background-color: red;
+  background-color: $colorMain2;
   display: flex;
   align-items: center;
   justify-content: space-between;

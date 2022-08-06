@@ -32,20 +32,3 @@
     }
   }
 }
-
-
-.wrapper.wrapper--opened {
-  & .lines__line {
-    background: transparent;
-  }
-
-  & .lines__line::before {
-    transform: rotate(45deg);
-    background: black;
-  }
-
-  & .lines__line::after {
-    transform: rotate(-45deg);
-    background: black;
-  }
-}

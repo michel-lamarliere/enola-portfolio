@@ -59,9 +59,19 @@
     gap: 1rem;
     margin-top: 1.5rem;
 
-    &__button {
-      margin-top: 0.35rem;
-      background-color: $colorAccent;
+    &__button-spinner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &__button {
+        margin-top: 0.35rem;
+        background-color: $colorAccent;
+      }
+
+      &__spinner {
+        
+      }
     }
 
     &__server-response {

@@ -1,0 +1,15 @@
+@import 'helpers/styles/variables';
+
+.wrapper {
+  @include h3;
+  padding: 0.5rem;
+  color: $colorMain;
+
+  &:hover {
+    color: $colorAccent3;
+  }
+
+  &--active {
+    color: $colorAccent2;
+  }
+}

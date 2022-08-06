@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Formik } from "formik";
+import { object, string } from "yup";
+import BarLoader from "react-spinners/BarLoader";
 
 import MainContainer from "components/containers/MainContainer";
-
-import placeholderIcon from "assets/icons/e_logo.svg";
-
-import classes from "./styles.module.scss";
-import { object, string } from "yup";
 import Input, { InputTypes } from "./components/Input";
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/ui-elements/RoundedButton";
+
+import placeholderIcon from "assets/icons/e_logo.svg";
+
+import classes from "./styles.module.scss";
+import { useLocation } from "react-router-dom";
 
 const contactInfo: { text: string; icon: string }[] = [
   {
@@ -28,10 +30,27 @@ const contactInfo: { text: string; icon: string }[] = [
 ];
 
 const Contact: React.FC = () => {
+  const location = useLocation();
+  const formRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (!formRef.current) {
+      return;
+    }
+
+    if (location.pathname === "/accueil/contact") {
+      formRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [formRef, location]);
+
   const [serverResponse, setServerResponse] = useState({
     success: true,
     message: "",
   });
+  const [waitingForServerResponse, setWaitingForServerResponse] =
+    useState(false);
 
   const formValidationSchema = object().shape({
     name: string()
@@ -51,6 +70,8 @@ const Contact: React.FC = () => {
   });
 
   const formSubmitHandler = async (inputValues: any, actions: any) => {
+    setWaitingForServerResponse(true);
+
     const response = await fetch(
       "https://email-portfolios.herokuapp.com/enola-portfolio/submit-form",
       {
@@ -67,6 +88,8 @@ const Contact: React.FC = () => {
         }),
       }
     );
+
+    setWaitingForServerResponse(false);
 
     if (!response.ok) {
       setServerResponse({
@@ -94,7 +117,7 @@ const Contact: React.FC = () => {
 
   return (
     <MainContainer>
-      <div className={classes.wrapper}>
+      <div className={classes.wrapper} id={"contact"} ref={formRef}>
         <div className={classes.details}>
           <div className={classes.details__title}>
             N’hésitez-pas à me contacter !
@@ -185,12 +208,21 @@ const Contact: React.FC = () => {
                     {serverResponse.message}
                   </div>
                 )}
-                <RoundedButton
-                  className={classes.form__form__button}
-                  text={"Envoyer"}
-                  type={RoundedButtonTypes.BUTTON}
-                  onClick={handleSubmit}
-                />
+                <div className={classes["form__form__button-spinner"]}>
+                  <RoundedButton
+                    className={classes["form__form__button-spinner__button"]}
+                    text={"Envoyer"}
+                    type={RoundedButtonTypes.BUTTON}
+                    onClick={handleSubmit}
+                    disabled={waitingForServerResponse}
+                  />
+                  {waitingForServerResponse && (
+                    <BarLoader
+                      color={"#FF96D6"}
+                      className={classes["form__form__button-spinner__spinner"]}
+                    />
+                  )}
+                </div>
               </form>
             )}
           </Formik>

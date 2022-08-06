@@ -1,34 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
+
+import { TOGGLE_MOBILE_MENU } from "store/mobile-menu";
 
 import classes from "./styles.module.scss";
 
 const HamburgerButton: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
   return (
-    /*<button
-      className={`${classes.wrapper} ${
-        menuState.isOpen && classes["wrapper--opened"]
-      } ${props.className}`}
-      onClick={hamburgerButtonHandler}
-    >
-      <div className={classes.lines}>
-        <span
-          className={`${classes.lines__line} ${
-            menuState.isOpen && classes["lines__line--mobile-menu-is-open"]
-          }`}
-        />
-      </div>
-    </button>*/
     <button
-      className={`${classes.wrapper} ${isOpen && classes["wrapper--opened"]}`}
-      onClick={() => setIsOpen((prev) => !prev)}
+      className={classes.wrapper}
+      onClick={() => {
+        dispatch(TOGGLE_MOBILE_MENU());
+      }}
     >
       <div className={classes.lines}>
-        <span
-          className={`${classes.lines__line} ${
-            isOpen && classes["lines__line-is-open"]
-          }`}
-        />
+        <span className={classes.lines__line} />
       </div>
     </button>
   );
