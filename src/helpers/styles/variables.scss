@@ -1,3 +1,11 @@
 @import './colors';
 @import './texts';
 
+$headerHeightMobile: 4.6rem;
+$headerHeightDesktop: 6rem;
+
+$footerHeightMobile: 9.75rem;
+$footerHeightDesktop: 13rem;
+
+$fullScreenMinHeightMobile: calc(100vh - calc(#{$headerHeightMobile} + #{$footerHeightMobile}));
+$fullScreenMinHeightDesktop: calc(100vh - calc(#{$headerHeightDesktop} + #{$footerHeightDesktop}));
