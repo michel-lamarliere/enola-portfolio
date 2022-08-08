@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-
-import MainContainer from "components/containers/MainContainer";
 import Error404Logo from "components/ui-elements/Error404Logo";
 import RoundedButton, {
   RoundedButtonTypes,
@@ -22,28 +20,26 @@ const Error404: React.FC = () => {
   }, [showAltColor]);
 
   return (
-    <MainContainer>
-      <div className={classes.wrapper}>
-        <Error404Logo
-          colorOneClassName={`${classes["logo-color-one"]} ${
-            showAltColor && classes["logo-color-one--alt"]
-          }`}
-          colorTwoClassName={`${classes["logo-color-two"]} ${
-            showAltColor && classes["logo-color-two--alt"]
-          }`}
-        />
-        <div className={classes.title}>ERROR 404</div>
-        <div className={classes.description}>
-          Veuillez nous excuser mais cette page est introuvable.
-        </div>
-        <RoundedButton
-          className={classes.button}
-          text={"Retourner à l'accueil"}
-          type={RoundedButtonTypes.LINK}
-          to={"/accueil"}
-        />
+    <div className={classes.wrapper}>
+      <Error404Logo
+        colorOneClassName={`${classes["logo-color-one"]} ${
+          showAltColor && classes["logo-color-one--alt"]
+        }`}
+        colorTwoClassName={`${classes["logo-color-two"]} ${
+          showAltColor && classes["logo-color-two--alt"]
+        }`}
+      />
+      <div className={classes.title}>ERROR 404</div>
+      <div className={classes.description}>
+        Veuillez nous excuser mais cette page est introuvable.
       </div>
-    </MainContainer>
+      <RoundedButton
+        className={classes.button}
+        text={"Retourner à l'accueil"}
+        type={RoundedButtonTypes.LINK}
+        to={"/accueil"}
+      />
+    </div>
   );
 };
 

@@ -1,6 +1,8 @@
 @import 'helpers/styles/variables';
 
 .wrapper {
+  @include container;
+  @include fullPage;
   display: flex;
   /*min-height: $fullScreenMinHeightMobile;*/
   flex-direction: column;

@@ -1,11 +1,12 @@
 @import 'helpers/styles/variables';
 
 .wrapper {
+  @include container;
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
-  margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem !important;
+  margin-bottom: 5rem !important;
   gap: 3rem;
 }
 
@@ -89,10 +90,13 @@
 @media screen and (min-width: 1000px) {
   .wrapper {
     flex-direction: row-reverse;
+    justify-content: flex-end;
     padding-top: 0;
+    gap: 4.5rem;
   }
 
   .details {
     margin-top: 2rem;
+    max-width: 21rem;
   }
 }

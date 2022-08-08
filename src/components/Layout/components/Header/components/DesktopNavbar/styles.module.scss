@@ -1,14 +1,12 @@
 @import 'helpers/styles/variables';
 
 .wrapper {
+  @include container;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: $headerHeightDesktop;
   background-color: $colorMain2;
-  max-width: 68rem;
-  margin: 0 auto;
-  padding: 0 3rem;
 }
 
 .logo-button {

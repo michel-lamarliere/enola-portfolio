@@ -1,0 +1,113 @@
+@import 'helpers/styles/variables';
+
+.wrapper {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+  overflow: hidden;
+}
+
+.title {
+  @include h2;
+  color: $colorMain;
+}
+
+.reviews-wrapper {
+
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.reviews {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  overflow: scroll;
+
+  &__item {
+    flex-shrink: 0;
+    width: 10.5rem;
+    padding: 1.5rem 1.3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 0.6rem #1414231A;
+
+    &__client {
+      @include h3;
+      text-align: center;
+    }
+
+    &__text {
+      @include p2;
+      margin-top: 1rem;
+      height: 9rem;
+    }
+
+    &__person {
+      @include p1;
+      color: $colorAccent3;
+    }
+
+    &__image {
+      width: 100%;
+      height: 9.3rem;
+      margin-top: 1.5rem;
+      border-radius: 0.5rem;
+      background-color: red;
+    }
+
+    &__link {
+      @include p4;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.arrow-button {
+  position: absolute;
+  display: none;
+  top: 45%;
+
+  &--left {
+    left: -1.5rem;
+  }
+
+  &--right {
+    transform: rotateY(180deg);
+    right: -1.5rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .arrow-button {
+    display: flex;
+  }
+
+  .reviews-wrapper {
+    @include container;
+  }
+
+  .reviews {
+    padding: 2rem 1rem;
+    gap: 3.25rem;
+    overflow: hidden;
+
+    &__item {
+      width: 14.5rem;
+      transition: transform ease-in-out 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &__text {
+      height: 6rem;;
+    }
+  }
+}

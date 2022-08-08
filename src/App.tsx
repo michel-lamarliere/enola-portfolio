@@ -10,6 +10,7 @@ import Error404 from "./pages/Error404";
 import Layout from "components/Layout";
 import MobileMenu from "./components/MobileMenu";
 import Overlay from "components/ui-elements/Overlay";
+import About from "./pages/About";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -51,7 +52,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path={"/accueil/*"} element={<Home />} />
           <Route path="/" element={<Navigate to="/accueil" replace />} />
-          {/*<Route path="/" element={<MainLayout />}>*/}
+          <Route path={"/a-propos"} element={<About />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
       </Layout>
