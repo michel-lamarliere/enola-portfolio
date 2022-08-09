@@ -1,7 +1,6 @@
 @import 'helpers/styles/variables';
 
 .wrapper {
-  @include container;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,10 +14,9 @@
 }
 
 .reviews-wrapper {
-
-  width: 100%;
   position: relative;
   display: flex;
+  width: 100%;
 }
 
 .reviews {
@@ -84,15 +82,18 @@
 }
 
 @media screen and (min-width: 1000px) {
-  .arrow-button {
-    display: flex;
+  .wrapper {
+    @include container;
+    margin-top: 5rem;
   }
 
   .reviews-wrapper {
     @include container;
+    padding-top: 0 !important;
   }
 
   .reviews {
+    margin-top: 0;
     padding: 2rem 1rem;
     gap: 3.25rem;
     overflow: hidden;
@@ -104,10 +105,14 @@
       &:hover {
         transform: scale(1.05);
       }
-    }
 
-    &__text {
-      height: 6rem;;
+      &__text {
+        height: 6.5rem;;
+      }
     }
+  }
+
+  .arrow-button {
+    display: flex;
   }
 }

@@ -1,0 +1,28 @@
+@import 'helpers/styles/variables';
+
+.container {
+  background-color: $colorAccent;
+}
+
+.wrapper {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+.image {
+}
+
+.title {
+  @include h2;
+  color: $colorMain2;
+}
+
+.paragraph {
+  @include p1;
+  color: $colorMain2;
+}

@@ -1,0 +1,12 @@
+@import 'helpers/styles/variables';
+
+.wrapper {
+
+  &:hover .color {
+    fill: $colorAccent2;
+  }
+}
+
+.color {
+  fill: $colorMain;
+}

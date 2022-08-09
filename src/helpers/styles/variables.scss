@@ -11,13 +11,16 @@ $fullScreenMinHeightMobile: calc(100vh - calc(#{$headerHeightMobile} + #{$footer
 $fullScreenMinHeightDesktop: calc(100vh - calc(#{$headerHeightDesktop} + #{$footerHeightDesktop}));
 
 @mixin container {
-  padding: 0 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   box-sizing: border-box;
 
   @media screen and (min-width: 1000px) {
     max-width: 68rem;
-    padding: 2rem 3rem;
-    margin: 0 auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

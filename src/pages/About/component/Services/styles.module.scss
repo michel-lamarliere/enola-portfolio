@@ -8,8 +8,8 @@
   @include container;
   display: flex;
   flex-direction: column;
-  padding-top: 2.75rem;
-  padding-bottom: 2.75rem;
+  padding-top: 2.75rem !important;
+  padding-bottom: 2.75rem !important;
   gap: 2.5rem
 }
 
@@ -33,6 +33,11 @@
       @include h3;
       color: $colorMain2;
       margin-top: 1rem;
+    }
+
+    &__icon {
+      width: 4rem;
+      height: 4rem;
     }
 
     &__description {

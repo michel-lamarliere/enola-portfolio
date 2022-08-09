@@ -1,40 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/ui-elements/RoundedButton";
-
-import placeholderIcon from "assets/icons/e_logo.svg";
+import PackagingLogo from "components/ui-elements/svg-components/services/PackagingLogo";
+import WebDesignLogo from "components/ui-elements/svg-components/services/WebDesignLogo";
+import VisualIdentityLogo from "components/ui-elements/svg-components/services/VisualIdentityLogo";
 
 import classes from "./styles.module.scss";
 
-const services: { title: string; icon: string }[] = [
-  {
-    title: "Identité visuelle & logo",
-    icon: placeholderIcon,
-  },
-  {
-    title: "Web design",
-    icon: placeholderIcon,
-  },
-  {
-    title: "Packaging & impression",
-    icon: placeholderIcon,
-  },
-];
-
 const Services: React.FC = () => {
+  const [visualIdentityAltColor, setVisualIdentityAltColor] = useState(false);
+  const [webDesignAltColor, setWebDesignAltColor] = useState(false);
+  const [packagingAltColor, setPackagingAltColor] = useState(false);
+
+  const services: { title: string; icon: JSX.Element }[] = [
+    {
+      title: "Identité visuelle & logo",
+      icon: <VisualIdentityLogo useAltColor={visualIdentityAltColor} />,
+    },
+    {
+      title: "Web design",
+      icon: <WebDesignLogo useAltColor={webDesignAltColor} />,
+    },
+    {
+      title: "Packaging & impression",
+      icon: <PackagingLogo useAltColor={packagingAltColor} />,
+    },
+  ];
+
+  useEffect(() => {
+    const changeVisualIdentityColors = setInterval(() => {
+      setVisualIdentityAltColor((prev) => !prev);
+    }, 500);
+
+    const webDesignTimeout = setTimeout(() => {
+      const changeWebDesignColors = setInterval(() => {
+        setWebDesignAltColor((prev) => !prev);
+      }, 500);
+
+      return () => {
+        clearInterval(changeWebDesignColors);
+      };
+    }, 333);
+
+    const packagingTimeout = setTimeout(() => {
+      const changePackagingColors = setInterval(() => {
+        setPackagingAltColor((prev) => !prev);
+      }, 500);
+
+      return () => {
+        clearInterval(changePackagingColors);
+      };
+    }, 666);
+
+    return () => {
+      clearInterval(changeVisualIdentityColors);
+      clearTimeout(webDesignTimeout);
+      clearTimeout(packagingTimeout);
+    };
+  }, []);
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.title}>Mes services</div>
       <ul className={classes.services}>
         {services.map((service, index) => (
           <div className={classes.services__item} key={+index}>
-            <img
-              src={service.icon}
-              alt={service.title}
-              className={classes.services__item__icon}
-            />
+            <span className={classes.services__item__icon}>{service.icon}</span>
             <div className={classes.services__item__text}>{service.title}</div>
           </div>
         ))}

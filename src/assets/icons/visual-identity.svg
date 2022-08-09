@@ -1,0 +1,20 @@
+<svg id="icone_idvisu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="82" height="82" viewBox="0 0 82 82">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_174" data-name="Rectangle 174" width="82" height="82" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_63" data-name="Groupe 63">
+    <g id="Groupe_63-2" data-name="Groupe 63" clip-path="url(#clip-path)">
+      <path id="Tracé_92" data-name="Tracé 92" d="M18.583,4.168,8.818,6.474A3.151,3.151,0,0,0,6.474,8.818L4.168,18.583l-2.35,9.951a3.154,3.154,0,0,0,.84,2.954l2.229,2.23L33.718,4.887l-2.23-2.229a3.154,3.154,0,0,0-2.954-.84Z" fill="#f85e41"/>
+      <path id="Tracé_93" data-name="Tracé 93" d="M16.841,11.852a3.528,3.528,0,1,1-4.989,0,3.527,3.527,0,0,1,4.989,0" fill="#ff96d6"/>
+      <path id="Tracé_94" data-name="Tracé 94" d="M79.828,56.655,56.655,79.828a4,4,0,0,1-5.657,0L4.887,33.718,33.717,4.887,79.828,51a4,4,0,0,1,0,5.657" fill="#fff"/>
+      <path id="Tracé_95" data-name="Tracé 95" d="M69.105,40.781c-6.735-1.19-15.211-.673-25.439,3.449-10.475,4.23-19.087,4.242-25.754,2.62L52.22,80.317l3.561.385L80.665,55.818l-.232-4.037Z" fill="#f85e41"/>
+      <path id="Tracé_96" data-name="Tracé 96" d="M79.828,56.655,56.655,79.828a4,4,0,0,1-5.657,0L4.887,33.718,33.717,4.887,79.828,51A4,4,0,0,1,79.828,56.655Z" fill="none" stroke="#000" stroke-width="2"/>
+      <path id="Tracé_97" data-name="Tracé 97" d="M18.583,4.168,8.818,6.474A3.151,3.151,0,0,0,6.474,8.818L4.168,18.583l-2.35,9.951a3.154,3.154,0,0,0,.84,2.954l2.229,2.23L33.718,4.887l-2.23-2.229a3.154,3.154,0,0,0-2.954-.84Z" fill="none" stroke="#000" stroke-width="2"/>
+      <line id="Ligne_1" data-name="Ligne 1" x2="10.042" y2="10.042" transform="translate(1 1)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+      <circle id="Ellipse_17" data-name="Ellipse 17" cx="3.528" cy="3.528" r="3.528" transform="translate(10.819 10.819)" fill="none" stroke="#000" stroke-width="2"/>
+      <path id="Tracé_98" data-name="Tracé 98" d="M17.911,46.85c6.774,1.622,15.524,1.61,26.168-2.62,10.391-4.122,19-4.638,25.846-3.449" fill="none" stroke="#000" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

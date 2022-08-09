@@ -6,8 +6,9 @@ import Input, { InputTypes } from "./components/Input";
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/ui-elements/RoundedButton";
-
-import placeholderIcon from "assets/icons/e_logo.svg";
+import emailIcon from "assets/icons/email.svg";
+import telephoneIcon from "assets/icons/telephone.svg";
+import addressIcon from "assets/icons/address.svg";
 
 import classes from "./styles.module.scss";
 import { useLocation } from "react-router-dom";
@@ -15,15 +16,15 @@ import { useLocation } from "react-router-dom";
 const contactInfo: { text: string; icon: string }[] = [
   {
     text: "contact@enolalouge.com",
-    icon: placeholderIcon,
+    icon: emailIcon,
   },
   {
     text: "+33 06 08 66 01 99",
-    icon: placeholderIcon,
+    icon: telephoneIcon,
   },
   {
     text: "Toulouse, 31000",
-    icon: placeholderIcon,
+    icon: addressIcon,
   },
 ];
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import LanguageButton from "components/ui-elements/LanguageButton";
 import ContactLink from "components//ui-elements/ContactLink";
 import CustomNavLink from "components/ui-elements/CustomNavLink";
-import EnolaLougeLogo from "components/ui-elements/EnolaLougeLogo";
+import EnolaLougeLogo from "components/ui-elements/svg-components/EnolaLougeLogo";
 
 import classes from "./styles.module.scss";
 
@@ -16,7 +16,7 @@ const DesktopNavbar: React.FC<Props> = (props) => {
   return (
     <nav className={`${classes.wrapper} ${props.className}`}>
       <Link to="/" className={classes["logo-button"]}>
-        <EnolaLougeLogo className={classes["logo-button__icon"]} />
+        <EnolaLougeLogo />
       </Link>
       <div className={classes["main-links"]}>
         <CustomNavLink to={"/accueil"} text={"Accueil"} />

@@ -1,0 +1,22 @@
+<svg id="icone_packaging" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="82" height="82" viewBox="0 0 82 82">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_184" data-name="Rectangle 184" width="82" height="82" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_71" data-name="Groupe 71">
+    <g id="Groupe_70" data-name="Groupe 70" clip-path="url(#clip-path)">
+      <path id="Tracé_132" data-name="Tracé 132" d="M67.5,13h-53a10.978,10.978,0,0,1-6.02,9.663A13.973,13.973,0,0,0,1,35.04V67A14,14,0,0,0,15,81H67A14,14,0,0,0,81,67V35.04a13.973,13.973,0,0,0-7.48-12.377A10.978,10.978,0,0,1,67.5,13" fill="#ff96d6"/>
+      <path id="Tracé_133" data-name="Tracé 133" d="M77.638,25.452c-9.949-2.534-22.026-.811-38.593,4.743-19.394,6.5-28.2,7.334-38.045,3.878L2.016,69.066A11.934,11.934,0,0,0,13.95,81H67.107A14.092,14.092,0,0,0,81.2,67.057c.1-9.631.137-26.409-.2-32.017-.228-3.764-3.362-9.588-3.362-9.588" fill="#f85e41"/>
+      <path id="Tracé_134" data-name="Tracé 134" d="M66.92,13H15.846a4.08,4.08,0,0,1-4.08-4.08V5.228a4.08,4.08,0,0,1,4.08-4.079H66.92A4.08,4.08,0,0,1,71,5.228V8.92A4.08,4.08,0,0,1,66.92,13" fill="#fff"/>
+      <rect id="Rectangle_182" data-name="Rectangle 182" width="80" height="23.703" transform="translate(1 42.867)" fill="#fff"/>
+      <rect id="Rectangle_183" data-name="Rectangle 183" width="60" height="12" rx="4" transform="translate(11 1)" fill="none" stroke="#000" stroke-width="2"/>
+      <path id="Tracé_135" data-name="Tracé 135" d="M67.5,13h-53a10.978,10.978,0,0,1-6.02,9.663A13.973,13.973,0,0,0,1,35.04V67A14,14,0,0,0,15,81H67A14,14,0,0,0,81,67V35.04a13.973,13.973,0,0,0-7.48-12.377A10.978,10.978,0,0,1,67.5,13Z" fill="none" stroke="#000" stroke-width="2"/>
+      <line id="Ligne_5" data-name="Ligne 5" x2="80" transform="translate(1 66.57)" fill="#fff"/>
+      <line id="Ligne_6" data-name="Ligne 6" x2="80" transform="translate(1 66.57)" fill="none" stroke="#000" stroke-width="2"/>
+      <path id="Tracé_136" data-name="Tracé 136" d="M76.622,25.089c-9.949-1.761-22.47-1-37.577,5.106C23.57,36.457,10.849,36.475,1,34.073" fill="none" stroke="#000" stroke-width="2"/>
+      <line id="Ligne_7" data-name="Ligne 7" x2="80" transform="translate(1 42.867)" fill="#fff"/>
+      <line id="Ligne_8" data-name="Ligne 8" x2="80" transform="translate(1 42.867)" fill="none" stroke="#000" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

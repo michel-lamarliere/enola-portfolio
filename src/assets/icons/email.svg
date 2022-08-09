@@ -1,0 +1,16 @@
+<svg id="icone_contact" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_172" data-name="Rectangle 172" width="30" height="30" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_58" data-name="Groupe 58">
+    <g id="Groupe_54" data-name="Groupe 54" clip-path="url(#clip-path)">
+      <path id="Tracé_85" data-name="Tracé 85" d="M30,15A15,15,0,1,1,15,0,15,15,0,0,1,30,15" fill="#141424"/>
+      <path id="Tracé_86" data-name="Tracé 86" d="M6.03,10.42a2.218,2.218,0,0,0-.03.37v8.42a2.042,2.042,0,0,0,.44,1.25l4.82-4.81Z" fill="#fff"/>
+      <path id="Tracé_87" data-name="Tracé 87" d="M17.65,16.74a3.742,3.742,0,0,1-5.3,0l-.03-.03L7.82,21.2a1.087,1.087,0,0,0,.18.01H22a1.087,1.087,0,0,0,.18-.01l-4.49-4.49Z" fill="#fff"/>
+      <path id="Tracé_88" data-name="Tracé 88" d="M23.97,10.42l-5.22,5.23,4.82,4.82A2.062,2.062,0,0,0,24,19.21V10.79a2.218,2.218,0,0,0-.03-.37" fill="#fff"/>
+      <path id="Tracé_89" data-name="Tracé 89" d="M13.38,15.65l.03.03a2.3,2.3,0,0,0,3.18,0l.04-.03,1.06-1.06,5.44-5.45A2.014,2.014,0,0,0,22,8.79H8a1.99,1.99,0,0,0-1.13.35l5.45,5.45Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

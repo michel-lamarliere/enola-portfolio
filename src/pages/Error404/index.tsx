@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Error404Logo from "components/ui-elements/Error404Logo";
+
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/ui-elements/RoundedButton";
+import Error404Logo from "components/ui-elements/svg-components/Error404Logo";
 
 import classes from "./styles.module.scss";
 
@@ -10,12 +11,12 @@ const Error404: React.FC = () => {
   const [showAltColor, setShowAltColor] = useState(false);
 
   useEffect(() => {
-    const test = setInterval(() => {
+    const changeColors = setInterval(() => {
       setShowAltColor((prev) => !prev);
     }, 500);
 
     return () => {
-      clearInterval(test);
+      clearInterval(changeColors);
     };
   }, [showAltColor]);
 
