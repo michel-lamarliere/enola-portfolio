@@ -1,17 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Formik } from "formik";
+import { useLocation } from "react-router-dom";
 import { object, string } from "yup";
-import BarLoader from "react-spinners/BarLoader";
+import { ClipLoader } from "react-spinners";
+
 import Input, { InputTypes } from "./components/Input";
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/ui-elements/RoundedButton";
+
 import emailIcon from "assets/icons/email.svg";
 import telephoneIcon from "assets/icons/telephone.svg";
 import addressIcon from "assets/icons/address.svg";
 
 import classes from "./styles.module.scss";
-import { useLocation } from "react-router-dom";
 
 const contactInfo: { text: string; icon: string }[] = [
   {
@@ -47,11 +49,10 @@ const Contact: React.FC = () => {
   }, [formRef, location]);
 
   const [serverResponse, setServerResponse] = useState({
+    waiting: false,
     success: true,
     message: "",
   });
-  const [waitingForServerResponse, setWaitingForServerResponse] =
-    useState(false);
 
   const formValidationSchema = object().shape({
     name: string()
@@ -71,7 +72,7 @@ const Contact: React.FC = () => {
   });
 
   const formSubmitHandler = async (inputValues: any, actions: any) => {
-    setWaitingForServerResponse(true);
+    setServerResponse((prev) => ({ ...prev, waiting: true }));
 
     const response = await fetch(
       "https://email-portfolios.herokuapp.com/enola-portfolio/submit-form",
@@ -90,10 +91,9 @@ const Contact: React.FC = () => {
       }
     );
 
-    setWaitingForServerResponse(false);
-
     if (!response.ok) {
       setServerResponse({
+        waiting: false,
         success: false,
         message:
           "Erreur lors de l'envoi. Veuillez réessayer plus tard ou m'envoyer un mail.",
@@ -101,7 +101,11 @@ const Contact: React.FC = () => {
     }
 
     actions.resetForm();
-    setServerResponse({ success: true, message: "Message envoyé." });
+    setServerResponse({
+      waiting: false,
+      success: true,
+      message: "Message envoyé.",
+    });
   };
 
   useEffect(() => {
@@ -214,11 +218,12 @@ const Contact: React.FC = () => {
                   text={"Envoyer"}
                   type={RoundedButtonTypes.BUTTON}
                   onClick={handleSubmit}
-                  disabled={waitingForServerResponse}
+                  disabled={serverResponse.waiting}
                 />
-                {waitingForServerResponse && (
-                  <BarLoader
+                {serverResponse.waiting && (
+                  <ClipLoader
                     color={"#FF96D6"}
+                    size={25}
                     className={classes["form__form__button-spinner__spinner"]}
                   />
                 )}

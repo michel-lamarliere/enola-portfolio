@@ -63,16 +63,16 @@
 
     &__button-spinner {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 0.35rem;
 
       &__button {
-        margin-top: 0.35rem;
         background-color: $colorAccent;
       }
 
       &__spinner {
-
+        justify-self: center;
       }
     }
 

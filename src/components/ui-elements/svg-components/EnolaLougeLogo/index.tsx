@@ -2,11 +2,7 @@ import React from "react";
 
 import classes from "./styles.module.scss";
 
-interface Props {
-  className?: string;
-}
-
-const EnolaLougeLogo: React.FC<Props> = (props) => {
+const EnolaLougeLogo: React.FC = () => {
   return (
     <svg
       id="logo_typo"

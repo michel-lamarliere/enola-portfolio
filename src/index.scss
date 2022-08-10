@@ -91,9 +91,11 @@ code {
   color: inherit;
   text-decoration: none;
   list-style-type: none;
-  
+
 }
 
 button {
   cursor: pointer;
 }
+
+@import 'helpers/styles/variables';

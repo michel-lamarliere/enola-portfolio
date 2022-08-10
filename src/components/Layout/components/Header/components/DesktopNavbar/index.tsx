@@ -15,7 +15,7 @@ interface Props {
 const DesktopNavbar: React.FC<Props> = (props) => {
   return (
     <nav className={`${classes.wrapper} ${props.className}`}>
-      <Link to="/" className={classes["logo-button"]}>
+      <Link to="/accueil" className={classes["logo-button"]}>
         <EnolaLougeLogo />
       </Link>
       <div className={classes["main-links"]}>

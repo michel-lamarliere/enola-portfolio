@@ -7,10 +7,22 @@ import { CLOSE_MOBILE_MENU } from "./store/mobile-menu";
 
 import Home from "./pages/Home";
 import Error404 from "./pages/Error404";
+import About from "./pages/About";
+import Legal from "./pages/Legal";
+
 import Layout from "components/Layout";
 import MobileMenu from "./components/MobileMenu";
 import Overlay from "components/ui-elements/Overlay";
-import About from "./pages/About";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -30,7 +42,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     dispatch(CLOSE_MOBILE_MENU());
-  }, [location]);
+  }, [location, dispatch]);
 
   useEffect(() => {
     if (mobileMenuState.isOpen) {
@@ -46,13 +58,18 @@ const App: React.FC = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Overlay />
       <MobileMenu />
       <Layout>
         <Routes>
           <Route path={"/accueil/*"} element={<Home />} />
-          <Route path="/" element={<Navigate to="/accueil" replace />} />
+          <Route
+            path="/"
+            element={<Navigate to="/accueil" replace state={{ location }} />}
+          />
           <Route path={"/a-propos"} element={<About />} />
+          <Route path={"/mentions-legales"} element={<Legal />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
       </Layout>
