@@ -1,4 +1,4 @@
-@import 'helpers/styles/variables';
+@import '../../../styles/variables';
 
 .wrapper {
   position: absolute;
@@ -8,6 +8,6 @@
   right: 0;
   background-color: rgba($colorAccent4, 0.6);
   z-index: 2;
-  
+
 }
 
