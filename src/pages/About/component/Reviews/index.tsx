@@ -29,8 +29,8 @@ const Reviews: React.FC = () => {
           <img src={leftArrowIcon} alt={"Gauche"}/>
         </button>
         <div className={classes.reviews} ref={reviewsRef}>
-          {!reviews.isEmpty && reviews.data.map((review: Review) => (
-            <div className={classes.reviews__item}>
+          {!reviews.isEmpty && reviews.data.map((review: Review, index) => (
+            <div className={classes.reviews__item} key={index}>
               <div className={classes.reviews__item__client}>
                 {review.client}
               </div>
@@ -41,7 +41,6 @@ const Reviews: React.FC = () => {
               <img className={classes.reviews__item__image}
                    src={`${process.env.REACT_APP_BACKEND_URL}${review.image}`}
                    alt={'recap projet'}/>
-              {/*<div className={classes.reviews__item__image}>{review.image}</div>*/}
               <div className={classes.reviews__item__link}>
                 <a
                   className={classes.reviews__item__link}

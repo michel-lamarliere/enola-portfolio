@@ -24,7 +24,7 @@ const EnolaLougeLogo: React.FC = () => {
           />
         </clipPath>
       </defs>
-      <g id="Groupe_1" data-name="Groupe 1" clip-path="url(#clip-path)">
+      <g id="Groupe_1" data-name="Groupe 1" clipPath="url(#clip-path)">
         <path
           id="Tracé_1"
           data-name="Tracé 1"

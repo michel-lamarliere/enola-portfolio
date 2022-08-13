@@ -2,19 +2,20 @@ import React, {useEffect, useState} from "react";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
-import {RootState} from "./store/store";
-import {CLOSE_MOBILE_MENU} from "./store/mobile-menu";
+import {RootState} from "store/store";
+import {CLOSE_MOBILE_MENU} from "store/mobile-menu";
+import {Project, SET_PROJECTS} from "store/projects";
+import {Review, SET_REVIEWS} from "store/reviews";
 
-import Home from "./pages/Home";
-import Error404 from "./pages/Error404";
-import About from "./pages/About";
-import Legal from "./pages/Legal";
+import Home from "pages/Home";
+import Error404 from "pages/Error404";
+import About from "pages/About";
+import Legal from "pages/Legal";
+import Projects from "pages/Projects";
 
 import Layout from "components/Layout";
-import MobileMenu from "./components/MobileMenu";
+import MobileMenu from "components/MobileMenu";
 import Overlay from "components/ui-elements/Overlay";
-import {SET_PROJECTS} from "./store/projects";
-import {SET_REVIEWS} from "./store/reviews";
 
 const ScrollToTop = () => {
   const {pathname} = useLocation();
@@ -76,9 +77,7 @@ const App: React.FC = () => {
 
     const responseData = await response.json();
 
-    console.log(responseData)
-
-    const curatedData = [];
+    const curatedData: Review[] = [];
     for (let i = 0; i < responseData.data.length; i++) {
       curatedData.push({
         client: responseData.data[i].attributes.client,
@@ -91,15 +90,16 @@ const App: React.FC = () => {
 
     dispatch(SET_REVIEWS(curatedData));
 
-    console.log(curatedData)
+
   };
 
   const getProjects = async () => {
     if (!projectsState.isEmpty) {
       return;
     }
+
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/projects`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/projects?populate=*`,
       {
         method: "GET",
         headers: {
@@ -110,7 +110,23 @@ const App: React.FC = () => {
 
     const responseData = await response.json();
 
-    dispatch(SET_PROJECTS(responseData.data));
+    const curatedData: Project[] = [];
+    for (let i = 0; i < responseData.data.length; i++) {
+
+      const curatedImages: string[] = [];
+      for (let y = 0; y < responseData.data[i].attributes.images.data.length; y++) {
+        curatedImages.push(responseData.data[i].attributes.images.data[y].attributes.url)
+      }
+      curatedData.push({
+        name: responseData.data[i].attributes.project_name,
+        description: responseData.data[i].attributes.description,
+        pro: responseData.data[i].attributes.pro,
+        date: responseData.data[i].attributes.date,
+        images: curatedImages
+      })
+    }
+
+    dispatch(SET_PROJECTS(curatedData));
   };
 
   useEffect(() => {
@@ -130,6 +146,7 @@ const App: React.FC = () => {
             path="/"
             element={<Navigate to="/accueil" replace state={{location}}/>}
           />
+          <Route path={'/projets'} element={<Projects/>}/>
           <Route path={"/a-propos"} element={<About/>}/>
           <Route path={"/mentions-legales"} element={<Legal/>}/>
           <Route path={"*"} element={<Error404/>}/>

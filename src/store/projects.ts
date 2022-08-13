@@ -1,14 +1,14 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export interface Review {
-  client: string;
-  text: string;
-  person: string;
-  image: string;
-  link: string;
+export interface Project {
+  name: string;
+  description: string;
+  pro: boolean;
+  date: string;
+  images: string[];
 }
 
-const initialState: { isEmpty: boolean, data: Review[] } = {
+const initialState: { isEmpty: boolean, data: Project[] } = {
   isEmpty: true,
   data: [],
 }

@@ -2,6 +2,7 @@
 
 .wrapper {
   @include container;
+  height: calc(100vh - #{$headerHeightMobile});
   display: flex;
   flex-direction: column;
 }
@@ -55,8 +56,10 @@
 
 @media screen and (min-width: 1000px) {
   .wrapper {
+    height: calc(100vh - #{$headerHeightDesktop});
     flex-direction: row;
     /*gap: 6.2rem;*/
+    align-items: center;
     justify-content: space-between;
   }
 
