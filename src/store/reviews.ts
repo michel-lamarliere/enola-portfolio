@@ -1,6 +1,6 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-export interface Review {
+export interface ReviewType {
   client: string;
   review: string;
   name: string;
@@ -8,10 +8,10 @@ export interface Review {
   url: string;
 }
 
-const initialState: { isEmpty: boolean, data: Review[] } = {
+const initialState: { isEmpty: boolean; data: ReviewType[] } = {
   isEmpty: true,
   data: [],
-}
+};
 
 const reviewsSlice = createSlice({
   name: "reviews",
@@ -28,6 +28,5 @@ const reviewsSlice = createSlice({
   },
 });
 
-export const {SET_REVIEWS, REMOVE_REVIEWS} =
-  reviewsSlice.actions;
+export const { SET_REVIEWS, REMOVE_REVIEWS } = reviewsSlice.actions;
 export default reviewsSlice.reducer;

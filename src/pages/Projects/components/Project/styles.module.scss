@@ -1,12 +1,17 @@
-@import '../../../../styles/variables';
+@import 'styles/variables';
 
 .wrapper {
   position: relative;
   width: 100%;
-  /*max-width: 16.5rem;*/
-  background-color: #7D7C8E;
-  border-radius: 0.5rem;
+  box-sizing: border-box;
+
+  &--skeleton {
+    height: 14rem;
+    border-radius: 0.5rem;
+    border: solid 0.1rem $colorAccent2;
+  }
 }
+
 
 .header {
   z-index: 4;
@@ -31,10 +36,15 @@
   position: relative;
   display: flex;
   overflow: hidden;
-  height: 14rem;
   border-radius: 0.5rem;
+  height: 14rem;
+  box-sizing: border-box;
+
 
   &__item {
+    @include h3;
+    color: $colorMain;
+    text-align: center;
     width: 100%;
     object-fit: cover;
     flex-shrink: 0;
@@ -45,7 +55,6 @@
   position: absolute;
   top: 40%;
   z-index: 4;
-  /*transform: translateY(-50%);*/
   box-shadow: 0 0 0.3rem #14142380;
 
   &--left {
@@ -69,6 +78,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0.2rem 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 
   &__description {
     @include p2;
@@ -88,7 +98,7 @@
 @media screen and (min-width: 1000px) {
   .wrapper {
     min-width: 14rem;
-    max-width: 21.6rem;
+    /*max-width: 21.6rem;*/
     transition: all ease-in-out 0.3s;
 
     &:hover {

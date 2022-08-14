@@ -1,4 +1,4 @@
-import {Project} from "../store/projects";
+import { Project } from "../store/projects";
 
 export const transformProjectData = (data: any) => {
   const transformedData: Project[] = [];
@@ -7,7 +7,7 @@ export const transformProjectData = (data: any) => {
     const transformedImages: string[] = [];
 
     for (let y = 0; y < data[i].attributes.images.data.length; y++) {
-      transformedImages.push(data[i].attributes.images.data[y].attributes.url)
+      transformedImages.push(data[i].attributes.images.data[y].attributes.url);
     }
 
     transformedData.push({
@@ -15,9 +15,9 @@ export const transformProjectData = (data: any) => {
       description: data[i].attributes.description,
       pro: data[i].attributes.pro,
       date: data[i].attributes.date,
-      images: transformedImages
-    })
+      images: transformedImages,
+    });
   }
 
   return transformedData;
-}
+};

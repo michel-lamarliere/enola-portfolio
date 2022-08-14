@@ -1,17 +1,32 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { RootState } from "store/store";
-import { Review } from "store/reviews";
+import { ReviewType } from "store/reviews";
+
+import Review, { SkeletonReview } from "./component/Review";
 
 import leftArrowIcon from "assets/icons/left-arrow.svg";
 
 import classes from "./styles.module.scss";
 
 const Reviews: React.FC = () => {
-  const reviews = useSelector((state: RootState) => state.reviews);
+  const reviewsState = useSelector((state: RootState) => state.reviews);
 
   const reviewsRef = useRef<null | HTMLDivElement>(null);
+
+  const [imagesAreLoaded, setImagesAreLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState(0);
+
+  useEffect(() => {
+    if (reviewsState.isEmpty || reviewsState.data.length === 0) {
+      return;
+    }
+
+    if (loadedImages === reviewsState.data.length) {
+      setImagesAreLoaded(true);
+    }
+  }, [reviewsState, loadedImages]);
 
   return (
     <div className={classes.wrapper}>
@@ -28,35 +43,21 @@ const Reviews: React.FC = () => {
           <img src={leftArrowIcon} alt={"Gauche"} />
         </button>
         <div className={classes.reviews} ref={reviewsRef}>
-          {!reviews.isEmpty &&
-            reviews.data.map((review: Review, index) => (
-              <div className={classes.reviews__item} key={index}>
-                <div className={classes.reviews__item__client}>
-                  {review.client}
-                </div>
-                <div className={classes.reviews__item__text}>
-                  {review.review}
-                </div>
-                <div className={classes.reviews__item__person}>
-                  {review.name}
-                </div>
-                <img
-                  className={classes.reviews__item__image}
-                  src={`${process.env.REACT_APP_BACKEND_URL}${review.image}`}
-                  alt={"recap projet"}
-                />
-                <div className={classes.reviews__item__link}>
-                  <a
-                    className={classes.reviews__item__link}
-                    href={review.url}
-                    target={"_blank"}
-                    rel="noreferrer"
-                  >
-                    Voir le profil complet
-                  </a>
-                </div>
-              </div>
+          {!imagesAreLoaded &&
+            [...Array(5)].map((skeleton, index) => (
+              <SkeletonReview key={index} />
             ))}
+          {reviewsState.data.map((review: ReviewType, index) => (
+            <Review
+              key={index}
+              client={review.client}
+              image={review.image}
+              name={review.name}
+              review={review.review}
+              url={review.url}
+              onLoad={() => setLoadedImages((prev) => prev + 1)}
+            />
+          ))}
         </div>
         <button
           onClick={() => {

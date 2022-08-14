@@ -18,10 +18,14 @@ import { useHttp } from "./services/http-store.services";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const [pathName, setPathName] = useState(pathname);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (pathname !== pathName) {
+      window.scrollTo(0, 0);
+    }
+    setPathName(pathname);
+  }, [pathName, pathname]);
 
   return null;
 };

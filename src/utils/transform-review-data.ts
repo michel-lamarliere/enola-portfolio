@@ -1,7 +1,7 @@
-import { Review } from "../store/reviews";
+import { ReviewType } from "store/reviews";
 
 export const transformReviewData = (data: any) => {
-  const transformedData: Review[] = [];
+  const transformedData: ReviewType[] = [];
 
   for (let i = 0; i < data.length; i++) {
     transformedData.push({
