@@ -8,8 +8,9 @@
   box-shadow: 0 0.15rem 0.6rem #1414231A;
 
   &--skeleton {
-    height: 27.2625rem;
-    box-sizing: content-box;
+    width: 13.1rem;
+    height: 27.0525rem;
+    box-sizing: border-box;
   }
 }
 
@@ -22,26 +23,26 @@
 
   &__text {
     transform: translate(0%, 9%);
-    height: 9.25rem;
+    height: 9.5rem;
     width: 100%;
   }
 
   &__person {
-    transform: translate(0%, 45%);
+    transform: translate(0%, 51%);
     width: 5rem;
     height: 1.5rem;
   }
 
   &__image {
-    transform: translate(0%, 54.5%);
+    transform: translate(0%, 62%);
     width: 100%;
     height: 6.9rem;
   }
 
   &__url {
-    transform: translate(18%, 85%);
+    transform: translate(18%, 96%);
     width: 7rem;
-    height: 1.5rem;
+    height: 1rem;
   }
 }
 
@@ -76,9 +77,14 @@
 }
 
 .link {
-  @include p4;
+  display: grid;
+  place-content: center;
+  width: 100%;
   margin-top: 1.5rem;
-  text-align: center;
+
+  &__text {
+    @include p4;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -89,32 +95,39 @@
     &:hover {
       transform: scale(1.05);
     }
+
+    &--skeleton {
+      width: 17.1rem;
+      height: 28.2rem;
+    }
   }
 
   .skeleton {
     &__client {
-      transform: translate(30%, 0);
+      transform: translate(28%, 0);
       width: 6rem;
     }
 
     &__text {
       transform: translate(0%, 9%);
-      height: 6.5rem;
+      height: 6.7rem;
     }
 
     &__person {
-      transform: translate(0%, 40%);
+      transform: translate(0%, 43%);
+      width: 6rem;
     }
 
     &__image {
-      transform: translate(0%, 49%);
-      height: 9.8rem;
+      transform: translate(0%, 53%);
+      height: 9.6rem;
     }
 
     &__url {
-      transform: translate(23%, 88%);
+      transform: translate(25%, 96%);
     }
   }
+
   .text {
     height: 8.5rem;;
   }

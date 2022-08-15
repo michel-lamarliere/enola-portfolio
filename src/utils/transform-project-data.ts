@@ -1,7 +1,7 @@
-import { Project } from "../store/projects";
+import { ProjectType } from "types/project.types";
 
 export const transformProjectData = (data: any) => {
-  const transformedData: Project[] = [];
+  const transformedData: ProjectType[] = [];
 
   for (let i = 0; i < data.length; i++) {
     const transformedImages: string[] = [];
@@ -15,6 +15,7 @@ export const transformProjectData = (data: any) => {
       description: data[i].attributes.description,
       pro: data[i].attributes.pro,
       date: data[i].attributes.date,
+      showsDate: data[i].attributes.showsDate,
       images: transformedImages,
     });
   }

@@ -44,16 +44,16 @@ const Review: React.FC<Props> = (props) => {
           onLoad={props.onLoad}
         />
       </div>
-      <div className={classes.link}>
+      <button className={classes.link}>
         <a
-          className={classes.link}
+          className={classes.link__text}
           href={props.url}
           target={"_blank"}
           rel="noreferrer"
         >
           Voir le profil complet
         </a>
-      </div>
+      </button>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
   return (
     <div className={classes.wrapper}>
       {!imagesAreLoaded &&
-        [...Array(16)].map((skeleton, index) => (
+        [...Array(12)].map((skeleton, index) => (
           <SkeletonProject key={index} />
         ))}
       {projectsState.data.map((project, index) => (
@@ -35,10 +35,10 @@ const Projects: React.FC = () => {
           date={project.date}
           pro={project.pro}
           images={project.images}
+          showsDate={project.showsDate}
           key={index}
           onLoad={() => {
-            setLoadedImages((prev) => prev + 1);
-            console.log("heloo");
+            /*setLoadedImages((prev) => prev + 1);*/
           }}
         />
       ))}

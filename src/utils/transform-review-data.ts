@@ -1,4 +1,4 @@
-import { ReviewType } from "store/reviews";
+import { ReviewType } from "types/review.types";
 
 export const transformReviewData = (data: any) => {
   const transformedData: ReviewType[] = [];

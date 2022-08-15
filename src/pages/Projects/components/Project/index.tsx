@@ -1,16 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-
-import classes from "./styles.module.scss";
+import ContentLoader from "react-content-loader";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import ContentLoader from "react-content-loader";
 
-interface Props {
-  name: string;
-  description: string;
-  date: string;
-  pro: boolean;
-  images: string[];
+import { ProjectType } from "types/project.types";
+
+import classes from "./styles.module.scss";
+
+interface Props extends ProjectType {
   onLoad: any;
 }
 
@@ -83,7 +80,6 @@ const Project: React.FC<Props> = (props) => {
         {props.images.map((image, index) => (
           <img
             className={classes.carousel__item}
-            /*src={`${process.env.REACT_APP_BACKEND_URL}${image}`}*/
             src={image}
             alt={props.name}
             key={index}
@@ -94,7 +90,9 @@ const Project: React.FC<Props> = (props) => {
       <div className={classes.footer}>
         <div className={classes.footer__description}>{props.description}</div>
         <div className={classes.footer__date}>
-          {format(new Date(props.date), "MMMM y", { locale: fr })}
+          {props.showsDate
+            ? format(new Date(props.date), "MMMM y", { locale: fr })
+            : "∞"}
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { RootState } from "store/store";
-import { ReviewType } from "store/reviews";
+
+import { ReviewType } from "types/review.types";
 
 import Review, { SkeletonReview } from "./component/Review";
 
@@ -17,6 +18,18 @@ const Reviews: React.FC = () => {
 
   const [imagesAreLoaded, setImagesAreLoaded] = useState(false);
   const [loadedImages, setLoadedImages] = useState(0);
+
+  const leftButtonHandler = () => {
+    if (reviewsRef.current) {
+      reviewsRef.current.scrollBy({ left: -600, behavior: "smooth" });
+    }
+  };
+
+  const rightButtonHandler = () => {
+    if (reviewsRef.current) {
+      reviewsRef.current.scrollBy({ left: 600, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     if (reviewsState.isEmpty || reviewsState.data.length === 0) {
@@ -33,11 +46,7 @@ const Reviews: React.FC = () => {
       <div className={classes.title}>Quelques avis clients</div>
       <div className={classes["reviews-wrapper"]}>
         <button
-          onClick={() => {
-            if (reviewsRef.current) {
-              reviewsRef.current.scrollBy({ left: -400, behavior: "smooth" });
-            }
-          }}
+          onClick={leftButtonHandler}
           className={`${classes["arrow-button"]} ${classes["arrow-button--left"]}`}
         >
           <img src={leftArrowIcon} alt={"Gauche"} />
@@ -60,11 +69,7 @@ const Reviews: React.FC = () => {
           ))}
         </div>
         <button
-          onClick={() => {
-            if (reviewsRef.current) {
-              reviewsRef.current.scrollBy({ left: 400, behavior: "smooth" });
-            }
-          }}
+          onClick={rightButtonHandler}
           className={`${classes["arrow-button"]} ${classes["arrow-button--right"]}`}
         >
           <img src={leftArrowIcon} alt={"Aller à droite"} />

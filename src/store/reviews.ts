@@ -1,12 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface ReviewType {
-  client: string;
-  review: string;
-  name: string;
-  image: string;
-  url: string;
-}
+import { ReviewType } from "types/review.types";
 
 const initialState: { isEmpty: boolean; data: ReviewType[] } = {
   isEmpty: true,
