@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store/store";
 import { CLOSE_MOBILE_MENU } from "store/mobile-menu";
 
+import { useHttp } from "services/http-store.services";
+
 import Home from "pages/Home";
 import Error404 from "pages/Error404";
 import About from "pages/About";
@@ -14,7 +16,6 @@ import Projects from "pages/Projects";
 import Layout from "components/Layout";
 import MobileMenu from "components/MobileMenu";
 import Overlay from "components/ui-elements/Overlay";
-import { useHttp } from "./services/http-store.services";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
