@@ -45,9 +45,13 @@ export const useHttp = () => {
         return;
       }
 
-      const transformedData = transformProjectData(responseData.data);
+      const [transformedData, totalPhotos] = transformProjectData(
+        responseData.data
+      );
 
-      dispatch(SET_PROJECTS(transformedData));
+      dispatch(
+        SET_PROJECTS({ data: transformedData, totalPhotos: totalPhotos })
+      );
     }
   }
 

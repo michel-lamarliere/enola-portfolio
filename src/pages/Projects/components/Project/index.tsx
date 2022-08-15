@@ -18,7 +18,6 @@ export const SkeletonProject: React.FC = () => {
       speed={2}
       width={"100%"}
       height={"100%"}
-      viewBox="0 0 100% 100%"
       backgroundColor="white"
       foregroundColor="rgba(255, 150, 214, 0.2)"
     >

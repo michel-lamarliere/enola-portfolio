@@ -2,8 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { ProjectType } from "types/project.types";
 
-const initialState: { isEmpty: boolean; data: ProjectType[] } = {
+const initialState: {
+  isEmpty: boolean;
+  data: ProjectType[];
+  totalPhotos: number;
+} = {
   isEmpty: true,
+  totalPhotos: 0,
   data: [],
 };
 
@@ -13,10 +18,12 @@ const projectsSlice = createSlice({
   reducers: {
     SET_PROJECTS: (state, action) => {
       state.isEmpty = false;
-      state.data = action.payload;
+      state.data = action.payload.data;
+      state.totalPhotos = action.payload.totalPhotos;
     },
     REMOVE_PROJECTS: (state) => {
       state.isEmpty = true;
+      state.totalPhotos = 0;
       state.data = [];
     },
   },

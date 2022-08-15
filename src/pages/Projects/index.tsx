@@ -15,12 +15,20 @@ const Projects: React.FC = () => {
   const [loadedImages, setLoadedImages] = useState(0);
 
   useEffect(() => {
-    /*if (loadedImages === projectsState.data.length) {
-    }*/
-    setTimeout(() => {
+    if (projectsState.totalPhotos === 0) {
+      return;
+    }
+
+    if (loadedImages === projectsState.totalPhotos) {
       setImagesAreLoaded(true);
-    }, 1500);
-  }, [projectsState.isEmpty, projectsState.data, loadedImages]);
+    }
+    setTimeout(() => {}, 1500);
+  }, [
+    projectsState.isEmpty,
+    projectsState.data,
+    projectsState.totalPhotos,
+    loadedImages,
+  ]);
 
   return (
     <div className={classes.wrapper}>
@@ -38,7 +46,7 @@ const Projects: React.FC = () => {
           showsDate={project.showsDate}
           key={index}
           onLoad={() => {
-            /*setLoadedImages((prev) => prev + 1);*/
+            setLoadedImages((prev) => prev + 1);
           }}
         />
       ))}

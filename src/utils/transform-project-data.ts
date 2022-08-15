@@ -2,9 +2,11 @@ import { ProjectType } from "types/project.types";
 
 export const transformProjectData = (data: any) => {
   const transformedData: ProjectType[] = [];
+  let totalPhotos = 0;
 
   for (let i = 0; i < data.length; i++) {
     const transformedImages: string[] = [];
+    totalPhotos = totalPhotos + data[i].attributes.images.data.length;
 
     for (let y = 0; y < data[i].attributes.images.data.length; y++) {
       transformedImages.push(data[i].attributes.images.data[y].attributes.url);
@@ -20,5 +22,5 @@ export const transformProjectData = (data: any) => {
     });
   }
 
-  return transformedData;
+  return [transformedData, totalPhotos];
 };
