@@ -2,7 +2,7 @@
 
 .wrapper {
   @include container;
-  height: calc(100vh - #{$headerHeightMobile});
+  /*height: calc(100vh - #{$headerHeightMobile});*/
   display: flex;
   flex-direction: column;
 }
