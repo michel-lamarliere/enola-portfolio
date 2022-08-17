@@ -18,6 +18,7 @@ export const transformProjectData = (data: any) => {
       pro: data[i].attributes.pro,
       date: data[i].attributes.date,
       showsDate: data[i].attributes.showsDate,
+      dateAltText: data[i].attributes.dateAltText,
       images: transformedImages,
     });
   }

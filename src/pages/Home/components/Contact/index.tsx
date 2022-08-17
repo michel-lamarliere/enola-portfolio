@@ -14,6 +14,7 @@ import telephoneIcon from "assets/icons/telephone.svg";
 import addressIcon from "assets/icons/address.svg";
 
 import classes from "./styles.module.scss";
+import { useHttp } from "../../../../services/http-store.services";
 
 const contactInfo: { text: string; icon: string }[] = [
   {
@@ -30,9 +31,18 @@ const contactInfo: { text: string; icon: string }[] = [
   },
 ];
 
+const serverError = {
+  waiting: false,
+  success: false,
+  message:
+    "Erreur lors de l'envoi. Veuillez réessayer plus tard ou m'envoyer un mail.",
+};
+
 const Contact: React.FC = () => {
   const location = useLocation();
   const formRef = useRef<any>(null);
+
+  const { Http } = useHttp();
 
   useEffect(() => {
     if (!formRef.current) {
@@ -74,30 +84,30 @@ const Contact: React.FC = () => {
   const formSubmitHandler = async (inputValues: any, actions: any) => {
     setServerResponse((prev) => ({ ...prev, waiting: true }));
 
-    const response = await fetch(
-      "https://email-portfolios.herokuapp.com/enola-portfolio/submit-form",
-      {
+    let response;
+
+    try {
+      const { response: reqResponse } = await Http.sendRequest({
+        url: `${process.env.REACT_APP_FORM_BACKEND_URL}/enola-portfolio/submit-form`,
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Request-Headers": "*",
-        },
+        data: false,
         body: JSON.stringify({
           language: "french",
           name: inputValues.name,
           email: inputValues.emailAddress,
           message: inputValues.message,
         }),
-      }
-    );
+      });
+
+      response = reqResponse;
+    } catch (e) {
+      setServerResponse(serverError);
+
+      return;
+    }
 
     if (!response.ok) {
-      setServerResponse({
-        waiting: false,
-        success: false,
-        message:
-          "Erreur lors de l'envoi. Veuillez réessayer plus tard ou m'envoyer un mail.",
-      });
+      setServerResponse(serverError);
     }
 
     actions.resetForm();

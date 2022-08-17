@@ -6,12 +6,11 @@
   box-sizing: border-box;
 
   &--skeleton {
-    height: 14rem;
+    height: 12.89335rem;
     border-radius: 0.5rem;
     border: solid 0.1rem $colorAccent2;
   }
 }
-
 
 .header {
   z-index: 4;
@@ -21,14 +20,24 @@
   right: 0;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   padding: 0.8rem;
+  transition: all ease-in-out 300ms;
 
   &__item {
     @include h3;
+    display: grid;
+    place-content: center;
     background-color: rgba($colorAccent4, 0.9);
-    padding: 0.35rem 0.45rem;
+    padding: 0 0.45rem;
+    height: 1.5rem;
     border-radius: 0.25rem;
     font-size: 12px;
+    box-shadow: 0 0 6px #14142380;
+
+    &--pro {
+      background-color: $colorAccent;
+    }
   }
 }
 
@@ -37,9 +46,8 @@
   display: flex;
   overflow: hidden;
   border-radius: 0.5rem;
-  height: 14rem;
+  height: 12.89335rem;
   box-sizing: border-box;
-
 
   &__item {
     @include h3;
@@ -51,11 +59,14 @@
   }
 }
 
+.hide {
+  opacity: 0 !important;
+}
+
 .button {
   position: absolute;
   top: 40%;
   z-index: 4;
-  box-shadow: 0 0 0.3rem #14142380;
 
   &--left {
     left: 1rem;
@@ -63,6 +74,7 @@
 
   &--right {
     right: 1rem;
+    transform: rotateY(180deg);
   }
 }
 
@@ -71,28 +83,40 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2.5rem;
-  background-color: rgba($colorAccent4, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.8rem;
+  transition: all ease-in-out 300ms;
 
-  &__description {
-    @include p2;
-  }
+  &__item {
+    display: grid;
+    place-content: center;
+    padding: 0 0.45rem;
+    height: 1.5rem;
+    background-color: rgba($colorAccent4, 0.9);
+    border-radius: 0.25rem;
+    box-shadow: 0 0 6px #14142380;
 
-  &__date {
-    @include p4;
-    flex-shrink: 0;
-    font-size: 10px;
+    &--description {
+      @include p2;
+      font-size: 12px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 56px;
+    }
 
-    &:first-letter {
-      text-transform: capitalize;
+    &--date {
+      @include p4;
+      flex-shrink: 0;
+      font-size: 10px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 56px;
+
+      &:first-letter {
+        text-transform: capitalize;
+      }
     }
   }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -116,8 +140,6 @@
   }
 
   .footer {
-    padding: 0.4rem 1.5rem;
-
     &__date {
       font-size: 12px;
     }

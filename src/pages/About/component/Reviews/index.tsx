@@ -7,7 +7,7 @@ import { ReviewType } from "types/review.types";
 
 import Review, { SkeletonReview } from "./component/Review";
 
-import leftArrowIcon from "assets/icons/left-arrow.svg";
+import leftArrowIcon from "assets/icons/left-arrow-bubble.svg";
 
 import classes from "./styles.module.scss";
 

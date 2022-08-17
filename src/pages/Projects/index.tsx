@@ -44,6 +44,7 @@ const Projects: React.FC = () => {
           pro={project.pro}
           images={project.images}
           showsDate={project.showsDate}
+          dateAltText={project.dateAltText}
           key={index}
           onLoad={() => {
             setLoadedImages((prev) => prev + 1);

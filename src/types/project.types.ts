@@ -4,5 +4,6 @@ export interface ProjectType {
   pro: boolean;
   date: string;
   showsDate: boolean;
+  dateAltText: string;
   images: string[];
 }

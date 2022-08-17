@@ -5,6 +5,8 @@ import { fr } from "date-fns/locale";
 
 import { ProjectType } from "types/project.types";
 
+import leftArrow from "assets/icons/left-arrow.svg";
+
 import classes from "./styles.module.scss";
 
 interface Props extends ProjectType {
@@ -30,10 +32,44 @@ const Project: React.FC<Props> = (props) => {
   const carouselRef = useRef<null | HTMLDivElement>(null);
 
   const [carouselWidth, setCarouselWidth] = useState(100);
+  const [carouselScrollLeft, setCarouselScrollLeft] = useState(0);
+
+  const leftButtonHandler = () => {
+    if (!carouselRef.current) {
+      return;
+    }
+    setCarouselScrollLeft((prev) => prev - carouselWidth);
+
+    carouselRef.current.scrollBy({
+      left: -carouselWidth,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      setCarouselScrollLeft(carouselRef.current!.scrollLeft);
+    }, 500);
+  };
+
+  const rightButtonHandler = () => {
+    if (!carouselRef.current) {
+      return;
+    }
+
+    setCarouselScrollLeft((prev) => prev + carouselWidth);
+
+    carouselRef.current.scrollBy({
+      left: carouselWidth,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      setCarouselScrollLeft(carouselRef.current!.scrollLeft);
+    }, 500);
+  };
 
   useEffect(() => {
-    if (carouselRef.current) {
-      setCarouselWidth(carouselRef.current.offsetWidth);
+    if (!carouselRef.current) {
+      return;
     }
 
     setCarouselWidth(carouselRef.current!.offsetWidth);
@@ -41,41 +77,41 @@ const Project: React.FC<Props> = (props) => {
     carouselRef.current?.scrollBy({ left: -30000 });
   }, [carouselRef.current?.offsetWidth]);
 
+  const altClasses = carouselScrollLeft > 20 ? classes["hide"] : "";
+
   return (
     <div className={classes.wrapper}>
-      <div className={classes.header}>
+      <div className={`${classes.header} ${altClasses}`}>
         <div className={classes.header__item}>{props.name}</div>
-        {props.pro && <div className={classes.header__item}>PROJET PRO</div>}
+        {props.pro && (
+          <div
+            className={`${classes.header__item} ${classes["header__item--pro"]}`}
+          >
+            PROJET PRO
+          </div>
+        )}
       </div>
       <button
         className={`${classes.button} ${classes["button--left"]}`}
-        onClick={() => {
-          if (carouselRef.current) {
-            carouselRef.current.scrollBy({
-              left: -carouselWidth,
-              behavior: "smooth",
-            });
-          }
-        }}
+        onClick={leftButtonHandler}
       >
-        {"<"}
+        <img
+          className={classes.button__img}
+          src={leftArrow}
+          alt={"Flèche gauche"}
+        />
       </button>
       <button
         className={`${classes.button} ${classes["button--right"]}`}
-        onClick={() => {
-          if (carouselRef.current) {
-            carouselRef.current.scrollBy({
-              left: carouselWidth,
-              behavior: "smooth",
-            });
-          }
-        }}
+        onClick={rightButtonHandler}
       >
-        {">"}
+        <img
+          className={classes.button__img}
+          src={leftArrow}
+          alt={"Flèche droite"}
+        />
       </button>
-      <div ref={carouselRef} className={classes.carousel} id={"carousel"}>
-        {/*<button><img src={} alt={'gauche'}/></button>*/}
-        {/*<button><img src={} alt={'droite'}/></button>*/}
+      <div ref={carouselRef} className={classes.carousel}>
         {props.images.map((image, index) => (
           <img
             className={classes.carousel__item}
@@ -86,12 +122,18 @@ const Project: React.FC<Props> = (props) => {
           />
         ))}
       </div>
-      <div className={classes.footer}>
-        <div className={classes.footer__description}>{props.description}</div>
-        <div className={classes.footer__date}>
+      <div className={`${classes.footer} ${altClasses}`}>
+        <div
+          className={`${classes.footer__item} ${classes["footer__item--description"]}`}
+        >
+          {props.description}
+        </div>
+        <div
+          className={`${classes.footer__item} ${classes["footer__item--date"]}`}
+        >
           {props.showsDate
-            ? format(new Date(props.date), "MMMM y", { locale: fr })
-            : "∞"}
+            ? format(new Date(props.date), "MM/y", { locale: fr })
+            : props.dateAltText}
         </div>
       </div>
     </div>

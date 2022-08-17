@@ -8,14 +8,20 @@ export const useHttp = () => {
   const dispatch = useDispatch();
 
   class Http {
-    static async sendRequest(params: { url: string }) {
+    static async sendRequest(params: {
+      url: string;
+      body?: string;
+      data: boolean;
+      method: "GET" | "POST";
+    }) {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}${params.url}?populate=*`,
+        `${params.url}${params.data ? "?populate=*" : ""}`,
         {
-          method: "GET",
+          method: params.method,
           headers: {
             "Content-Type": "application/json",
           },
+          body: params.body,
         }
       );
 
@@ -24,7 +30,9 @@ export const useHttp = () => {
 
     static async getAndStoreReviews() {
       const { response, responseData } = await this.sendRequest({
-        url: "/api/reviews",
+        url: `${process.env.REACT_APP_BACKEND_URL}/api/reviews`,
+        data: true,
+        method: "GET",
       });
 
       if (!response.ok) {
@@ -38,7 +46,9 @@ export const useHttp = () => {
 
     static async getAndStoreProjects() {
       const { response, responseData } = await this.sendRequest({
-        url: "/api/projects",
+        url: `${process.env.REACT_APP_BACKEND_URL}/api/projects`,
+        data: true,
+        method: "GET",
       });
 
       if (!response.ok) {
