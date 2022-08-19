@@ -3,5 +3,5 @@ export interface ReviewType {
   review: string;
   name: string;
   image: string;
-  url: string;
+  projectUrl: string;
 }

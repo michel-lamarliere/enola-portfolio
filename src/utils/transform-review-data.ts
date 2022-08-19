@@ -8,7 +8,7 @@ export const transformReviewData = (data: any) => {
       client: data[i].attributes.client,
       review: data[i].attributes.review,
       name: data[i].attributes.name,
-      url: data[i].attributes.url,
+      projectUrl: data[i].attributes.projectUrl,
       image: data[i].attributes.image.data[0].attributes.url,
     });
   }

@@ -11,27 +11,22 @@ export const useHttp = () => {
     static async sendRequest(params: {
       url: string;
       body?: string;
-      data: boolean;
       method: "GET" | "POST";
     }) {
-      const response = await fetch(
-        `${params.url}${params.data ? "?populate=*" : ""}`,
-        {
-          method: params.method,
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: params.body,
-        }
-      );
+      const response = await fetch(params.url, {
+        method: params.method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: params.body,
+      });
 
       return { response, responseData: await response.json() };
     }
 
     static async getAndStoreReviews() {
       const { response, responseData } = await this.sendRequest({
-        url: `${process.env.REACT_APP_BACKEND_URL}/api/reviews`,
-        data: true,
+        url: `${process.env.REACT_APP_BACKEND_URL}/api/reviews?populate=*`,
         method: "GET",
       });
 
@@ -46,8 +41,7 @@ export const useHttp = () => {
 
     static async getAndStoreProjects() {
       const { response, responseData } = await this.sendRequest({
-        url: `${process.env.REACT_APP_BACKEND_URL}/api/projects`,
-        data: true,
+        url: `${process.env.REACT_APP_BACKEND_URL}/api/projects?sort=order&populate=*`,
         method: "GET",
       });
 

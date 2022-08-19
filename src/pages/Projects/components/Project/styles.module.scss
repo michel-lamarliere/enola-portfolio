@@ -1,5 +1,26 @@
 @import 'styles/variables';
 
+@mixin onTop {
+  z-index: 4;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem;
+  transition: all ease-in-out 300ms;
+}
+
+@mixin item {
+  display: grid;
+  place-content: center;
+  background-color: rgba($colorAccent4, 0.9);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 6px #14142380;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
@@ -13,31 +34,28 @@
 }
 
 .header {
-  z-index: 4;
-  position: absolute;
+  @include onTop;
   top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.8rem;
-  transition: all ease-in-out 300ms;
 
   &__item {
+    @include item;
     @include h3;
-    display: grid;
-    place-content: center;
-    background-color: rgba($colorAccent4, 0.9);
-    padding: 0 0.45rem;
-    height: 1.5rem;
-    border-radius: 0.25rem;
     font-size: 12px;
-    box-shadow: 0 0 6px #14142380;
 
     &--pro {
       background-color: $colorAccent;
     }
+  }
+}
+
+.date {
+  @include onTop;
+  top: 1.8rem;
+
+  &__item {
+    @include item;
+    @include p4;
+    font-size: 10px;
   }
 }
 
@@ -84,45 +102,17 @@
   }
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.8rem;
-  transition: all ease-in-out 300ms;
+.description {
+  @include onTop;
+  bottom: 0 !important;
+  justify-content: center;
 
   &__item {
-    display: grid;
-    place-content: center;
-    padding: 0 0.45rem;
-    height: 1.5rem;
-    background-color: rgba($colorAccent4, 0.9);
-    border-radius: 0.25rem;
-    box-shadow: 0 0 6px #14142380;
-
-    &--description {
-      @include p2;
-      font-size: 12px;
-      box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 56px;
-    }
-
-    &--date {
-      @include p4;
-      flex-shrink: 0;
-      font-size: 10px;
-      box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 56px;
-
-      &:first-letter {
-        text-transform: capitalize;
-      }
-    }
+    @include item;
+    @include p2;
+    text-align: center;
+    font-size: 12px;
   }
-
 }
 
 @media screen and (min-width: 1000px) {
@@ -134,13 +124,13 @@
     &:hover {
       transform: scale(1.05);
 
-      .header, .footer, .button {
+      .header, .date, .button, .description {
         opacity: 1;
       }
     }
   }
 
-  .header, .button, .footer {
+  .header, .date, .button, .description {
     opacity: 0;
     transition: all ease-in-out 0.3s;
   }

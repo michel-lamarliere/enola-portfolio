@@ -115,6 +115,13 @@ const Project: React.FC<Props> = (props) => {
           </div>
         )}
       </div>
+      <div className={`${classes.date} ${hideDiv}`}>
+        <div className={classes.date__item}>
+          {props.showsDate
+            ? format(new Date(props.date), "MM/y", { locale: fr })
+            : props.dateAltText}
+        </div>
+      </div>
       <button
         disabled={leftButtonIsDisabled}
         className={`${classes.button} ${classes["button--left"]} ${hideLeftButton}`}
@@ -148,19 +155,8 @@ const Project: React.FC<Props> = (props) => {
           />
         ))}
       </div>
-      <div className={`${classes.footer} ${hideDiv}`}>
-        <div
-          className={`${classes.footer__item} ${classes["footer__item--description"]}`}
-        >
-          {props.description}
-        </div>
-        <div
-          className={`${classes.footer__item} ${classes["footer__item--date"]}`}
-        >
-          {props.showsDate
-            ? format(new Date(props.date), "MM/y", { locale: fr })
-            : props.dateAltText}
-        </div>
+      <div className={`${classes.description} ${hideDiv}`}>
+        <div className={classes.description__item}>{props.description}</div>
       </div>
     </div>
   );

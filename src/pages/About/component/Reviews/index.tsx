@@ -63,7 +63,7 @@ const Reviews: React.FC = () => {
               image={review.image}
               name={review.name}
               review={review.review}
-              url={review.url}
+              projectUrl={review.projectUrl}
               onLoad={() => setLoadedImages((prev) => prev + 1)}
             />
           ))}

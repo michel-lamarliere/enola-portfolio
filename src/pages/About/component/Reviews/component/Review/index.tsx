@@ -8,7 +8,7 @@ interface Props {
   review: string;
   name: string;
   image: string;
-  url: string;
+  projectUrl: string;
   onLoad: any;
 }
 
@@ -47,7 +47,7 @@ const Review: React.FC<Props> = (props) => {
       <button className={classes.link}>
         <a
           className={classes.link__text}
-          href={props.url}
+          href={props.projectUrl}
           target={"_blank"}
           rel="noreferrer"
         >
