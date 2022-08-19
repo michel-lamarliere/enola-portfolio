@@ -90,7 +90,6 @@ const Contact: React.FC = () => {
       const { response: reqResponse } = await Http.sendRequest({
         url: `${process.env.REACT_APP_FORM_BACKEND_URL}/enola-portfolio/submit-form`,
         method: "POST",
-        data: false,
         body: JSON.stringify({
           language: "french",
           name: inputValues.name,
