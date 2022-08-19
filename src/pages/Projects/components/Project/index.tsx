@@ -29,42 +29,45 @@ export const SkeletonProject: React.FC = () => {
 };
 
 const Project: React.FC<Props> = (props) => {
-  const carouselRef = useRef<null | HTMLDivElement>(null);
+  const carouselRef = useRef<null | any>(null);
 
+  const [leftButtonIsDisabled, setLeftButtonIsDisabled] = useState(false);
+  const [rightButtonIsDisabled, setRightButtonIsDisabled] = useState(false);
   const [carouselWidth, setCarouselWidth] = useState(100);
   const [carouselScrollLeft, setCarouselScrollLeft] = useState(0);
+  const [carouselScrollLeftMax, setCarouselScrollLeftMax] = useState(0);
 
-  const leftButtonHandler = () => {
+  const buttonHandler = (params: { scrollLeft: boolean }) => {
     if (!carouselRef.current) {
       return;
     }
-    setCarouselScrollLeft((prev) => prev - carouselWidth);
+    params.scrollLeft
+      ? setLeftButtonIsDisabled(true)
+      : setRightButtonIsDisabled(true);
+
+    setCarouselScrollLeft((prev) =>
+      params.scrollLeft ? prev - carouselWidth : prev + carouselWidth
+    );
 
     carouselRef.current.scrollBy({
-      left: -carouselWidth,
+      left: params.scrollLeft ? -carouselWidth : +carouselWidth,
       behavior: "smooth",
     });
 
     setTimeout(() => {
       setCarouselScrollLeft(carouselRef.current!.scrollLeft);
+      params.scrollLeft
+        ? setLeftButtonIsDisabled(false)
+        : setRightButtonIsDisabled(false);
     }, 500);
   };
 
+  const leftButtonHandler = () => {
+    buttonHandler({ scrollLeft: true });
+  };
+
   const rightButtonHandler = () => {
-    if (!carouselRef.current) {
-      return;
-    }
-
-    setCarouselScrollLeft((prev) => prev + carouselWidth);
-
-    carouselRef.current.scrollBy({
-      left: carouselWidth,
-      behavior: "smooth",
-    });
-
-    setTimeout(() => {
-      setCarouselScrollLeft(carouselRef.current!.scrollLeft);
-    }, 500);
+    buttonHandler({ scrollLeft: false });
   };
 
   useEffect(() => {
@@ -77,11 +80,32 @@ const Project: React.FC<Props> = (props) => {
     carouselRef.current?.scrollBy({ left: -30000 });
   }, [carouselRef.current?.offsetWidth]);
 
-  const altClasses = carouselScrollLeft > 20 ? classes["hide"] : "";
+  useEffect(() => {
+    if (!carouselRef.current) {
+      return;
+    }
+
+    setCarouselScrollLeftMax(carouselRef.current!.scrollLeftMax);
+  }, [
+    carouselScrollLeft,
+    carouselWidth,
+    carouselRef.current?.scrollLeft,
+    carouselScrollLeftMax,
+  ]);
+
+  const hideLeftButton =
+    carouselScrollLeft - carouselWidth <= -20 ? classes["hide-button"] : "";
+
+  const hideRightButton =
+    carouselScrollLeft + carouselWidth >= carouselScrollLeftMax + 20
+      ? classes["hide-button"]
+      : "";
+
+  const hideDiv = carouselScrollLeft > 20 ? classes["hide-div"] : "";
 
   return (
     <div className={classes.wrapper}>
-      <div className={`${classes.header} ${altClasses}`}>
+      <div className={`${classes.header} ${hideDiv}`}>
         <div className={classes.header__item}>{props.name}</div>
         {props.pro && (
           <div
@@ -92,7 +116,8 @@ const Project: React.FC<Props> = (props) => {
         )}
       </div>
       <button
-        className={`${classes.button} ${classes["button--left"]}`}
+        disabled={leftButtonIsDisabled}
+        className={`${classes.button} ${classes["button--left"]} ${hideLeftButton}`}
         onClick={leftButtonHandler}
       >
         <img
@@ -102,7 +127,8 @@ const Project: React.FC<Props> = (props) => {
         />
       </button>
       <button
-        className={`${classes.button} ${classes["button--right"]}`}
+        disabled={rightButtonIsDisabled}
+        className={`${classes.button} ${classes["button--right"]} ${hideRightButton}`}
         onClick={rightButtonHandler}
       >
         <img
@@ -122,7 +148,7 @@ const Project: React.FC<Props> = (props) => {
           />
         ))}
       </div>
-      <div className={`${classes.footer} ${altClasses}`}>
+      <div className={`${classes.footer} ${hideDiv}`}>
         <div
           className={`${classes.footer__item} ${classes["footer__item--description"]}`}
         >

@@ -59,14 +59,20 @@
   }
 }
 
-.hide {
+.hide-div {
   opacity: 0 !important;
 }
 
+.hide-button {
+  visibility: hidden !important;
+}
+
 .button {
+  visibility: visible;
   position: absolute;
   top: 40%;
   z-index: 4;
+  transition: all ease-in-out 0.3s;
 
   &--left {
     left: 1rem;
