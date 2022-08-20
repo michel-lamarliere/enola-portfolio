@@ -45,8 +45,10 @@ const Main: React.FC = () => {
         <div className={classes.description}>
           Spécialisée dans la création d’identité visuelle et le web design.
           <br />
+          <br />
           Ma curiosité et mon goût pour la nouveauté m’ont poussé à toujours me
           renouveler dans mes créations.
+          <br />
           <br />
           Soucieuse de la satisfaction de mes clients, j’arrive toujours à
           m’adapter à leurs besoins.

@@ -7,7 +7,6 @@ import { TOGGLE_MOBILE_MENU } from "store/mobile-menu";
 
 import classes from "./styles.module.scss";
 import CustomNavLink from "../ui-elements/CustomNavLink";
-import LanguageButton from "../ui-elements/LanguageButton";
 import ContactLink from "../ui-elements/ContactLink";
 
 const MobileMenu: React.FC = () => {
@@ -41,7 +40,7 @@ const MobileMenu: React.FC = () => {
             <CustomNavLink to={"/a-propos"} text={"À propos"} />
           </ul>
           <ul className={classes["secondary-links"]}>
-            <LanguageButton />
+            {/*<LanguageButton />*/}
             <ContactLink />
           </ul>
         </animated.div>

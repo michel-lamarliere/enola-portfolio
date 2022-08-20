@@ -18,12 +18,14 @@ export const SkeletonProject: React.FC = () => {
     <ContentLoader
       className={`${classes.wrapper} ${classes["wrapper--skeleton"]}`}
       speed={2}
-      width={"100%"}
       height={"100%"}
-      backgroundColor="white"
+      backgroundColor="#F3F2F7"
       foregroundColor="rgba(255, 150, 214, 0.2)"
     >
-      <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" />
+      <rect className={classes.skeleton__name} rx="3" ry="3" />
+      <rect className={classes.skeleton__pro} rx="3" ry="3" />
+      <rect className={classes.skeleton__date} rx="3" ry="3" />
+      <rect className={classes.skeleton__description} rx="5" ry="5" />
     </ContentLoader>
   );
 };

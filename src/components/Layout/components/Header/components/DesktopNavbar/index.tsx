@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import LanguageButton from "components/ui-elements/LanguageButton";
 import ContactLink from "components//ui-elements/ContactLink";
 import CustomNavLink from "components/ui-elements/CustomNavLink";
 import EnolaLougeLogo from "components/ui-elements/svg-components/EnolaLougeLogo";
@@ -24,7 +22,7 @@ const DesktopNavbar: React.FC<Props> = (props) => {
         <CustomNavLink to={"/a-propos"} text={"À propos"} />
       </div>
       <div className={classes["secondary-links"]}>
-        <LanguageButton />
+        {/*<LanguageButton />*/}
         <ContactLink />
       </div>
     </nav>
