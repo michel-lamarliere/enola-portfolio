@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
 
     try {
       const { response: reqResponse } = await Http.sendRequest({
-        url: `${process.env.REACT_APP_FORM_BACKEND_URL}/enola-portfolio/submit-form`,
+        url: `${process.env.REACT_APP_FORM_BACKEND_URL}/enola-portfolio/form`,
         method: "POST",
         body: JSON.stringify({
           language: "french",
