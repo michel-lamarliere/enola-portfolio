@@ -27,7 +27,7 @@
   box-sizing: border-box;
   overflow: scroll;
 
-  & > div:last-child {
+  & > .review:last-child {
     margin-right: 0.5rem;
   }
 }
