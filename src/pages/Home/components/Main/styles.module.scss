@@ -1,4 +1,4 @@
-@import '../../../../styles/variables';
+@import 'styles/variables';
 
 .wrapper {
   @include container;
@@ -31,13 +31,13 @@
 }
 
 .image {
-  justify-self: center;
-  max-width: 16.5rem;
-  height: 16.5rem;
+  display: flex;
+  max-width: 38rem;
+  width: 100%;
+  height: auto;
   margin-top: 1rem;
   border-radius: 0.5rem;
-  // REMOVE WHEN IMAGE IS PROVIDED
-  background-color: #7D7C8E;
+  object-fit: contain;
 
   &--desktop {
     display: none;
@@ -53,11 +53,12 @@
   margin-top: 1.75rem;
 }
 
-@media screen and (min-width: 1000px) {
+
+@media screen and (min-width: 800px) {
   .wrapper {
     height: calc(100vh - #{$headerHeightDesktop});
     flex-direction: row;
-    /*gap: 6.2rem;*/
+    gap: 6.2rem;
     align-items: center;
     justify-content: space-between;
   }
@@ -70,11 +71,9 @@
   }
 
   .image {
-    grid-area: image;
-    width: 30rem;
-    height: 30rem;
-    max-width: 30rem;
-    max-height: 30rem;
+    /*width: 100%;
+    height: 100%;*/
+    max-width: 100%;
     margin-top: 0;
 
     &--mobile {
@@ -84,5 +83,11 @@
     &--desktop {
       display: flex;
     }
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .image {
+    max-width: 28rem;
   }
 }

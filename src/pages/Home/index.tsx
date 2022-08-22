@@ -6,11 +6,11 @@ import Contact from "./components/Contact";
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <>
       <Main />
       <Services />
       <Contact />
-    </div>
+    </>
   );
 };
 

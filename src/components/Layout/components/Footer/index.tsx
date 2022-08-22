@@ -13,13 +13,12 @@ const Footer: React.FC = () => {
     <div className={classes.footer}>
       <div className={classes.wrapper}>
         <div className={classes.links}>
-          <Link to={"/"}>
-            <img
-              src={elLogo}
-              alt={"Enola Louge"}
-              className={classes["links__el-logo"]}
-            />
-          </Link>
+          <img
+            src={elLogo}
+            alt={"Enola Louge"}
+            className={classes["links__el-logo"]}
+          />
+
           <div className={classes.links__socials}>
             <a
               href={"https://www.behance.net/enolalouge1"}

@@ -5,6 +5,8 @@ import RoundedButton, {
   RoundedButtonTypes,
 } from "components/ui-elements/RoundedButton";
 
+import mainImg from "assets/home.jpg";
+
 import classes from "./styles.module.scss";
 
 const Main: React.FC = () => {
@@ -35,13 +37,15 @@ const Main: React.FC = () => {
           <div className={classes["title--static"]}>Graphiste</div>
           <span className={classes["title--dynamic"]} ref={el} />
         </div>
-        {/*<img
-            src={""}
-            alt={"Photo d'Enola Louge"}
-            className={classes.main__image}
-          />*/}
+
+        <img
+          src={mainImg}
+          alt={"Enola Louge"}
+          className={`${classes.image} ${classes["image--mobile"]}`}
+        />
+
         {/*REMOVE WHEN IMAGE IS PROVIDED*/}
-        <div className={`${classes.image} ${classes["image--mobile"]}`} />
+        {/*<div className={`${classes.image} ${classes["image--mobile"]}`} />*/}
         <div className={classes.description}>
           Spécialisée dans la création d’identité visuelle et le web design.
           <br />
@@ -53,14 +57,20 @@ const Main: React.FC = () => {
           Soucieuse de la satisfaction de mes clients, j’arrive toujours à
           m’adapter à leurs besoins.
         </div>
-        <RoundedButton
-          type={RoundedButtonTypes.ANCHOR}
-          className={classes.button}
-          href={require("assets/cv.pdf")}
-          text={"Télécharger mon CV"}
-        />
+        <div className={classes.button}>
+          <RoundedButton
+            type={RoundedButtonTypes.ANCHOR}
+            href={require("assets/cv.pdf")}
+            text={"Télécharger mon CV"}
+          />
+        </div>
       </div>
-      <div className={`${classes.image} ${classes["image--desktop"]}`} />
+
+      <img
+        src={mainImg}
+        alt={"Enola Louge"}
+        className={`${classes.image} ${classes["image--desktop"]}`}
+      />
     </div>
   );
 };

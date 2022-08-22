@@ -1,4 +1,4 @@
-@import '../../../../styles/variables';
+@import 'styles/variables';
 
 .container {
   background-color: $colorAccent;
@@ -55,6 +55,7 @@
   }
 
   .services {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

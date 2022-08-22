@@ -1,11 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
-import VisualIdentityLogo
-  from "components/ui-elements/svg-components/services/VisualIdentityLogo";
-import WebDesignLogo
-  from "components/ui-elements/svg-components/services/WebDesignLogo";
-import PackagingLogo
-  from "components/ui-elements/svg-components/services/PackagingLogo";
+import VisualIdentityLogo from "components/ui-elements/svg-components/services/VisualIdentityLogo";
+import WebDesignLogo from "components/ui-elements/svg-components/services/WebDesignLogo";
+import PackagingLogo from "components/ui-elements/svg-components/services/PackagingLogo";
 
 import classes from "./styles.module.scss";
 
@@ -49,25 +46,47 @@ const Services: React.FC = () => {
   const services: {
     icon: JSX.Element;
     title: string;
-    description: string;
+    description: string | React.ReactNode;
   }[] = [
     {
       title: "Identité visuelle & logo",
-      icon: <VisualIdentityLogo useAltColor={visualIdentityAltColor}/>,
-      description:
-        "Le texte de l’identité visuelle n’est pas encore disponible. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      icon: <VisualIdentityLogo useAltColor={visualIdentityAltColor} />,
+      description: (
+        <>
+          Un logo n’est pas aussi efficace sans une identité visuelle cohérente
+          et impactante. <br /> <br />
+          Vous aurez sûrement besoin d’une charte graphique (guide des couleurs,
+          typographies, symboles forts, etc.) et de templates pour éditer
+          simplement les créations.
+        </>
+      ),
     },
     {
       title: "Web design",
-      icon: <WebDesignLogo useAltColor={webDesignAltColor}/>,
-      description:
-        "Le texte du web design n’est pas encore disponible. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      icon: <WebDesignLogo useAltColor={webDesignAltColor} />,
+      description: (
+        <>
+          Besoin d’une maquette de site vitrine ou de landing page ? <br />
+          <br />
+          Je suis capable de créer tous les éléments digitaux pour votre projet
+          ainsi que d’accessoires pour le web : Set d’icônes, signature e-mail,
+          bannière web, newsletter, etc.
+        </>
+      ),
     },
     {
       title: "Packaging & impression",
-      icon: <PackagingLogo useAltColor={packagingAltColor}/>,
-      description:
-        "Le texte du packaging n’est pas encore disponible. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      icon: <PackagingLogo useAltColor={packagingAltColor} />,
+      description: (
+        <>
+          Que ce soit pour un design d’impression ou d’emballage je créerai les
+          designs adaptés à vos besoins. <br />
+          <br />
+          Voici quelques exemples : <br />
+          Carte de visite, menu, brochure, emballage produit, étiquette,
+          couverture de livre, etc.
+        </>
+      ),
     },
   ];
   return (
