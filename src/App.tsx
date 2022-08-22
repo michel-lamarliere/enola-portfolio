@@ -37,7 +37,6 @@ const App: React.FC = () => {
 
   const { Http } = useHttp();
 
-  const token = useSelector((state: RootState) => state.auth.token);
   const mobileMenuState = useSelector((state: RootState) => state.mobileMenu);
   const reviewsState = useSelector((state: RootState) => state.reviews);
   const projectsState = useSelector((state: RootState) => state.projects);

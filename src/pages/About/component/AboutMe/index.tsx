@@ -28,9 +28,10 @@ const AboutMe: React.FC = () => {
           do eiusmod tempor.
         </div>
         <RoundedButton
+          type={RoundedButtonTypes.ANCHOR}
+          className={classes.button}
+          href={require("assets/cv.pdf")}
           text={"Télécharger mon CV"}
-          type={RoundedButtonTypes.BUTTON}
-          onClick={() => {}}
         />
       </div>
     </div>

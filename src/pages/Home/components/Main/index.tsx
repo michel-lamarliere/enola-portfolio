@@ -54,10 +54,10 @@ const Main: React.FC = () => {
           m’adapter à leurs besoins.
         </div>
         <RoundedButton
-          type={RoundedButtonTypes.BUTTON}
+          type={RoundedButtonTypes.ANCHOR}
           className={classes.button}
+          href={require("assets/cv.pdf")}
           text={"Télécharger mon CV"}
-          onClick={() => {}}
         />
       </div>
       <div className={`${classes.image} ${classes["image--desktop"]}`} />
