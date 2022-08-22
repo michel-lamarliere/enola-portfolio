@@ -26,6 +26,10 @@
   padding: 0.5rem;
   box-sizing: border-box;
   overflow: scroll;
+
+  & > div:last-child {
+    margin-right: 0.5rem;
+  }
 }
 
 .arrow-button {

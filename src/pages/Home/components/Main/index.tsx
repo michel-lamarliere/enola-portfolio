@@ -15,11 +15,12 @@ const Main: React.FC = () => {
 
   useEffect(() => {
     const options = {
-      strings: ["numérique.", "passionnée.", "créative.", "numérique."],
+      strings: ["numérique.", "passionnée.", "créative."],
       startDelay: 200,
       typeSpeed: 50,
       backSpeed: 50,
       showCursor: false,
+      loop: true,
     };
 
     typed.current = new Typed(el.current, options);

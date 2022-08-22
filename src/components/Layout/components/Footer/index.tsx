@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               <img src={behanceIcon} alt={"Behance"} />
             </a>
             <a
-              href={"https://www.instagram.com/enola.louge"}
+              href={"https://www.instagram.com/enolalouge.design"}
               target={"_blank"}
               rel="noreferrer"
             >
