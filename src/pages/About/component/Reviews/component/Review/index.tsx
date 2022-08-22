@@ -1,14 +1,11 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
+import { ReviewType } from "types/review.types";
+
 import classes from "./styles.module.scss";
 
-interface Props {
-  client: string;
-  review: string;
-  name: string;
-  image: string;
-  projectUrl: string;
+interface Props extends ReviewType {
   onLoad: any;
 }
 
@@ -51,7 +48,7 @@ const Review: React.FC<Props> = (props) => {
           target={"_blank"}
           rel="noreferrer"
         >
-          Voir le profil complet
+          Voir le projet complet
         </a>
       </button>
     </div>
