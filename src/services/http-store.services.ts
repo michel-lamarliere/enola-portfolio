@@ -31,6 +31,21 @@ export const useHttp = () => {
       return { response, responseData: await response.json() };
     }
 
+    static async submitForm(body: {
+      language: "french" | "english";
+      name: string;
+      email: string;
+      message: string;
+    }) {
+      const { response } = await this.sendRequest({
+        url: "https://forms-backend1.herokuapp.com/enola-portfolio/form",
+        method: "POST",
+        body: JSON.stringify(body),
+      });
+
+      return response;
+    }
+
     static async getToken() {
       const { response, responseData } = await this.sendRequest({
         url: "https://forms-backend1.herokuapp.com/enola-portfolio/auth",
