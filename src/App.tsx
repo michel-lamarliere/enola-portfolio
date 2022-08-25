@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -38,6 +38,7 @@ const App: React.FC = () => {
   const { Http } = useHttp();
 
   const mobileMenuState = useSelector((state: RootState) => state.mobileMenu);
+  const token = useSelector((state: RootState) => state.auth.token);
 
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -65,17 +66,19 @@ const App: React.FC = () => {
     }
   }, [mobileMenuState.isOpen]);
 
-  const getAllData = useCallback(async () => {
-    await Http.getToken();
+  useEffect(() => {
+    (async () => {
+      await Http.getToken();
+    })();
+
+    if (!token) {
+      return;
+    }
 
     Http.getResume();
-    Http.getAndStoreReviews();
     Http.getAndStoreProjects();
-  }, [Http]);
-
-  useEffect(() => {
-    getAllData();
-  }, [getAllData]);
+    Http.getAndStoreReviews();
+  }, [Http, token]);
 
   return (
     <>

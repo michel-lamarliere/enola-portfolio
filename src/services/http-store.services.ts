@@ -1,18 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { RootState } from "store/store";
+import store from "store/store";
 import { SET_PROJECTS } from "store/projects";
 import { SET_REVIEWS } from "store/reviews";
 import { SET_TOKEN } from "store/auth";
+import { SET_RESUME_URL } from "store/resume";
 
 import { transformProjectData } from "utils/transform-project-data";
 import { transformReviewData } from "utils/transform-review-data";
-import { SET_RESUME_URL } from "../store/resume";
 
 export const useHttp = () => {
   const dispatch = useDispatch();
-
-  const token = useSelector((state: RootState) => state.auth.token);
 
   class Http {
     static async sendRequest(params: {
@@ -20,6 +18,8 @@ export const useHttp = () => {
       body?: string;
       method: "GET" | "POST";
     }) {
+      const token = store.getState();
+
       const response = await fetch(params.url, {
         method: params.method,
         headers: {
