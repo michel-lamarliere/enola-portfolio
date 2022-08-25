@@ -32,7 +32,7 @@ const Reviews: React.FC = () => {
   };
 
   useEffect(() => {
-    if (reviewsState.isEmpty || reviewsState.data.length === 0) {
+    if (!reviewsState.data || reviewsState.data.length === 0) {
       return;
     }
 
@@ -56,17 +56,18 @@ const Reviews: React.FC = () => {
             [...Array(5)].map((skeleton, index) => (
               <SkeletonReview key={index} />
             ))}
-          {reviewsState.data.map((review: ReviewType, index) => (
-            <Review
-              key={index}
-              client={review.client}
-              image={review.image}
-              name={review.name}
-              review={review.review}
-              projectUrl={review.projectUrl}
-              onLoad={() => setLoadedImages((prev) => prev + 1)}
-            />
-          ))}
+          {reviewsState.data &&
+            reviewsState.data.map((review: ReviewType, index) => (
+              <Review
+                key={index}
+                client={review.client}
+                image={review.image}
+                name={review.name}
+                review={review.review}
+                projectUrl={review.projectUrl}
+                onLoad={() => setLoadedImages((prev) => prev + 1)}
+              />
+            ))}
         </div>
         <button
           onClick={rightButtonHandler}

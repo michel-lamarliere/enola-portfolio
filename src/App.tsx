@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -38,8 +38,6 @@ const App: React.FC = () => {
   const { Http } = useHttp();
 
   const mobileMenuState = useSelector((state: RootState) => state.mobileMenu);
-  const reviewsState = useSelector((state: RootState) => state.reviews);
-  const projectsState = useSelector((state: RootState) => state.projects);
 
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -67,23 +65,17 @@ const App: React.FC = () => {
     }
   }, [mobileMenuState.isOpen]);
 
-  useEffect(() => {
-    Http.getToken();
-  }, []);
+  const getAllData = useCallback(async () => {
+    await Http.getToken();
+
+    Http.getResume();
+    Http.getAndStoreReviews();
+    Http.getAndStoreProjects();
+  }, [Http]);
 
   useEffect(() => {
-    const getReviewsAndProjects = async () => {
-      if (reviewsState.isEmpty) {
-        await Http.getAndStoreReviews();
-      }
-
-      if (projectsState.isEmpty) {
-        await Http.getAndStoreProjects();
-      }
-    };
-
-    getReviewsAndProjects();
-  }, [Http, projectsState.isEmpty, reviewsState.isEmpty]);
+    getAllData();
+  }, [getAllData]);
 
   return (
     <>

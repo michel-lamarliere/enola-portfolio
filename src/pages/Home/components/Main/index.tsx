@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 import Typed from "typed.js";
+
+import { RootState } from "store/store";
 
 import RoundedButton, {
   RoundedButtonTypes,
@@ -10,6 +13,8 @@ import mainImg from "assets/home.jpg";
 import classes from "./styles.module.scss";
 
 const Main: React.FC = () => {
+  const cvUrl = useSelector((state: RootState) => state.resume.url);
+
   const el = useRef<any>(null);
   const typed = useRef<any>(null);
 
@@ -38,7 +43,6 @@ const Main: React.FC = () => {
           <div className={classes["title--static"]}>Graphiste</div>
           <span className={classes["title--dynamic"]} ref={el} />
         </div>
-
         <img
           src={mainImg}
           alt={"Enola Louge"}
@@ -58,7 +62,7 @@ const Main: React.FC = () => {
         <div className={classes.button}>
           <RoundedButton
             type={RoundedButtonTypes.ANCHOR}
-            href={require("assets/enola-louge-cv.pdf")}
+            href={cvUrl ? cvUrl : ""}
             text={"Télécharger mon CV"}
           />
         </div>

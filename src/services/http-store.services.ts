@@ -7,6 +7,7 @@ import { SET_TOKEN } from "store/auth";
 
 import { transformProjectData } from "utils/transform-project-data";
 import { transformReviewData } from "utils/transform-review-data";
+import { SET_RESUME_URL } from "../store/resume";
 
 export const useHttp = () => {
   const dispatch = useDispatch();
@@ -57,6 +58,21 @@ export const useHttp = () => {
       }
 
       dispatch(SET_TOKEN(responseData.token));
+    }
+
+    static async getResume() {
+      const { response, responseData } = await this.sendRequest({
+        url: `${process.env.REACT_APP_BACKEND_URL}/api/cv?populate=*`,
+        method: "GET",
+      });
+
+      if (!response.ok) {
+        return;
+      }
+
+      dispatch(
+        SET_RESUME_URL(responseData.data.attributes.cv.data.attributes.url)
+      );
     }
 
     static async getAndStoreReviews() {

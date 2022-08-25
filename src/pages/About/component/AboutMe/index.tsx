@@ -1,4 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
+import { RootState } from "store/store";
 
 import RoundedButton, {
   RoundedButtonTypes,
@@ -9,6 +12,8 @@ import photo from "assets/about.jpg";
 import classes from "./styles.module.scss";
 
 const AboutMe: React.FC = () => {
+  const cvUrl = useSelector((state: RootState) => state.resume.url);
+
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
@@ -36,7 +41,7 @@ const AboutMe: React.FC = () => {
           <RoundedButton
             type={RoundedButtonTypes.ANCHOR}
             className={classes.text__button}
-            href={require("assets/enola-louge-cv.pdf")}
+            href={cvUrl ? cvUrl : ""}
             text={"Télécharger mon CV"}
           />
         </div>

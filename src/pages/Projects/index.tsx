@@ -10,7 +10,7 @@ import classes from "./styles.module.scss";
 const Projects: React.FC = () => {
   const projectsState = useSelector((state: RootState) => state.projects);
   const [imagesAreLoaded, setImagesAreLoaded] = useState(
-    !projectsState.isEmpty || projectsState.data.length !== 0
+    !projectsState.data || projectsState.data.length !== 0
   );
   const [loadedImages, setLoadedImages] = useState(0);
 
@@ -23,12 +23,7 @@ const Projects: React.FC = () => {
       setImagesAreLoaded(true);
     }
     setTimeout(() => {}, 1500);
-  }, [
-    projectsState.isEmpty,
-    projectsState.data,
-    projectsState.totalPhotos,
-    loadedImages,
-  ]);
+  }, [projectsState.data, projectsState.totalPhotos, loadedImages]);
 
   return (
     <div className={classes.wrapper}>
@@ -36,21 +31,22 @@ const Projects: React.FC = () => {
         [...Array(12)].map((skeleton, index) => (
           <SkeletonProject key={index} />
         ))}
-      {projectsState.data.map((project, index) => (
-        <Project
-          name={project.name}
-          description={project.description}
-          date={project.date}
-          pro={project.pro}
-          images={project.images}
-          showsDate={project.showsDate}
-          dateAltText={project.dateAltText}
-          key={index}
-          onLoad={() => {
-            setLoadedImages((prev) => prev + 1);
-          }}
-        />
-      ))}
+      {projectsState.data &&
+        projectsState.data.map((project, index) => (
+          <Project
+            name={project.name}
+            description={project.description}
+            date={project.date}
+            pro={project.pro}
+            images={project.images}
+            showsDate={project.showsDate}
+            dateAltText={project.dateAltText}
+            key={index}
+            onLoad={() => {
+              setLoadedImages((prev) => prev + 1);
+            }}
+          />
+        ))}
     </div>
   );
 };

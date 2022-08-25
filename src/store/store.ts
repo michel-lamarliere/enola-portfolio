@@ -4,6 +4,7 @@ import auth from "./auth";
 import mobileMenu from "./mobile-menu";
 import projects from "./projects";
 import reviews from "./reviews";
+import resume from "./resume";
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     mobileMenu: mobileMenu,
     projects: projects,
     reviews: reviews,
+    resume: resume,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;

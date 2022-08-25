@@ -48,6 +48,7 @@ const RoundedButton: React.FC<Props> = (props) => {
         href={props.href}
         target={"_blank"}
         rel="noreferrer"
+        /*rel="noreferrer"*/
       >
         {props.text}
       </a>
