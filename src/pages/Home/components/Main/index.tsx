@@ -44,9 +44,6 @@ const Main: React.FC = () => {
           alt={"Enola Louge"}
           className={`${classes.image} ${classes["image--mobile"]}`}
         />
-
-        {/*REMOVE WHEN IMAGE IS PROVIDED*/}
-        {/*<div className={`${classes.image} ${classes["image--mobile"]}`} />*/}
         <div className={classes.description}>
           Spécialisée dans la création d’identité visuelle et le web design.
           <br />
@@ -61,7 +58,7 @@ const Main: React.FC = () => {
         <div className={classes.button}>
           <RoundedButton
             type={RoundedButtonTypes.ANCHOR}
-            href={require("assets/cv.pdf")}
+            href={require("assets/enola-louge-cv.pdf")}
             text={"Télécharger mon CV"}
           />
         </div>

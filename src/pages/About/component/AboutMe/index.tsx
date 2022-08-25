@@ -36,7 +36,7 @@ const AboutMe: React.FC = () => {
           <RoundedButton
             type={RoundedButtonTypes.ANCHOR}
             className={classes.text__button}
-            href={require("assets/cv.pdf")}
+            href={require("assets/enola-louge-cv.pdf")}
             text={"Télécharger mon CV"}
           />
         </div>
