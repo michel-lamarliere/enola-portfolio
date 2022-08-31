@@ -43,11 +43,13 @@ const Main: React.FC = () => {
           <div className={classes["title--static"]}>Graphiste</div>
           <span className={classes["title--dynamic"]} ref={el} />
         </div>
-        <img
-          src={mainImg}
-          alt={"Enola Louge"}
-          className={`${classes.image} ${classes["image--mobile"]}`}
-        />
+        <div className={classes.image}>
+          <img
+            src={mainImg}
+            alt={"Enola Louge"}
+            className={`${classes.image__img} ${classes["image__img--mobile"]}`}
+          />
+        </div>
         <div className={classes.description}>
           Spécialisée dans la création d’identité visuelle et le web design.
           <br />
@@ -67,12 +69,13 @@ const Main: React.FC = () => {
           />
         </div>
       </div>
-
-      <img
-        src={mainImg}
-        alt={"Enola Louge"}
-        className={`${classes.image} ${classes["image--desktop"]}`}
-      />
+      <div className={classes.image}>
+        <img
+          src={mainImg}
+          alt={"Enola Louge"}
+          className={`${classes.image__img} ${classes["image__img--desktop"]}`}
+        />
+      </div>
     </div>
   );
 };
