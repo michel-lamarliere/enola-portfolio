@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import VisualIdentityLogo from "components/ui-elements/svg-components/services/VisualIdentityLogo";
-import WebDesignLogo from "components/ui-elements/svg-components/services/WebDesignLogo";
-import PackagingLogo from "components/ui-elements/svg-components/services/PackagingLogo";
+import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
+import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
+import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 
 import classes from "./styles.module.scss";
 

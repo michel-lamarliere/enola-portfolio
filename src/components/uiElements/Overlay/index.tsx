@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { animated, useTransition } from "react-spring";
 
 import { RootState } from "store/store";
-import { CLOSE_MOBILE_MENU } from "store/mobile-menu";
+import { CLOSE_MOBILE_MENU } from "store/mobileMenu";
 
 import classes from "./styles.module.scss";
 

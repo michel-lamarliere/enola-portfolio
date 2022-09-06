@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ContactLink from "components//ui-elements/ContactLink";
-import CustomNavLink from "components/ui-elements/CustomNavLink";
-import EnolaLougeLogo from "components/ui-elements/svg-components/EnolaLougeLogo";
+import ContactLink from "components//uiElements/ContactLink";
+import CustomNavLink from "components/uiElements/CustomNavLink";
+import EnolaLougeLogo from "components/uiElements/svgs/EnolaLougeLogo";
 
 import classes from "./styles.module.scss";
 

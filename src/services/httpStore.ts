@@ -1,33 +1,56 @@
 import { useDispatch } from "react-redux";
 
-import store from "store/store";
+import store from "../store/store";
 import { SET_PROJECTS } from "store/projects";
 import { SET_REVIEWS } from "store/reviews";
 import { SET_TOKEN } from "store/auth";
 import { SET_RESUME_URL } from "store/resume";
 
-import { transformProjectData } from "utils/transform-project-data";
-import { transformReviewData } from "utils/transform-review-data";
+import { transformProjectData } from "utils/transformProjectData";
+import { transformReviewData } from "utils/transformReviewData";
 
 export const useHttp = () => {
   const dispatch = useDispatch();
 
   class Http {
-    static async sendRequest(params: {
+    static async sendFormRequest(params: {
       url: string;
-      body?: string;
       method: "GET" | "POST";
+      body?: string;
     }) {
-      const token = store.getState();
+      const token = store.getState().auth.token;
 
-      const response = await fetch(params.url, {
-        method: params.method,
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token || ""}`,
-        },
-        body: params.body,
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_FORM_BACKEND_URL}/${params.url}`,
+        {
+          method: params.method,
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+          body: params.body,
+        }
+      );
+
+      return { response, responseData: await response.json() };
+    }
+
+    static async sendStrapiRequest(params: {
+      url: string;
+      method: "GET" | "POST";
+      body?: string;
+    }) {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}${params.url}`,
+        {
+          method: params.method,
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${process.env.REACT_APP_STRAPI_TOKEN}`,
+          },
+          body: params.body,
+        }
+      );
 
       return { response, responseData: await response.json() };
     }
@@ -38,8 +61,8 @@ export const useHttp = () => {
       email: string;
       message: string;
     }) {
-      const { response } = await this.sendRequest({
-        url: "https://forms-backend1.herokuapp.com/enola-portfolio/form",
+      const { response } = await this.sendFormRequest({
+        url: "/form",
         method: "POST",
         body: JSON.stringify(body),
       });
@@ -47,9 +70,9 @@ export const useHttp = () => {
       return response;
     }
 
-    static async getToken() {
-      const { response, responseData } = await this.sendRequest({
-        url: "https://forms-backend1.herokuapp.com/enola-portfolio/auth",
+    static async getFormBackendToken() {
+      const { response, responseData } = await this.sendFormRequest({
+        url: "/auth",
         method: "GET",
       });
 
@@ -61,8 +84,8 @@ export const useHttp = () => {
     }
 
     static async getResume() {
-      const { response, responseData } = await this.sendRequest({
-        url: `${process.env.REACT_APP_BACKEND_URL}/api/cv?populate=*`,
+      const { response, responseData } = await this.sendStrapiRequest({
+        url: "/cv?populate=*",
         method: "GET",
       });
 
@@ -76,8 +99,8 @@ export const useHttp = () => {
     }
 
     static async getAndStoreReviews() {
-      const { response, responseData } = await this.sendRequest({
-        url: `${process.env.REACT_APP_BACKEND_URL}/api/reviews?populate=*`,
+      const { response, responseData } = await this.sendStrapiRequest({
+        url: "/reviews?populate=*",
         method: "GET",
       });
 
@@ -91,8 +114,8 @@ export const useHttp = () => {
     }
 
     static async getAndStoreProjects() {
-      const { response, responseData } = await this.sendRequest({
-        url: `${process.env.REACT_APP_BACKEND_URL}/api/projects?sort=order&populate=*`,
+      const { response, responseData } = await this.sendStrapiRequest({
+        url: "/projects?sort=order&populate=*",
         method: "GET",
       });
 

@@ -150,7 +150,7 @@
     transition: all ease-in-out 0.3s;
 
     &:hover {
-      transform: scale(1.05);
+      /*transform: scale(1.05);*/
 
       .header, .date, .button, .description {
         opacity: 1;

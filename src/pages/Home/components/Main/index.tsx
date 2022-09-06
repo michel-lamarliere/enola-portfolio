@@ -6,7 +6,7 @@ import { RootState } from "store/store";
 
 import RoundedButton, {
   RoundedButtonTypes,
-} from "components/ui-elements/RoundedButton";
+} from "components/uiElements/RoundedButton";
 
 import mainImg from "assets/home.jpg";
 

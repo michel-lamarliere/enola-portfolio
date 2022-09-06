@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { animated, useTransition } from "react-spring";
 
 import { RootState } from "store/store";
-import { TOGGLE_MOBILE_MENU } from "store/mobile-menu";
+import { TOGGLE_MOBILE_MENU } from "store/mobileMenu";
 
 import classes from "./styles.module.scss";
-import CustomNavLink from "../ui-elements/CustomNavLink";
-import ContactLink from "../ui-elements/ContactLink";
+import CustomNavLink from "../uiElements/CustomNavLink";
+import ContactLink from "../uiElements/ContactLink";
 
 const MobileMenu: React.FC = () => {
   const dispatch = useDispatch();

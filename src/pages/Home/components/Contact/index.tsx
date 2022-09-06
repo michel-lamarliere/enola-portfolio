@@ -7,14 +7,14 @@ import { ClipLoader } from "react-spinners";
 import Input, { InputTypes } from "./components/Input";
 import RoundedButton, {
   RoundedButtonTypes,
-} from "components/ui-elements/RoundedButton";
+} from "components/uiElements/RoundedButton";
 
 import emailIcon from "assets/icons/email.svg";
 import telephoneIcon from "assets/icons/telephone.svg";
 import addressIcon from "assets/icons/address.svg";
 
 import classes from "./styles.module.scss";
-import { useHttp } from "../../../../services/http-store.services";
+import { useHttp } from "../../../../services/httpStore";
 
 const contactInfo: { text: string; icon: string }[] = [
   {
@@ -84,26 +84,21 @@ const Contact: React.FC = () => {
   const formSubmitHandler = async (inputValues: any, actions: any) => {
     setServerResponse((prev) => ({ ...prev, waiting: true }));
 
-    let response;
+    const response = await Http.submitForm({
+      language: "french",
+      name: inputValues.name,
+      email: inputValues.emailAddress,
+      message: inputValues.message,
+    });
 
-    try {
-      response = await Http.submitForm({
-        language: "french",
-        name: inputValues.name,
-        email: inputValues.emailAddress,
-        message: inputValues.message,
-      });
-    } catch (e) {
+    if (!response.ok) {
       setServerResponse(serverError);
 
       return;
     }
 
-    if (!response.ok) {
-      setServerResponse(serverError);
-    }
-
     actions.resetForm();
+
     setServerResponse({
       waiting: false,
       success: true,

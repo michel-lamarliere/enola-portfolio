@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import auth from "./auth";
-import mobileMenu from "./mobile-menu";
+import mobileMenu from "./mobileMenu";
 import projects from "./projects";
 import reviews from "./reviews";
 import resume from "./resume";

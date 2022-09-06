@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import RoundedButton, {
   RoundedButtonTypes,
-} from "components/ui-elements/RoundedButton";
-import PackagingLogo from "components/ui-elements/svg-components/services/PackagingLogo";
-import WebDesignLogo from "components/ui-elements/svg-components/services/WebDesignLogo";
-import VisualIdentityLogo from "components/ui-elements/svg-components/services/VisualIdentityLogo";
+} from "components/uiElements/RoundedButton";
+import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
+import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
+import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
 
 import classes from "./styles.module.scss";
 

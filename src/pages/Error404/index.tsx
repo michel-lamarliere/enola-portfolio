@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import RoundedButton, {
   RoundedButtonTypes,
-} from "components/ui-elements/RoundedButton";
-import Error404Logo from "components/ui-elements/svg-components/Error404Logo";
+} from "components/uiElements/RoundedButton";
+import Error404Logo from "components/uiElements/svgs/Error404Logo";
 
 import classes from "./styles.module.scss";
 

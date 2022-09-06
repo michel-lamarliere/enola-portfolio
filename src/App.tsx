@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { RootState } from "store/store";
-import { CLOSE_MOBILE_MENU } from "store/mobile-menu";
+import { CLOSE_MOBILE_MENU } from "store/mobileMenu";
 
-import { useHttp } from "services/http-store.services";
+import { useHttp } from "services/httpStore";
 
 import Home from "pages/Home";
 import Error404 from "pages/Error404";
@@ -15,7 +15,7 @@ import Projects from "pages/Projects";
 
 import Layout from "components/Layout";
 import MobileMenu from "components/MobileMenu";
-import Overlay from "components/ui-elements/Overlay";
+import Overlay from "components/uiElements/Overlay";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -38,7 +38,6 @@ const App: React.FC = () => {
   const { Http } = useHttp();
 
   const mobileMenuState = useSelector((state: RootState) => state.mobileMenu);
-  const token = useSelector((state: RootState) => state.auth.token);
 
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -66,19 +65,17 @@ const App: React.FC = () => {
     }
   }, [mobileMenuState.isOpen]);
 
-  useEffect(() => {
-    (async () => {
-      await Http.getToken();
-    })();
-
-    if (!token) {
-      return;
-    }
+  const fetchData = useCallback(async () => {
+    await Http.getFormBackendToken();
 
     Http.getResume();
     Http.getAndStoreProjects();
     Http.getAndStoreReviews();
-  }, [Http, token]);
+  }, [Http]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <>

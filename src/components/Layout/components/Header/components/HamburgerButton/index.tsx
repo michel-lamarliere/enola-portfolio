@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { TOGGLE_MOBILE_MENU } from "store/mobile-menu";
+import { TOGGLE_MOBILE_MENU } from "store/mobileMenu";
 
 import classes from "./styles.module.scss";
 
