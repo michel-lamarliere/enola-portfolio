@@ -7,7 +7,7 @@ const initialState: {
   totalPhotos: number;
 } = {
   totalPhotos: 0,
-  data: [],
+  data: null,
 };
 
 const projectsSlice = createSlice({

@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import { object, string } from "yup";
 import { ClipLoader } from "react-spinners";
 
+import { useHttp } from "services/httpStore";
+
 import Input, { InputTypes } from "./components/Input";
 import RoundedButton, {
   RoundedButtonTypes,
@@ -14,7 +16,6 @@ import telephoneIcon from "assets/icons/telephone.svg";
 import addressIcon from "assets/icons/address.svg";
 
 import classes from "./styles.module.scss";
-import { useHttp } from "../../../../services/httpStore";
 
 const contactInfo: { text: string; icon: string }[] = [
   {

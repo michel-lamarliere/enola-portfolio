@@ -21,7 +21,7 @@ export const useHttp = () => {
       const token = store.getState().auth.token;
 
       const response = await fetch(
-        `${process.env.REACT_APP_FORM_BACKEND_URL}/${params.url}`,
+        `${process.env.REACT_APP_FORM_BACKEND_URL}${params.url}`,
         {
           method: params.method,
           headers: {
