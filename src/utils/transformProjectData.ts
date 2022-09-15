@@ -12,6 +12,14 @@ export const transformProjectData = (data: any) => {
       transformedImages.push(data[i].attributes.images.data[y].attributes.url);
     }
 
+    transformedImages.sort((a, b) => {
+      if (a < b) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+
     transformedData.push({
       name: data[i].attributes.projectName,
       description: data[i].attributes.description,
