@@ -66,7 +66,7 @@ const App: React.FC = () => {
   }, [mobileMenuState.isOpen]);
 
   const fetchData = useCallback(async () => {
-    await Http.getFormBackendToken();
+    /*await Http.getFormBackendToken();*/
 
     Http.getResume();
     Http.getAndStoreProjects();

@@ -9,9 +9,7 @@ import classes from "./styles.module.scss";
 
 const Projects: React.FC = () => {
   const projectsState = useSelector((state: RootState) => state.projects);
-  const [imagesAreLoaded, setImagesAreLoaded] = useState(
-    !projectsState.data || projectsState.data.length !== 0
-  );
+  const [imagesAreLoaded, setImagesAreLoaded] = useState(false);
   const [loadedImages, setLoadedImages] = useState(0);
 
   useEffect(() => {

@@ -1,6 +1,4 @@
 import { useDispatch } from "react-redux";
-
-import store from "../store/store";
 import { SET_PROJECTS } from "store/projects";
 import { SET_REVIEWS } from "store/reviews";
 import { SET_TOKEN } from "store/auth";
@@ -13,28 +11,6 @@ export const useHttp = () => {
   const dispatch = useDispatch();
 
   class Http {
-    static async sendFormRequest(params: {
-      url: string;
-      method: "GET" | "POST";
-      body?: string;
-    }) {
-      const token = store.getState().auth.token;
-
-      const response = await fetch(
-        `${process.env.REACT_APP_FORM_BACKEND_URL}${params.url}`,
-        {
-          method: params.method,
-          headers: {
-            "Content-Type": "application/json",
-            authorization: `Bearer ${token}`,
-          },
-          body: params.body,
-        }
-      );
-
-      return { response, responseData: await response.json() };
-    }
-
     static async sendStrapiRequest(params: {
       url: string;
       method: "GET" | "POST";
@@ -52,6 +28,9 @@ export const useHttp = () => {
         }
       );
 
+      /*console.log(response);
+      console.log(await response.json());*/
+
       return { response, responseData: await response.json() };
     }
 
@@ -61,7 +40,7 @@ export const useHttp = () => {
       email: string;
       message: string;
     }) {
-      const { response } = await this.sendFormRequest({
+      const { response } = await this.sendStrapiRequest({
         url: "/form",
         method: "POST",
         body: JSON.stringify(body),
@@ -71,10 +50,12 @@ export const useHttp = () => {
     }
 
     static async getFormBackendToken() {
-      const { response, responseData } = await this.sendFormRequest({
+      const { response, responseData } = await this.sendStrapiRequest({
         url: "/auth",
         method: "GET",
       });
+
+      console.log(response);
 
       if (!response.ok) {
         return;
