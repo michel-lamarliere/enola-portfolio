@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton";
 import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
-import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
+import VisualIdentityLogo
+  from "components/uiElements/svgs/services/VisualIdentityLogo";
 
 import classes from "./styles.module.scss";
 
@@ -63,13 +64,13 @@ const Services: React.FC = () => {
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.title}>Mes services</div>
+      <h3 className={classes.title}>Mes services</h3>
       <ul className={classes.services}>
         {services.map((service, index) => (
-          <div className={classes.services__item} key={+index}>
+          <h4 className={classes.services__item} key={+index}>
             <span className={classes.services__item__icon}>{service.icon}</span>
             <div className={classes.services__item__text}>{service.title}</div>
-          </div>
+          </h4>
         ))}
       </ul>
       <RoundedButton

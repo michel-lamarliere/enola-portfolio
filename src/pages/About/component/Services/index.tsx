@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
-import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
+import VisualIdentityLogo
+  from "components/uiElements/svgs/services/VisualIdentityLogo";
 import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
 import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 
@@ -92,18 +93,18 @@ const Services: React.FC = () => {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <div className={classes.title}>Mes services</div>
+        <h3 className={classes.title}>Mes services</h3>
         <div className={classes.services}>
           {services.map((service, index) => (
-            <div className={classes.services__item} key={index}>
+            <h4 className={classes.services__item} key={index}>
               <div className={classes.services__item__icon}>{service.icon}</div>
-              <div className={classes.services__item__title}>
+              <h5 className={classes.services__item__title}>
                 {service.title}
-              </div>
-              <div className={classes.services__item__description}>
+              </h5>
+              <p className={classes.services__item__description}>
                 {service.description}
-              </div>
-            </div>
+              </p>
+            </h4>
           ))}
         </div>
       </div>

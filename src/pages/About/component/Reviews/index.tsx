@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import React, {useEffect, useRef, useState} from "react";
+import {useSelector} from "react-redux";
 
-import { RootState } from "store/store";
+import {RootState} from "store/store";
 
-import { ReviewType } from "types/review.types";
+import {ReviewType} from "types/review.types";
 
-import Review, { SkeletonReview } from "./component/Review";
+import Review, {SkeletonReview} from "./component/Review";
 
 import leftArrowIcon from "assets/icons/left-arrow-bubble.svg";
 
@@ -43,7 +43,7 @@ const Reviews: React.FC = () => {
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.title}>Quelques avis clients</div>
+      <h3 className={classes.title}>Quelques avis clients</h3>
       <div className={classes["reviews-wrapper"]}>
         <button
           onClick={leftButtonHandler}

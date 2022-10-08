@@ -1,7 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
-import { RootState } from "store/store";
+import {RootState} from "store/store";
 
 import RoundedButton, {
   RoundedButtonTypes,
@@ -19,8 +19,8 @@ const AboutMe: React.FC = () => {
       <div className={classes.wrapper}>
         <img className={classes.image} src={photo} alt={"Enola Louge"} />
         <div className={classes.text}>
-          <div className={classes.text__title}>Me connaître</div>
-          <div className={classes.text__paragraph}>
+          <h3 className={classes.text__title}>Me connaître</h3>
+          <p className={classes.text__paragraph}>
             Je m’appelle Enola et je suis graphiste spécialisée dans le design
             d’identité visuelle et le web design.
             <br />
@@ -37,7 +37,7 @@ const AboutMe: React.FC = () => {
             <br />
             N’hésitez pas à me contacter si vous avez besoin d’un renseignement,
             c’est avec plaisir que je vous répondrai !
-          </div>
+          </p>
           <RoundedButton
             type={RoundedButtonTypes.ANCHOR}
             className={classes.text__button}

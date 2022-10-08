@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import React, {useEffect, useRef} from "react";
+import {useSelector} from "react-redux";
 import Typed from "typed.js";
 
-import { RootState } from "store/store";
+import {RootState} from "store/store";
 
 import RoundedButton, {
   RoundedButtonTypes,
@@ -38,11 +38,11 @@ const Main: React.FC = () => {
   return (
     <div className={classes.wrapper}>
       <div className={classes["left-container"]}>
-        <div className={classes.name}>enola louge</div>
-        <div className={classes.title}>
+        <h1 className={classes.name}>enola louge</h1>
+        <h2 className={classes.title}>
           <div className={classes["title--static"]}>Graphiste</div>
           <span className={classes["title--dynamic"]} ref={el} />
-        </div>
+        </h2>
         <div className={classes.image}>
           <img
             src={mainImg}
