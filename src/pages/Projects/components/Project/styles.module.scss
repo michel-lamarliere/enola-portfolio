@@ -1,24 +1,12 @@
 @import 'styles/variables';
 
-@mixin onTop {
-  z-index: 4;
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.8rem;
-  transition: all ease-in-out 300ms;
-}
-
 @mixin item {
   display: grid;
   place-content: center;
-  background-color: rgba($colorAccent4, 0.9);
+  background-color: #ffffff;
   padding: 0.2rem 0.45rem;
   border-radius: 0.25rem;
-  box-shadow: 0 0 6px #14142380;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
 }
 
 .wrapper {
@@ -38,51 +26,39 @@
 .skeleton {
   &__name {
     transform: translate(0, 0);
-    width: 5rem;
-    height: 1.35rem;
-  }
-
-  &__pro {
-    transform: translate(78%, 0);
-    width: 6rem;
-    height: 1.35rem;
-  }
-
-  &__date {
-    transform: translate(0, 1.8rem);
-    width: 2.9rem;
-    height: 1.2rem;
+    width: 12rem;
+    height: 1.275rem;
   }
 
   &__description {
-    transform: translate(0, 9.7rem);
-    width: 100%;
-    height: 1.42rem;
+    transform: translate(0, 1.45rem);
+    width: 7rem;
+    height: 1.15rem;
   }
 }
 
 .header {
-  @include onTop;
-  top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .2rem;
+  padding: 0.8rem;
+  transition: all ease-in-out 300ms;
+  z-index: 4;
 
-  &__item {
+
+  &_title {
     @include item;
     @include h3;
     font-size: 12px;
-
-    &--pro {
-      background-color: $colorAccent;
-    }
   }
-}
 
-.date {
-  @include onTop;
-  top: 1.8rem;
-
-  &__item {
+  &_description {
     @include item;
-    @include p4;
+    @include p3;
     font-size: 10px;
   }
 }
@@ -130,42 +106,22 @@
   }
 }
 
-.description {
-  @include onTop;
-  bottom: 0 !important;
-  justify-content: center;
-
-  &__item {
-    @include item;
-    @include p2;
-    text-align: center;
-    font-size: 12px;
-  }
-}
-
 @media screen and (min-width: 1000px) {
   .wrapper {
     min-width: 14rem;
-    /*max-width: 21.6rem;*/
     transition: all ease-in-out 0.3s;
 
     &:hover {
       transform: scale(1.05);
 
-      .header, .date, .button, .description {
+      .header, .button {
         opacity: 1;
       }
     }
   }
 
-  .header, .date, .button, .description {
+  .header, .button, {
     opacity: 0;
     transition: all ease-in-out 0.3s;
-  }
-
-  .footer {
-    &__date {
-      font-size: 12px;
-    }
   }
 }

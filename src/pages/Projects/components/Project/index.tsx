@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import ContentLoader from "react-content-loader";
-import { format } from "date-fns";
-import { fr } from "date-fns/locale";
 
 import { ProjectType } from "types/project.types";
 
@@ -23,9 +21,7 @@ export const SkeletonProject: React.FC = () => {
       foregroundColor="rgba(255, 150, 214, 0.2)"
     >
       <rect className={classes.skeleton__name} rx="3" ry="3" />
-      <rect className={classes.skeleton__pro} rx="3" ry="3" />
-      <rect className={classes.skeleton__date} rx="3" ry="3" />
-      <rect className={classes.skeleton__description} rx="5" ry="5" />
+      <rect className={classes.skeleton__description} rx="3" ry="3" />
     </ContentLoader>
   );
 };
@@ -40,9 +36,8 @@ const Project: React.FC<Props> = (props) => {
   const [carouselScrollLeftMax, setCarouselScrollLeftMax] = useState(0);
 
   const buttonHandler = (params: { scrollLeft: boolean }) => {
-    if (!carouselRef.current) {
-      return;
-    }
+    if (!carouselRef.current) return;
+
     params.scrollLeft
       ? setLeftButtonIsDisabled(true)
       : setRightButtonIsDisabled(true);
@@ -108,21 +103,8 @@ const Project: React.FC<Props> = (props) => {
   return (
     <div className={classes.wrapper}>
       <div className={`${classes.header} ${hideDiv}`}>
-        <div className={classes.header__item}>{props.name}</div>
-        {props.pro && (
-          <div
-            className={`${classes.header__item} ${classes["header__item--pro"]}`}
-          >
-            PROJET PRO
-          </div>
-        )}
-      </div>
-      <div className={`${classes.date} ${hideDiv}`}>
-        <div className={classes.date__item}>
-          {props.showsDate
-            ? format(new Date(props.date), "MM/y", { locale: fr })
-            : props.dateAltText}
-        </div>
+        <div className={classes.header_title}>{props.name}</div>
+        <div className={classes.header_description}>{props.description}</div>
       </div>
       <button
         disabled={leftButtonIsDisabled}
@@ -156,9 +138,6 @@ const Project: React.FC<Props> = (props) => {
             onLoad={props.onLoad}
           />
         ))}
-      </div>
-      <div className={`${classes.description} ${hideDiv}`}>
-        <div className={classes.description__item}>{props.description}</div>
       </div>
     </div>
   );

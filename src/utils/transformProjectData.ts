@@ -23,10 +23,6 @@ export const transformProjectData = (data: any) => {
     transformedData.push({
       name: data[i].attributes.projectName,
       description: data[i].attributes.description,
-      pro: data[i].attributes.pro,
-      date: data[i].attributes.date,
-      showsDate: data[i].attributes.showDate,
-      dateAltText: data[i].attributes.dateAltText,
       images: transformedImages,
     });
   }

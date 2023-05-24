@@ -1,9 +1,5 @@
-import React, {useEffect, useRef} from "react";
-import {useSelector} from "react-redux";
+import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
-
-import {RootState} from "store/store";
-
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton";
@@ -13,8 +9,6 @@ import mainImg from "assets/home.jpg";
 import classes from "./styles.module.scss";
 
 const Main: React.FC = () => {
-  const cvUrl = useSelector((state: RootState) => state.resume.url);
-
   const el = useRef<any>(null);
   const typed = useRef<any>(null);
 
@@ -63,9 +57,9 @@ const Main: React.FC = () => {
         </div>
         <div className={classes.button}>
           <RoundedButton
-            type={RoundedButtonTypes.ANCHOR}
-            href={cvUrl ? cvUrl : ""}
-            text={"Télécharger mon CV"}
+            type={RoundedButtonTypes.LINK}
+            to={"/projets"}
+            text={"Voir mes projets"}
           />
         </div>
       </div>

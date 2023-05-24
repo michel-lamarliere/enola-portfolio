@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             Mentions légales
           </Link>
           <div className={classes.info__rights}>
-            Enola Louge 2022 - tous droits réservés
+            Enola Louge {new Date().getFullYear()} - tous droits réservés
           </div>
           <div className={classes.info__credits}>
             <div className={classes.info__credits__text}>

@@ -4,15 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { RootState } from "store/store";
 import { CLOSE_MOBILE_MENU } from "store/mobileMenu";
-
 import { useHttp } from "services/httpStore";
-
 import Home from "pages/Home";
 import Error404 from "pages/Error404";
 import About from "pages/About";
 import Legal from "pages/Legal";
 import Projects from "pages/Projects";
-
 import Layout from "components/Layout";
 import MobileMenu from "components/MobileMenu";
 import Overlay from "components/uiElements/Overlay";
