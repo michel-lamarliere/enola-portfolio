@@ -15,7 +15,6 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div className={classes.wrapper}>
-      <SkeletonProject />
       {isLoading &&
         [...Array(12)].map((skeleton, index) => (
           <SkeletonProject key={index} />
