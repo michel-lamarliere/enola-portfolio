@@ -46,7 +46,8 @@
 
 @media screen and (min-width: 1000px) {
   .imageContainer {
-    width: 80%;
+    width: 70%;
+    max-width: 1000px;
     margin: 0 auto;
     border-radius: 0;
     overflow: unset;
