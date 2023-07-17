@@ -12,14 +12,14 @@ import classes from "features/projects/components/Project/Project.module.scss";
 export const SkeletonProject: FC = () => {
   return (
     <ContentLoader
-      className={`${classes.wrapper} ${classes["wrapper--skeleton"]}`}
+      className={classes.wrapper}
       speed={2}
       height={"100%"}
       backgroundColor="#F3F2F7"
       foregroundColor="rgba(255, 150, 214, 0.2)"
     >
-      <rect className={classes.skeleton__name} rx="3" ry="3" />
-      <rect className={classes.skeleton__description} rx="3" ry="3" />
+      <rect className={classes.skeleton_name} rx="3" ry="3" />
+      <rect className={classes.skeleton_description} rx="3" ry="3" />
     </ContentLoader>
   );
 };
