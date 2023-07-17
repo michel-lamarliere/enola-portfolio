@@ -1,8 +1,8 @@
 import React from "react";
 
-import Main from "./components/Main";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
+import Main from "pages/Home/Main/Main";
+import Services from "pages/Home/Services/Services";
+import Contact from "features/contact/components/Contact/Contact";
 
 const Home: React.FC = () => {
   return (

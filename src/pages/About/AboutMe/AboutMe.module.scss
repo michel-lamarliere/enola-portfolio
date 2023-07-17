@@ -1,0 +1,76 @@
+@import 'styles/variables';
+
+.container {
+  /*@include container;*/
+  box-sizing: border-box;
+}
+
+.wrapper {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+  background-color: $colorAccent;
+}
+
+.image {
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  &__title {
+    @include h2;
+    color: $colorMain2;
+  }
+
+  &__paragraph {
+    @include p1;
+    color: $colorMain2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    @include container;
+  }
+
+  .wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 9rem;
+    padding: 3.5rem;
+  }
+
+  .image {
+    object-fit: cover;
+    object-position: calc(50% + 4rem);
+    height: 100%;
+  }
+
+  .text {
+    align-items: flex-start;
+    gap: 1rem;
+
+    &__title {
+      text-align: left;
+    }
+
+    &__button {
+      margin-top: 3rem;
+    }
+  }
+}

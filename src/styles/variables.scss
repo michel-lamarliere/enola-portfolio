@@ -7,6 +7,10 @@ $headerHeightDesktop: 6rem;
 $footerHeightMobile: 9.75rem;
 $footerHeightDesktop: 13rem;
 
+$zIndexOverlay: 50;
+$zIndexInter: 75;
+$zIndexModal: 100;
+
 $fullScreenMinHeightMobile: calc(100vh - calc(#{$headerHeightMobile} + #{$footerHeightMobile}));
 $fullScreenMinHeightDesktop: calc(100vh - calc(#{$headerHeightDesktop} + #{$footerHeightDesktop}));
 

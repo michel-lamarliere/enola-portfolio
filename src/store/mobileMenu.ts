@@ -1,23 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { create, StoreApi, UseBoundStore } from "zustand";
 
-const mobileMenuSlice = createSlice({
-  name: "mobileMenu",
-  initialState: {
-    isOpen: false,
-  },
-  reducers: {
-    OPEN_MOBILE_MENU: (state) => {
-      state.isOpen = true;
-    },
-    CLOSE_MOBILE_MENU: (state) => {
-      state.isOpen = false;
-    },
-    TOGGLE_MOBILE_MENU: (state) => {
-      state.isOpen = !state.isOpen;
-    },
-  },
-});
+type MobileMenuStore = UseBoundStore<
+  StoreApi<{
+    isOpen: boolean;
+    open: () => void;
+    close: () => void;
+    toggle: () => void;
+  }>
+>;
 
-export const { OPEN_MOBILE_MENU, CLOSE_MOBILE_MENU, TOGGLE_MOBILE_MENU } =
-  mobileMenuSlice.actions;
-export default mobileMenuSlice.reducer;
+export const useMobileMenuStore: MobileMenuStore = create((set) => ({
+  isOpen: false,
+  open: () => set({ isOpen: true }),
+  close: () => set({ isOpen: false }),
+  toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+}));

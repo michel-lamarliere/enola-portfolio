@@ -1,0 +1,44 @@
+@import '../../../../../styles/variables';
+
+@mixin input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: solid 1px transparent;
+  border-radius: 0.25rem;
+  background-color: $colorAccent4;
+  color: $colorMain;
+  box-sizing: border-box;
+}
+
+@mixin error {
+  border-color: $colorAccent2;
+}
+
+.wrapper {
+
+}
+
+.text {
+  @include h3;
+  @include input;
+
+  &--error {
+    @include error;
+  }
+}
+
+.textarea {
+  @include p1;
+  @include input;
+  resize: none;
+
+  &--error {
+    @include error;
+  }
+}
+
+.error-text {
+  @include p4;
+  margin-top: 0.25rem;
+  color: $colorAccent2;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "components/Layout/components/Header/Header";
+import Footer from "components/Layout/components/Footer/Footer";
 
 interface Props {
   children: JSX.Element;
