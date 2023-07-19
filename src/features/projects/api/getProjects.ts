@@ -22,9 +22,9 @@ const handleGetProjects = async (): Promise<ProjectType[]> => {
     name: project.attributes.name || "Project",
     description: project.attributes.description,
     coverImage: project.attributes.cover_image?.data?.attributes?.url || "",
-    images: project.attributes.images.data?.map(
-      (image) => image.attributes.url
-    ),
+    images: project.attributes.images.data
+      .sort((a, b) => a.attributes.name.localeCompare(b.attributes.name))
+      ?.map((image) => image.attributes.url),
   }));
 };
 

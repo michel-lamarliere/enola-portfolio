@@ -9,6 +9,7 @@ export type StrapiImageSingle = {
 export type StrapiImageMultiple = {
   data: {
     attributes: {
+      name: string;
       url: string;
     };
   }[];
