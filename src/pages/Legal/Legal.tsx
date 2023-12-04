@@ -43,7 +43,8 @@ const Legal: React.FC = () => {
                 <br /> Le responsable publication est une personne physique ou
                 une personne morale.
                 <br />
-                <br /> Webmaster : Lamarlière Michel - m.lamarliere@icloud.com
+                <br /> Webmaster : Lamarlière Michel -
+                michel.lamarliere@icloud.com
                 <br />
                 <br /> Hébergeur : Hostinger – IP : 109.106.246.58 6023 Cyprus
                 415-624-8380

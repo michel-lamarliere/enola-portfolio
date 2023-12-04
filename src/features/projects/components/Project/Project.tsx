@@ -45,7 +45,7 @@ const Project: FC<Omit<ProjectType, "id">> = ({
       <img className={classes.img} src={coverImage} alt={name} />
       <RoundedButton
         className={classes.button}
-        text="Voir le project"
+        text="Voir le projet"
         type={RoundedButtonTypes.BUTTON}
         onClick={clickHandler}
       />
