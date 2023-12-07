@@ -2,13 +2,13 @@
 
 .wrapper {
   flex-shrink: 0;
-  width: 10.5rem;
+  width: 13.5rem;
   padding: 1.5rem 1.3rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.15rem 0.6rem #1414231A;
 
   &--skeleton {
-    width: 13.1rem;
+    width: 13.5rem;
     height: 27.0525rem;
     box-sizing: border-box;
   }
@@ -129,7 +129,7 @@
   }
 
   .text {
-    height: 8.5rem;;
+    height: 10rem;
   }
 
 }

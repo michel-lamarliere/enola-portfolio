@@ -40,19 +40,31 @@ const Contact: React.FC = () => {
   const location = useLocation();
   const formRef = useRef<any>(null);
 
-  useEffect(() => {
-    if (!formRef.current) {
-      return;
-    }
+  const { mutation, serverResponse } = useSendMessage();
 
-    // TODO CHANGE THIS WITH NAVIGATE
-    if (location.pathname === "/accueil/contact") {
-      setTimeout(() => {
+  useEffect(() => {
+    if (!formRef.current) return;
+
+    let timeout: any;
+    if (location.hash.includes("#contact")) {
+      timeout = setTimeout(() => {
         formRef.current.scrollIntoView({
           behavior: "smooth",
         });
       }, 300);
     }
+
+    return () => {
+      clearTimeout(timeout);
+
+      if (window.location.hash) {
+        window.history.replaceState(
+          "",
+          document.title,
+          window.location.pathname
+        );
+      }
+    };
   }, [formRef, location]);
 
   const formValidationSchema = object().shape({
@@ -72,10 +84,8 @@ const Contact: React.FC = () => {
       .required("Champ requis."),
   });
 
-  const { mutation, serverResponse } = useSendMessage();
-
   return (
-    <div className={classes.wrapper} id={"contact"} ref={formRef}>
+    <div className={classes.wrapper} ref={formRef}>
       <div className={classes.details}>
         <div className={classes.details__title}>
           N’hésitez-pas à me contacter !

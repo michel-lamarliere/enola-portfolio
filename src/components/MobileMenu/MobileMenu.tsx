@@ -6,6 +6,7 @@ import ContactLink from "components/uiElements/ContactLink/ContactLink";
 import { useMobileMenuStore } from "store/mobileMenu";
 
 import classes from "./MobileMenu.module.scss";
+import { routes } from "config/routes";
 
 const MobileMenu: React.FC = () => {
   const mobileMenu = useMobileMenuStore((state) => state);
@@ -31,9 +32,9 @@ const MobileMenu: React.FC = () => {
             </div>
           </button>
           <ul className={classes["main-links"]}>
-            <CustomNavLink to={"/accueil"} text={"Accueil"} />
-            <CustomNavLink to={"/projets"} text={"Projets"} />
-            <CustomNavLink to={"/a-propos"} text={"À propos"} />
+            <CustomNavLink to={routes.home.root} text={"Accueil"} />
+            <CustomNavLink to={routes.projects} text={"Projets"} />
+            <CustomNavLink to={routes.about} text={"À propos"} />
           </ul>
           <ul className={classes["secondary-links"]}>
             <ContactLink />

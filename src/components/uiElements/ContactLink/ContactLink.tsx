@@ -1,11 +1,16 @@
 import React from "react";
-
-import classes from "components/uiElements/ContactLink/ContactLink.module.scss";
 import { Link } from "react-router-dom";
+
+import { routes } from "config/routes";
+
+import classes from "./ContactLink.module.scss";
 
 const ContactLink: React.FC = () => {
   return (
-    <Link to={"/accueil/contact"} className={classes.wrapper}>
+    <Link
+      to={`${routes.home.root}${routes.home.hashes.contact}`}
+      className={classes.wrapper}
+    >
       Contact
     </Link>
   );

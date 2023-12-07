@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { routes } from "config/routes";
+
 import elLogo from "assets/icons/enola-louge_logo.svg";
 import behanceIcon from "assets/icons/behance.svg";
 import instagramIcon from "assets/icons/instagram.svg";
@@ -43,7 +45,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <Link
-            to={"/mentions-legales"}
+            to={routes.legalNotice}
             className={`${classes["legal-mentions"]} ${classes["legal-mentions--desktop"]}`}
           >
             Mentions légales
@@ -51,7 +53,7 @@ const Footer: React.FC = () => {
         </div>
         <div className={classes.info}>
           <Link
-            to={"/mentions-legales"}
+            to={routes.legalNotice}
             className={`${classes["legal-mentions"]} ${classes["legal-mentions--mobile"]}`}
           >
             Mentions légales

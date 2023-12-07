@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Home from "pages/Home";
 import Error404 from "pages/Error404/Error404";
@@ -11,6 +11,7 @@ import MobileMenu from "components/MobileMenu/MobileMenu";
 import Overlay from "components/uiElements/Overlay/Overlay";
 import { useProjectModalStore } from "features/projects/store/project-modal";
 import { useMobileMenuStore } from "store/mobileMenu";
+import { routes } from "config/routes";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -68,14 +69,10 @@ const App: React.FC = () => {
       <MobileMenu />
       <Layout>
         <Routes>
-          <Route path={"/accueil/*"} element={<Home />} />
-          <Route
-            path="/"
-            element={<Navigate to="/accueil" replace state={{ location }} />}
-          />
-          <Route path={"/projets"} element={<ProjectsPage />} />
-          <Route path={"/a-propos"} element={<About />} />
-          <Route path={"/mentions-legales"} element={<Legal />} />
+          <Route path={"/"} element={<Home />} />
+          <Route path={routes.projects} element={<ProjectsPage />} />
+          <Route path={routes.about} element={<About />} />
+          <Route path={routes.legalNotice} element={<Legal />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
       </Layout>

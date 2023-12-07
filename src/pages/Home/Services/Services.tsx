@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton/RoundedButton";
+import { routes } from "config/routes";
+
 import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
 import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
@@ -74,7 +76,7 @@ const Services: React.FC = () => {
       </ul>
       <RoundedButton
         type={RoundedButtonTypes.LINK}
-        to={"/a-propos"}
+        to={routes.about}
         text={"En savoir plus"}
         className={classes.button}
       />

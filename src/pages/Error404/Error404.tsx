@@ -38,7 +38,7 @@ const Error404: React.FC = () => {
         className={classes.button}
         text={"Retourner à l'accueil"}
         type={RoundedButtonTypes.LINK}
-        to={"/accueil"}
+        to={"/"}
       />
     </div>
   );

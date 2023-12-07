@@ -3,6 +3,7 @@ import React from "react";
 import RoundedButton, {
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton/RoundedButton";
+import { routes } from "config/routes";
 
 import photo from "assets/about.jpg";
 
@@ -36,7 +37,7 @@ const AboutMe: React.FC = () => {
           <RoundedButton
             type={RoundedButtonTypes.LINK}
             className={classes.text__button}
-            to="/projets"
+            to={routes.projects}
             text={"Voir mes projets"}
           />
         </div>

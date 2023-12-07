@@ -14,7 +14,7 @@ interface Props {
 const MobileNavbar: React.FC<Props> = (props) => {
   return (
     <nav className={`${classes.wrapper} ${props.className}`}>
-      <Link to="/accueil" className={classes["logo-button"]}>
+      <Link to="/" className={classes["logo-button"]}>
         <img src={logoE} alt={"Logo Enola Louge"} />
       </Link>
       <HamburgerButton />

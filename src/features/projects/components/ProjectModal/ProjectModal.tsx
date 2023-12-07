@@ -28,7 +28,7 @@ export const ProjectModal: FC<Pick<ProjectType, "images">> = ({ images }) => {
             className={classes.image}
             key={`project-${image}-${index}`}
             src={image}
-            alt={`project-image-${index}`}
+            alt={`projet-${image}-${index}`}
           />
         ))}
       </div>
