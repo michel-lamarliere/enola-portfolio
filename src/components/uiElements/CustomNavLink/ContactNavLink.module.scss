@@ -4,6 +4,7 @@
   @include h3;
   padding: 0.5rem;
   color: $colorMain;
+  white-space: nowrap;
 
   &:hover {
     color: $colorAccent3;

@@ -4,9 +4,9 @@ import { useGetReviews } from "features/reviews/api/get";
 
 import leftArrowIcon from "assets/icons/left-arrow-bubble.svg";
 
-import classes from "features/reviews/page/ReviewsPage.module.scss";
+import classes from "features/reviews/components/Reviews/Reviews.module.scss";
 
-const ReviewsPage: React.FC = () => {
+const Reviews: React.FC = () => {
   const { data, isLoading } = useGetReviews();
 
   const reviewsRef = useRef<null | HTMLDivElement>(null);
@@ -25,7 +25,9 @@ const ReviewsPage: React.FC = () => {
 
   return (
     <div className={classes.wrapper}>
-      <h3 className={classes.title}>Quelques avis clients</h3>
+      <h3 className={classes.title}>
+        Qui de mieux que mes clients, pour parler de mon travail ?
+      </h3>
       <div className={classes["reviews-wrapper"]}>
         <button
           onClick={leftButtonHandler}
@@ -60,4 +62,4 @@ const ReviewsPage: React.FC = () => {
   );
 };
 
-export default ReviewsPage;
+export default Reviews;

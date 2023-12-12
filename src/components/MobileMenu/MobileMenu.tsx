@@ -4,9 +4,9 @@ import { animated, useTransition } from "react-spring";
 import CustomNavLink from "components/uiElements/CustomNavLink/ContactNavLink";
 import ContactLink from "components/uiElements/ContactLink/ContactLink";
 import { useMobileMenuStore } from "store/mobileMenu";
+import { getRoutes } from "utils/getRoutes";
 
 import classes from "./MobileMenu.module.scss";
-import { routes } from "config/routes";
 
 const MobileMenu: React.FC = () => {
   const mobileMenu = useMobileMenuStore((state) => state);
@@ -17,24 +17,25 @@ const MobileMenu: React.FC = () => {
     leave: { opacity: 0, y: 0, x: 300 },
   });
 
+  const routesToDisplay = getRoutes();
+
   return transition(
     (styles, item) =>
       item && (
         <animated.div className={classes.wrapper} style={styles}>
-          <button
-            className={classes.button}
-            onClick={() => {
-              mobileMenu.toggle();
-            }}
-          >
+          <button className={classes.button} onClick={mobileMenu.toggle}>
             <div className={classes.lines}>
               <span className={classes.lines__line} />
             </div>
           </button>
           <ul className={classes["main-links"]}>
-            <CustomNavLink to={routes.home.root} text={"Accueil"} />
-            <CustomNavLink to={routes.projects} text={"Projets"} />
-            <CustomNavLink to={routes.about} text={"À propos"} />
+            {routesToDisplay.map((route) => (
+              <CustomNavLink
+                key={`${route.title}-mobile`}
+                to={route.url()}
+                text={route.title}
+              />
+            ))}
           </ul>
           <ul className={classes["secondary-links"]}>
             <ContactLink />

@@ -60,7 +60,7 @@ const Main: React.FC = () => {
         <div className={classes.button}>
           <RoundedButton
             type={RoundedButtonTypes.LINK}
-            to={routes.projects}
+            to={routes.projects.url()}
             text={"Voir mes projets"}
           />
         </div>

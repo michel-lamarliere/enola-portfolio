@@ -1,0 +1,191 @@
+@import 'styles/variables';
+
+.ArticlePage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.headerWrapper {
+  width: 100%;
+  background-color: $colorAccent4;
+}
+
+.header {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  &_one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &_image {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &_date {
+      @include p4;
+    }
+
+    &_title {
+      @include h1;
+    }
+
+  }
+
+  &_description {
+    margin-top: 2rem;
+    @include h3
+  }
+}
+
+.paragraph {
+  @include container;
+  margin-top: 2rem;
+
+  & > * > a {
+    color: $colorAccent2 !important;
+    text-decoration: underline !important;
+  }
+
+  & > h1 {
+    @include h1;
+    margin-bottom: 1rem;
+  }
+
+  & > h2 {
+    @include h2;
+    margin-bottom: 1rem;
+  }
+
+  & > p {
+    @include p1;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  & > * > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+}
+
+.presentationWrapper {
+  @include container;
+  width: 100%;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: $colorAccent;
+  border-radius: 10px;
+
+  &_img {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &_title {
+      @include h2;
+      color: $colorMain2;
+    }
+
+    &_subTitle {
+      @include h3;
+      color: $colorMain2;
+    }
+
+    &_description {
+      @include p1;
+      color: $colorMain2;
+    }
+  }
+}
+
+.moreWrapper {
+  margin-top: 4rem;
+  background: linear-gradient(to bottom, $colorAccent4 50%, transparent 0%);
+}
+
+.more {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &_title {
+    @include h2;
+    color: $colorMain;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  &_linkToBlog {
+    align-self: center;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .header {
+    &_one {
+      flex-direction: row;
+    }
+
+    &_image {
+      max-width: 33%;
+      flex-shrink: 0;
+    }
+  }
+
+  .presentation {
+    flex-direction: row;
+
+    &_img {
+      height: 10rem;
+      width: 10rem;
+    }
+
+    &_text {
+      align-items: flex-start;
+    }
+  }
+}

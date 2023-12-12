@@ -8,7 +8,7 @@ import classes from "./ContactLink.module.scss";
 const ContactLink: React.FC = () => {
   return (
     <Link
-      to={`${routes.home.root}${routes.home.hashes.contact}`}
+      to={`${routes.home.url}${routes.home.hashes?.contact}`}
       className={classes.wrapper}
     >
       Contact

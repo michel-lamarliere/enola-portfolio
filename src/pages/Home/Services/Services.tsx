@@ -76,7 +76,7 @@ const Services: React.FC = () => {
       </ul>
       <RoundedButton
         type={RoundedButtonTypes.LINK}
-        to={routes.about}
+        to={routes.about.url()}
         text={"En savoir plus"}
         className={classes.button}
       />

@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@import '../../../../styles/variables';
 
 .container {
   background-color: $colorAccent;
@@ -42,12 +42,22 @@
 
     &__description {
       @include p1;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       color: $colorMain2;
     }
   }
 }
 
+.downloadDescription {
+  @include h3;
+  margin-top: 4rem;
+  color: $colorMain2;
+  text-align: center;
+}
+
+.downloadButton {
+  margin: 0 auto;
+}
 
 @media screen and (min-width: 1000px) {
   .container {

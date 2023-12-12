@@ -1,0 +1,28 @@
+@import 'styles/variables';
+
+.FAQItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.question {
+  @include p1;
+  min-height: 3rem;
+  justify-self: flex-start;
+  text-align: left;
+  padding: 1rem;
+  background-color: $colorAccent4;
+  color: $colorMain;
+  border-radius: 0.5rem;
+}
+
+.answer {
+  &_text {
+    @include p1;
+    height: 100%;
+    text-align: left;
+    padding: 1rem;
+    color: $colorMain;
+  }
+}

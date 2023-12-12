@@ -4,9 +4,12 @@ import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdenti
 import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
 import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 
-import classes from "pages/About/Services/Services.module.scss";
+import classes from "./Services.module.scss";
+import RoundedButton, {
+  RoundedButtonTypes,
+} from "components/uiElements/RoundedButton/RoundedButton";
 
-const Services: React.FC = () => {
+export const Services = () => {
   const [visualIdentityAltColor, setVisualIdentityAltColor] = useState(false);
   const [webDesignAltColor, setWebDesignAltColor] = useState(false);
   const [packagingAltColor, setPackagingAltColor] = useState(false);
@@ -104,9 +107,17 @@ const Services: React.FC = () => {
             </h4>
           ))}
         </div>
+        <div className={classes.downloadDescription}>
+          Envie d’en savoir plus ? Consultez mon PDF présentation de service
+        </div>
+        <RoundedButton
+          text={"Télécharger mon PDF"}
+          type={RoundedButtonTypes.ANCHOR}
+          href={""}
+          download
+          className={classes.downloadButton}
+        />
       </div>
     </div>
   );
 };
-
-export default Services;

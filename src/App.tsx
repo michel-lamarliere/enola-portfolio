@@ -12,6 +12,9 @@ import Overlay from "components/uiElements/Overlay/Overlay";
 import { useProjectModalStore } from "features/projects/store/project-modal";
 import { useMobileMenuStore } from "store/mobileMenu";
 import { routes } from "config/routes";
+import { ServicesPage } from "features/services/page";
+import { BlogPage } from "features/blog/page/BlogPage";
+import { ArticlePage } from "features/article/page";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -70,9 +73,12 @@ const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path={"/"} element={<Home />} />
-          <Route path={routes.projects} element={<ProjectsPage />} />
-          <Route path={routes.about} element={<About />} />
-          <Route path={routes.legalNotice} element={<Legal />} />
+          <Route path={routes.projects.pathname} element={<ProjectsPage />} />
+          <Route path={routes.services.pathname} element={<ServicesPage />} />
+          <Route path={routes.about.pathname} element={<About />} />
+          <Route path={routes.legalNotice.pathname} element={<Legal />} />
+          <Route path={routes.blog.pathname} element={<BlogPage />} />
+          <Route path={routes.article.pathname} element={<ArticlePage />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
       </Layout>

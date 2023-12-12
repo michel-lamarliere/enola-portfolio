@@ -37,8 +37,8 @@ const AboutMe: React.FC = () => {
           <RoundedButton
             type={RoundedButtonTypes.LINK}
             className={classes.text__button}
-            to={routes.projects}
-            text={"Voir mes projets"}
+            to={routes.services.url()}
+            text={"Découvrir mes services"}
           />
         </div>
       </div>

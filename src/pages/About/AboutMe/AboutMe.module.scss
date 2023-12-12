@@ -1,8 +1,9 @@
 @import 'styles/variables';
 
 .container {
-  /*@include container;*/
+  width: 100%;
   box-sizing: border-box;
+  background-color: $colorAccent;
 }
 
 .wrapper {
@@ -13,7 +14,6 @@
   gap: 2.5rem;
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
-  background-color: $colorAccent;
 }
 
 .image {
@@ -42,11 +42,10 @@
 
 @media screen and (min-width: 1000px) {
   .container {
-    @include container;
   }
 
   .wrapper {
-
+    @include container;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3.5rem;

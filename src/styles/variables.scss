@@ -14,6 +14,8 @@ $zIndexModal: 100;
 $fullScreenMinHeightMobile: calc(100vh - calc(#{$headerHeightMobile} + #{$footerHeightMobile}));
 $fullScreenMinHeightDesktop: calc(100vh - calc(#{$headerHeightDesktop} + #{$footerHeightDesktop}));
 
+$boxShadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+
 @mixin container {
   padding-left: 1.5rem;
   padding-right: 1.5rem;

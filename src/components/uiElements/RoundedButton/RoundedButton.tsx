@@ -28,6 +28,7 @@ type conditionalProps =
   | {
       type: RoundedButtonTypes.ANCHOR;
       href: string;
+      download?: boolean;
     };
 
 type Props = commonProps & conditionalProps;
@@ -48,6 +49,7 @@ const RoundedButton: React.FC<Props> = (props) => {
         href={props.href}
         target={"_blank"}
         rel="noreferrer"
+        download={props.download}
       >
         {props.text}
       </a>
