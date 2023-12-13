@@ -1,0 +1,136 @@
+@import '../../../styles/variables';
+
+.footer {
+  min-height: $footerHeightMobile;
+  padding: 1.25rem 1.5rem;
+  background-color: $colorMain;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  &__el-logo {
+    width: 2rem;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    & > img {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+  }
+}
+
+.legal-mentions {
+  @include h3;
+  color: $colorMain2;
+
+  &--desktop {
+    display: none;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__credits {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &__text {
+      @include p4;
+      color: $colorAccent3;
+    }
+  }
+
+  &__rights {
+    @include p2;
+    color: $colorMain2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .footer {
+    max-height: none;
+    height: $footerHeightDesktop;
+    flex-direction: column;
+    padding: 4rem 3rem 2rem 3rem;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1363px;
+    margin: 0 auto;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+
+    &__el-logo {
+      width: 2.7rem;
+    }
+
+    &__socials {
+      flex-direction: row;
+      justify-self: center;
+    }
+  }
+
+  .legal-mentions {
+    justify-self: flex-end;
+
+    &--mobile {
+      display: none;
+    }
+
+    &--desktop {
+      display: flex;
+    }
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+
+
+    &__rights {
+      display: grid;
+      grid-column-start: 2;
+      justify-self: center;
+    }
+
+    &__credits {
+      display: grid;
+      align-self: flex-end;
+      justify-self: flex-end;
+      grid-column-start: 3;
+
+      &__text {
+        text-align: end;
+      }
+    }
+  }
+}

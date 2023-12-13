@@ -6,7 +6,7 @@
   color: $colorMain;
   white-space: nowrap;
 
-  &:hover {
+  &:hover:not(.wrapper--active) {
     color: $colorAccent3;
   }
 

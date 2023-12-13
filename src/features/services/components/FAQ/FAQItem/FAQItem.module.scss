@@ -8,6 +8,7 @@
 
 .question {
   @include p1;
+  width: 100%;
   min-height: 3rem;
   justify-self: flex-start;
   text-align: left;
@@ -20,6 +21,7 @@
 .answer {
   &_text {
     @include p1;
+    width: 100%;
     height: 100%;
     text-align: left;
     padding: 1rem;

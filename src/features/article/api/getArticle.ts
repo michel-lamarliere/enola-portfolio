@@ -29,7 +29,7 @@ const handleGetArticle = async (id: Id): Promise<Article> => {
 
 export const useGetArticle = (id: Id) => {
   return useQuery({
-    queryKey: [articleQueryKeys.get],
+    queryKey: [articleQueryKeys.get, { id }],
     queryFn: () => handleGetArticle(id),
   });
 };

@@ -8,6 +8,7 @@ export const ArticleFactory = (articleRaw: ArticleRaw): Article => {
     date: articleRaw.attributes.date,
     description: articleRaw.attributes.description,
     coverImage: articleRaw.attributes.cover_image?.data?.attributes?.url || "",
+    tag: articleRaw.attributes.tag,
     paragraph: articleRaw.attributes.paragraph,
   };
 };

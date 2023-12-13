@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 
 import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
 import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
 import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 
 import classes from "./Services.module.scss";
-import RoundedButton, {
-  RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
 
-export const Services = () => {
+type Props = {
+  showDescription?: boolean;
+  children: ReactElement;
+};
+
+export const Services = ({ showDescription, children }: Props) => {
   const [visualIdentityAltColor, setVisualIdentityAltColor] = useState(false);
   const [webDesignAltColor, setWebDesignAltColor] = useState(false);
   const [packagingAltColor, setPackagingAltColor] = useState(false);
@@ -49,45 +51,63 @@ export const Services = () => {
   const services: {
     icon: JSX.Element;
     title: string;
+    subtitle: string;
     description: string | React.ReactNode;
   }[] = [
     {
-      title: "Identité visuelle & logo",
       icon: <VisualIdentityLogo useAltColor={visualIdentityAltColor} />,
+      title: "Identité visuelle & logo",
+      subtitle: "Pour vous démarquer et atteindre votre cible rêvée",
       description: (
         <>
-          Un logo n’est pas aussi efficace sans une identité visuelle cohérente
-          et impactante. <br /> <br />
-          Vous aurez sûrement besoin d’une charte graphique (guide des couleurs,
-          typographies, symboles forts, etc.) et de templates pour éditer
-          simplement les créations.
+          Une identité visuelle stratégique, cohérente et impactante pour
+          traduire vos valeurs et refléter votre image de marque.
+          <br />
+          <br />
+          Logo dans différentes déclinaisons, échelles typographiques, palette
+          de couleurs, symboles graphiques forts…
+          <br />
+          <br />
+          Le tout mis en commun et guidé par des règles et conseils
+          d’utilisation dans une charte graphique.
         </>
       ),
     },
     {
       title: "Web design",
       icon: <WebDesignLogo useAltColor={webDesignAltColor} />,
+      subtitle:
+        "Pour gagner en visibilité et faciliter votre création de contenu.",
       description: (
         <>
-          Besoin d’une maquette de site vitrine ou de landing page ? <br />
+          Je crée vos modèles de posts en accord avec votre identité visuelle je
+          les rend 100% modifiables sur un espace Canva (ou Adobe Express).
           <br />
-          Je suis capable de créer tous les éléments digitaux pour votre projet
-          ainsi que d’accessoires pour le web : Set d’icônes, signature e-mail,
-          bannière web, newsletter, etc.
+          <br />
+          Des modèles uniques de feed posts, de stories, de couverture de reels,
+          etc.
+          <br />
+          <br />
+          Tout est modifiable simplement et rapidement.
         </>
       ),
     },
     {
       title: "Packaging & impression",
       icon: <PackagingLogo useAltColor={packagingAltColor} />,
+      subtitle:
+        "Que ce soit pour le web ou l’impression, voici un petit zoom de mes services à la carte",
       description: (
         <>
-          Que ce soit pour un design d’impression ou d’emballage je créerai les
-          designs adaptés à vos besoins. <br />
+          Ma partie préférée, évidemment !
           <br />
-          Voici quelques exemples : <br />
-          Carte de visite, menu, brochure, emballage produit, étiquette,
-          couverture de livre, etc.
+          <br />
+          Mon savoir-faire et ma créativité vont me permettre de concevoir des
+          propositions graphiques pertinentes.
+          <br />
+          <br />
+          Suites à vos retours, je fais d’éventuelles modifications pour que
+          tout soit parfait.
         </>
       ),
     },
@@ -101,22 +121,20 @@ export const Services = () => {
             <h4 className={classes.services__item} key={index}>
               <div className={classes.services__item__icon}>{service.icon}</div>
               <h5 className={classes.services__item__title}>{service.title}</h5>
-              <p className={classes.services__item__description}>
-                {service.description}
-              </p>
+              {showDescription && (
+                <div className={classes.services__item__text}>
+                  <h5 className={classes.services__item__text__subtitle}>
+                    {service.subtitle}
+                  </h5>
+                  <p className={classes.services__item__text__description}>
+                    {service.description}
+                  </p>
+                </div>
+              )}
             </h4>
           ))}
         </div>
-        <div className={classes.downloadDescription}>
-          Envie d’en savoir plus ? Consultez mon PDF présentation de service
-        </div>
-        <RoundedButton
-          text={"Télécharger mon PDF"}
-          type={RoundedButtonTypes.ANCHOR}
-          href={""}
-          download
-          className={classes.downloadButton}
-        />
+        {children}
       </div>
     </div>
   );

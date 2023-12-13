@@ -7,7 +7,9 @@ import styles from "./BlogPage.module.scss";
 export const BlogPage = () => {
   return (
     <div className={styles.BlogPage}>
-      <Articles />
+      <div className={styles.content}>
+        <Articles />
+      </div>
     </div>
   );
 };

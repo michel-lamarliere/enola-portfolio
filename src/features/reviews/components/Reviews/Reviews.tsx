@@ -37,9 +37,7 @@ const Reviews: React.FC = () => {
         </button>
         <div className={classes.reviews} ref={reviewsRef}>
           {isLoading &&
-            [...Array(5)].map((skeleton, index) => (
-              <SkeletonReview key={index} />
-            ))}
+            [...Array(5)].map((_, index) => <SkeletonReview key={index} />)}
           {data?.map((review, index) => (
             <Review
               key={index}

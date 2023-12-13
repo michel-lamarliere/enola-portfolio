@@ -5,10 +5,10 @@ import { routes } from "config/routes";
 
 import classes from "./ContactLink.module.scss";
 
-const ContactLink: React.FC = () => {
+const ContactLink = () => {
   return (
     <Link
-      to={`${routes.home.url}${routes.home.hashes?.contact}`}
+      to={`${routes.home.url()}${routes.home.hashes?.contact}`}
       className={classes.wrapper}
     >
       Contact

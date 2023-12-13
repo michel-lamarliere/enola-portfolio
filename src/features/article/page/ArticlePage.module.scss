@@ -9,7 +9,7 @@
 
 .headerWrapper {
   width: 100%;
-  background-color: $colorAccent4;
+  background-color: $colorAccent5;
 }
 
 .header {
@@ -29,9 +29,11 @@
 
   &_image {
     height: auto;
-    object-fit: cover;
+    min-height: 12rem;
     width: 100%;
     border-radius: 10px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
   }
 
   &_text {
@@ -65,12 +67,32 @@
   }
 
   & > h1 {
-    @include h1;
+    @include h2;
     margin-bottom: 1rem;
   }
 
   & > h2 {
-    @include h2;
+    @include h3;
+    margin-bottom: 1rem;
+  }
+
+  & > h3 {
+    @include p1;
+    margin-bottom: 1rem;
+  }
+
+  & > h4 {
+    @include p2;
+    margin-bottom: 1rem;
+  }
+
+  & > h5 {
+    @include p3;
+    margin-bottom: 1rem;
+  }
+
+  & > h6 {
+    @include p4;
     margin-bottom: 1rem;
   }
 
@@ -86,7 +108,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 3/2;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 10px;
   }
 }
@@ -164,6 +186,43 @@
   }
 }
 
+.skeleton {
+  &_header {
+    &_one {
+      height: 100%;
+      align-items: unset;
+    }
+
+    &_text {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &_img {
+  }
+
+  &_title {
+    min-width: 100%;
+    height: 4rem;
+  }
+
+  &_date {
+    width: 8rem;
+    height: 1rem;
+  }
+
+  &_tag {
+    height: 1.5rem;
+    width: 6rem;
+  }
+
+  &_description {
+    height: 7rem;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 700px) {
   .header {
     &_one {
@@ -186,6 +245,17 @@
 
     &_text {
       align-items: flex-start;
+
+    }
+  }
+
+  .skeleton {
+    &_title {
+      height: 5rem;
+    }
+
+    &_description {
+      height: 4rem;
     }
   }
 }

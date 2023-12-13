@@ -95,6 +95,12 @@ code {
   box-sizing: border-box;
 }
 
+img {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 button {
   cursor: pointer;
   background-color: transparent;

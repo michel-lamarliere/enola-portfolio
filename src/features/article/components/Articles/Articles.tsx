@@ -21,21 +21,15 @@ export const Articles = ({ limit }: Props) => {
 
   return (
     <div className={styles.Articles}>
-      {isLoading &&
-        Array(6)
-          .fill(0)
-          .map((_, index) => <ArticlePreviewSkeleton />)}
-      {data?.slice(0, limit).map((article) => (
-        <ArticlePreview
-          key={`article-${article.id}`}
-          title={article.title}
-          id={article.id}
-          description={article.description}
-          coverImage={article.coverImage}
-          date={article.date}
-          paragraph={article.paragraph}
-        />
-      ))}
+      <div className={styles.content}>
+        {isLoading &&
+          Array(6)
+            .fill(0)
+            .map((_, index) => <ArticlePreviewSkeleton />)}
+        {data?.slice(0, limit).map((article) => (
+          <ArticlePreview key={`article-${article.id}`} {...article} />
+        ))}
+      </div>
     </div>
   );
 };

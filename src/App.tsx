@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import Home from "pages/Home";
-import Error404 from "pages/Error404/Error404";
-import About from "pages/About/About";
-import Legal from "pages/Legal/Legal";
+import HomePage from "features/home/page/HomePage";
+import Error404Page from "features/error/page/Error404Page";
+import About from "features/about/page/About";
+import LegalNoticePage from "features/legal-notice/page/LegalNoticePage";
 import ProjectsPage from "features/projects/page/ProjectsPage";
-import Layout from "components/Layout";
+import Layout from "components/Layout/Layout";
 import MobileMenu from "components/MobileMenu/MobileMenu";
 import Overlay from "components/uiElements/Overlay/Overlay";
 import { useProjectModalStore } from "features/projects/store/project-modal";
@@ -72,14 +72,17 @@ const App: React.FC = () => {
       <MobileMenu />
       <Layout>
         <Routes>
-          <Route path={"/"} element={<Home />} />
+          <Route path={"/"} element={<HomePage />} />
           <Route path={routes.projects.pathname} element={<ProjectsPage />} />
           <Route path={routes.services.pathname} element={<ServicesPage />} />
           <Route path={routes.about.pathname} element={<About />} />
-          <Route path={routes.legalNotice.pathname} element={<Legal />} />
+          <Route
+            path={routes.legalNotice.pathname}
+            element={<LegalNoticePage />}
+          />
           <Route path={routes.blog.pathname} element={<BlogPage />} />
           <Route path={routes.article.pathname} element={<ArticlePage />} />
-          <Route path={"*"} element={<Error404 />} />
+          <Route path={"*"} element={<Error404Page />} />
         </Routes>
       </Layout>
     </>

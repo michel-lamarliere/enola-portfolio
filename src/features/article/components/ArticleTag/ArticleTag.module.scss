@@ -1,0 +1,10 @@
+@import 'styles/variables';
+
+.ArticleTag {
+  @include p2;
+  width: fit-content;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  background-color: $colorAccent4;
+  color: $colorMain;
+}

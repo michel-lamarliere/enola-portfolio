@@ -1,7 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import classes from "components/uiElements/CustomNavLink/ContactNavLink.module.scss";
-import { NavLink } from "react-router-dom";
 
 interface Props {
   to: string;

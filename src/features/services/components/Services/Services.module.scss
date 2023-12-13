@@ -40,23 +40,28 @@
       height: 4rem;
     }
 
-    &__description {
-      @include p1;
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
       margin-top: 2rem;
-      color: $colorMain2;
+      padding: 1rem;
+      background-color: $colorMain2;
+      color: $colorMain;
+      border: solid 2px $colorMain;
+      border-radius: 10px;
+      box-shadow: $boxShadow;
+
+      &__subtitle {
+        @include h3;
+      }
+
+      &__description {
+        @include p1;
+      }
     }
   }
-}
-
-.downloadDescription {
-  @include h3;
-  margin-top: 4rem;
-  color: $colorMain2;
-  text-align: center;
-}
-
-.downloadButton {
-  margin: 0 auto;
 }
 
 @media screen and (min-width: 1000px) {

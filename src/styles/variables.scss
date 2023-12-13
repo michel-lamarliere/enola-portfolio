@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'texts';
+@import 'mixins';
 
 $headerHeightMobile: 4.6rem;
 $headerHeightDesktop: 6rem;
@@ -14,7 +15,7 @@ $zIndexModal: 100;
 $fullScreenMinHeightMobile: calc(100vh - calc(#{$headerHeightMobile} + #{$footerHeightMobile}));
 $fullScreenMinHeightDesktop: calc(100vh - calc(#{$headerHeightDesktop} + #{$footerHeightDesktop}));
 
-$boxShadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+$boxShadow: 0 0.15rem 0.6rem #14142333;
 
 @mixin container {
   padding-left: 1.5rem;

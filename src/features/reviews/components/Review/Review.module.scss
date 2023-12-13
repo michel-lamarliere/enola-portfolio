@@ -1,16 +1,16 @@
 @import 'styles/variables';
 
 .wrapper {
+  @include hoverEffect;
   flex-shrink: 0;
   width: 13.5rem;
   padding: 1.5rem 1.3rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0.15rem 0.6rem #1414231A;
+  box-shadow: $boxShadow;
 
   &--skeleton {
     width: 13.5rem;
     height: 27.0525rem;
-    box-sizing: border-box;
   }
 }
 
@@ -90,14 +90,9 @@
 @media screen and (min-width: 1000px) {
   .wrapper {
     width: 14.5rem;
-    transition: transform ease-in-out 0.3s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
 
     &--skeleton {
-      width: 17.1rem;
+      width: 14.5rem;
       height: 28.2rem;
     }
   }

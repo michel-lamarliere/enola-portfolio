@@ -7,6 +7,7 @@ export type ArticleRaw = {
     date: any;
     description: string;
     cover_image: StrapiImageSingle;
+    tag: string;
     paragraph: any;
   };
 };
