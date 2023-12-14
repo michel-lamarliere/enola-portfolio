@@ -5,7 +5,7 @@ import { ReviewRaw } from "features/reviews/types/reviewRaw";
 import { ReviewType } from "../types/review";
 
 const getReviews = (): Promise<{ data: ReviewRaw[] }> => {
-  return axios.get("/reviews?populate=*");
+  return axios.get("/reviews?sort=order&populate=*");
 };
 
 const getReviewsHandler = async (): Promise<ReviewType[]> => {
