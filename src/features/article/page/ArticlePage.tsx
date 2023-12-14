@@ -78,7 +78,7 @@ export const ArticlePage = () => {
               humeur !
             </div>
             <RoundedButton
-              text={"Découvrir mes service"}
+              text={"Découvrir mes services"}
               type={RoundedButtonTypes.LINK}
               to={routes.services.url()}
             />
@@ -114,9 +114,7 @@ const ArticleSkeleton = () => {
             <Skeleton
               className={cn(styles.header_text_title, styles.skeleton_title)}
             />
-            <Skeleton
-              className={cn(styles.header_text_tag, styles.skeleton_tag)}
-            />
+            <Skeleton className={styles.skeleton_tag} />
           </div>
         </div>
         <Skeleton
