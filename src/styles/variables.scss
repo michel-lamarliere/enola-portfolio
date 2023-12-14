@@ -16,6 +16,10 @@ $fullScreenMinHeightMobile: calc(100vh - calc(#{$headerHeightMobile} + #{$footer
 $fullScreenMinHeightDesktop: calc(100vh - calc(#{$headerHeightDesktop} + #{$footerHeightDesktop}));
 
 $boxShadow: 0 0.15rem 0.6rem #14142333;
+$borderRadiusLow: 0.25rem;
+$borderRadiusMedium: 0.5rem;
+$borderRadiusHigh: 1rem;
+$borderRadiusCircle: 50%;
 
 @mixin container {
   padding-left: 1.5rem;

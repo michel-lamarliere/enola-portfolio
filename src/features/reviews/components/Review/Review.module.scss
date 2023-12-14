@@ -5,7 +5,7 @@
   flex-shrink: 0;
   width: 13.5rem;
   padding: 1.5rem 1.3rem;
-  border-radius: 0.5rem;
+  border-radius: $borderRadiusMedium;
   box-shadow: $boxShadow;
 
   &--skeleton {
@@ -71,7 +71,7 @@
   &__img {
     @include h3;
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: $borderRadiusMedium;
     object-fit: cover;
   }
 }

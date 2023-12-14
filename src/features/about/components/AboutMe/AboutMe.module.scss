@@ -20,7 +20,7 @@
   width: 100%;
   max-width: 25rem;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: $borderRadiusMedium;
 }
 
 .text {
@@ -49,7 +49,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3.5rem;
-    border-radius: 0.5rem;
+    border-radius: $borderRadiusMedium;
     margin-bottom: 9rem;
     padding: 3.5rem;
   }

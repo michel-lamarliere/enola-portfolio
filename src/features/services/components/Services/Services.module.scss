@@ -50,8 +50,7 @@
       background-color: $colorMain2;
       color: $colorMain;
       border: solid 2px $colorMain;
-      border-radius: 10px;
-      box-shadow: $boxShadow;
+      border-radius: $borderRadiusMedium;
 
       &__subtitle {
         @include h3;

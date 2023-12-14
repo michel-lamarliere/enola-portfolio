@@ -3,7 +3,7 @@ export const routes: {
     title: string;
     hideInNavbar?: boolean;
     pathname: string;
-    url: (id?: string) => string /* | ((id: string) => string)*/;
+    url: (params?: { id: string; slug: string }) => string;
     hashes?: {
       [key: string]: string;
     };
@@ -40,8 +40,8 @@ export const routes: {
   article: {
     hideInNavbar: true,
     title: "Article",
-    pathname: "/article/:id",
-    url: (id) => `/article/${id}`,
+    pathname: "/article/:id/:slug",
+    url: (params) => `/article/${params?.id}/${params?.slug}`,
   },
   legalNotice: {
     hideInNavbar: true,

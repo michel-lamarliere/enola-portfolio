@@ -49,7 +49,7 @@
 .form {
   padding: 2rem 0.75rem;
   box-shadow: $boxShadow;
-  border-radius: 1rem;
+  border-radius: $borderRadiusHigh;
 
   &__title {
     @include p3;

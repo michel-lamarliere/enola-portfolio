@@ -21,13 +21,20 @@ export const ArticlePreviewSkeleton = () => {
 
 export const ArticlePreview = ({
   id,
+  slug,
   title,
   description,
   coverImage,
   tag,
 }: Article) => {
   return (
-    <Link className={styles.ArticlePreview} to={routes.article.url(id)}>
+    <Link
+      className={styles.ArticlePreview}
+      to={routes.article.url({
+        id,
+        slug,
+      })}
+    >
       <img className={styles.image} src={coverImage} alt={title} />
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>

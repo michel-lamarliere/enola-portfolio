@@ -3,7 +3,7 @@
 .wrapper {
   max-height: 2.5rem;
   padding: 0.7rem 1.6rem;
-  border-radius: 0.5rem;
+  border-radius: $borderRadiusMedium;
   background-color: $colorMain;
   color: $colorMain2;
   box-sizing: border-box;

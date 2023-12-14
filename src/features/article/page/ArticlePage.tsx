@@ -26,10 +26,9 @@ export const ArticlePage = () => {
   return (
     <div className={styles.ArticlePage}>
       {isLoading && <ArticleSkeleton />}
-      {isError ||
-        (!isLoading && !data && (
-          <div className={styles.error}>Une erreur est survenue</div>
-        ))}
+      {(isError || (!isLoading && !data)) && (
+        <div className={styles.error}>Une erreur est survenue</div>
+      )}
       {data && (
         <>
           <div className={styles.headerWrapper}>

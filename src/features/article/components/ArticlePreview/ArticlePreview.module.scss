@@ -7,7 +7,7 @@
   gap: 0.5rem;
   box-shadow: $boxShadow;
   background-color: $colorMain2;
-  border-radius: 10px;
+  border-radius: $borderRadiusMedium;
 }
 
 .image {
@@ -15,7 +15,7 @@
   height: auto;
   aspect-ratio: 3/2;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  border-radius: $borderRadiusMedium $borderRadiusMedium 0 0;
 }
 
 .content {
