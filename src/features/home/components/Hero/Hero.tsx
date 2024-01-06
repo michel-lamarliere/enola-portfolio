@@ -47,15 +47,20 @@ const Hero: React.FC = () => {
           />
         </div>
         <div className={classes.description}>
-          Spécialisée dans la création d’identité visuelle et le web design.
+          Bienvenue sur mon site !
           <br />
           <br />
-          Ma curiosité et mon goût pour la nouveauté m’ont poussé à toujours me
-          renouveler dans mes créations.
+          Je m'appelle Enola et je suis spécialisée dans la création d’identité
+          visuelle depuis plus de 3 ans.
           <br />
           <br />
-          Soucieuse de la satisfaction de mes clients, j’arrive toujours à
-          m’adapter à leurs besoins.
+          Mon univers graphique est coloré, lumineux, simplifié, joyeux,
+          mémorable et en constante évolution. J’accorde également beaucoup
+          d’’importance à l'expérience client : communication, adaptation,
+          flexibilité et qualité sont mes motos !
+          <br />
+          <br />
+          Ensemble, faisons de votre marque une expérience visuelle unique !
         </div>
         <RoundedButton
           type={RoundedButtonTypes.LINK}

@@ -42,12 +42,12 @@ export const FAQ = () => {
           Une question ? J’y ai sûrement répondu dans cette FAQ
         </div>
       </div>
-      <div className={styles.content}>
-        <div className={styles.data}>
+      <div className={styles.listWrapper}>
+        <ul className={styles.list}>
           {faq.map(({ question, answer }) => (
             <FAQItem question={question} answer={answer} />
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

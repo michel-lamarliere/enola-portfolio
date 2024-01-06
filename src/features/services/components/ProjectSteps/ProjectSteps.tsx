@@ -19,8 +19,8 @@ const steps = [
       <>
         Au programme ? <br /> Un premier échange, de préférence en visio, afin
         de faire votre connaissance et discuter de vos envies et besoins.
-        <br /> J’en profite également pour vous montrer des projets récents et
-        en rapport avec votre entreprise et organiser la suite de l’aventure.
+        <br /> J’en profite également pour vous montrer des projets récents, en
+        rapport avec votre entreprise et organiser la suite de l’aventure.
       </>
     ),
   },
@@ -39,17 +39,18 @@ const steps = [
     title: "La direction artistique",
     img: step3Img,
     paragraph:
-      "On y est presque, mais avant de créer, il faut s’inspirer ! Je fais donc une proposition de 2 univers distincts, composés de créations en rapport avec votre projet; logos, typos, couleurs… J’argumente le tout pour vous faire part de ma vision globale et en savoir plus sur vos goûts. Une fois cette étape terminée, ça va glisser tout seul !",
+      "On y est presque, mais avant de créer, il faut s’inspirer ! Je fais donc une proposition de 2 univers distincts, composés de créations en rapport avec votre projet; logos, typos, couleurs… J’argumente le tout pour vous faire part de ma vision globale et en savoir plus sur vos goûts. Une fois cette étape terminée, ça va rouler tout seul !",
   },
   {
     title: "La création",
     img: step4Img,
     paragraph: (
       <>
-        Ma partie préférée, évidemment ! <br /> Je mets mon expertise et ma
-        créativité au service de propositions graphiques pertinentes. <br />{" "}
-        Après discussion, je fais d’éventuels ajustements pour coller au plus
-        près de tes attentes.
+        Ma partie préférée, évidemment ! <br />
+        Mon savoir-faire et ma créativité vont me permettre de concevoir des
+        propositions graphiques pertinentes. <br />
+        Suite à vos retours, je fais d’éventuelles modifications pour que tout
+        soit parfait.
       </>
     ),
   },
@@ -60,9 +61,9 @@ const steps = [
       <>
         Tut tut, livraison en cours !<br /> Libérez de l’espace sur votre
         ordinateur, ça va envoyer du lourd.
-        <br /> Je vous envoi les créations dans tous les formats et déclinaisons
-        souhaitées, je vous offre également un petit guide pour utiliser les
-        designs en totale autonomie.
+        <br /> Je vous envoie les créations dans tous les formats et
+        déclinaisons souhaitées, je vous offre également un petit guide pour
+        utiliser les designs en totale autonomie.
       </>
     ),
   },
@@ -72,7 +73,7 @@ const steps = [
     paragraph: (
       <>
         Je ne vous oublie pas, non jamaiiiis 🎶 <br /> Le projet est terminé et
-        vous êtes à 100% satisfait , mais je ne disparais pas !<br /> Je reste
+        vous êtes à 100% satisfait, mais je ne disparais pas !<br /> Je reste
         disponible pour assurer un suivi, répondre à vos questions ou vous
         offrir d’autres conseils.
       </>
@@ -84,7 +85,7 @@ export const ProjectSteps = () => {
   return (
     <div className={styles.ProjectSteps}>
       <div className={styles.title}>
-        Les 5 étapes de la réalisation d’un projet
+        Les 6 étapes de la réalisation d’un projet
       </div>
       <div className={styles.boxes}>
         {steps.map((step, index) => (

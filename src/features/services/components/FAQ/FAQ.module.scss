@@ -15,14 +15,14 @@
   }
 }
 
-.content {
+.listWrapper {
   @include container;
   display: flex;
   flex-direction: column;
   margin: -1.5rem auto 0 auto;
 }
 
-.data {
+.list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

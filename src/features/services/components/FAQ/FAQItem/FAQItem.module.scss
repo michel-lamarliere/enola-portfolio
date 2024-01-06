@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@import 'src/styles/variables';
 
 .FAQItem {
   display: flex;
@@ -19,12 +19,11 @@
 }
 
 .answer {
-  &_text {
-    @include p1;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    padding: 1rem;
-    color: $colorMain;
-  }
+  @include p1;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 1rem;
+  color: $colorMain;
 }
+

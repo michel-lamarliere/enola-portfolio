@@ -26,8 +26,8 @@ export const FAQItem = ({ question, answer }: Props) => {
       {transitions(
         (style, item) =>
           item && (
-            <animated.div style={style} className={styles.answer}>
-              <div className={styles.answer_text}>{answer}</div>
+            <animated.div style={style}>
+              <div className={styles.answer}>{answer}</div>
             </animated.div>
           )
       )}

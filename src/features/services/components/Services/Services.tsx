@@ -74,14 +74,14 @@ export const Services = ({ showDescription, children }: Props) => {
       ),
     },
     {
-      title: "Web design",
+      title: "Supports réseaux sociaux",
       icon: <WebDesignLogo useAltColor={webDesignAltColor} />,
       subtitle:
         "Pour gagner en visibilité et faciliter votre création de contenu.",
       description: (
         <>
-          Je crée vos modèles de posts en accord avec votre identité visuelle je
-          les rend 100% modifiables sur un espace Canva (ou Adobe Express).
+          Je crée vos modèles de posts en accord avec votre identité visuelle et
+          je les rends 100% modifiables sur un espace Canva (ou Adobe Express).
           <br />
           <br />
           Des modèles uniques de feed posts, de stories, de couverture de reels,
@@ -93,7 +93,7 @@ export const Services = ({ showDescription, children }: Props) => {
       ),
     },
     {
-      title: "Packaging & impression",
+      title: "À la carte",
       icon: <PackagingLogo useAltColor={packagingAltColor} />,
       subtitle:
         "Que ce soit pour le web ou l’impression, voici un petit zoom de mes services à la carte",
@@ -106,8 +106,8 @@ export const Services = ({ showDescription, children }: Props) => {
           propositions graphiques pertinentes.
           <br />
           <br />
-          Suites à vos retours, je fais d’éventuelles modifications pour que
-          tout soit parfait.
+          Suite à vos retours, je fais d’éventuelles modifications pour que tout
+          soit parfait.
         </>
       ),
     },

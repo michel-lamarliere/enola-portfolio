@@ -15,9 +15,7 @@ type Props = {
 export const Articles = ({ limit }: Props) => {
   const { data, isLoading, isError } = useGetArticles();
 
-  if (isError) {
-    return <></>;
-  }
+  if (isError) return <></>;
 
   return (
     <div className={styles.Articles}>

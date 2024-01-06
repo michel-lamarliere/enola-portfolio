@@ -9,7 +9,7 @@ import { routes } from "config/routes";
 
 import classes from "features/about/page/About.module.scss";
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <>
       <AboutMe />
