@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import HomePage from "features/home/page/HomePage";
-import Error404Page from "features/error/page/Error404Page";
-import About from "features/about/page/About";
-import LegalNoticePage from "features/legal-notice/page/LegalNoticePage";
-import ProjectsPage from "features/projects/page/ProjectsPage";
+import HomePage from "pages/home/page/HomePage";
+import Error404Page from "pages/error/page/Error404Page";
+import AboutMePage from "pages/about-me/page/AboutMePage";
+import LegalNoticePage from "pages/legal-notice/page/LegalNoticePage";
+import ProjectsPage from "pages/projects/page/ProjectsPage";
 import Layout from "components/Layout/Layout";
 import MobileMenu from "components/MobileMenu/MobileMenu";
 import Overlay from "components/uiElements/Overlay/Overlay";
-import { useProjectModalStore } from "features/projects/store/project-modal";
+import { useProjectModalStore } from "pages/projects/store/project-modal";
 import { useMobileMenuStore } from "store/mobileMenu";
 import { routes } from "config/routes";
-import { ServicesPage } from "features/services/page";
-import { BlogPage } from "features/blog/page/BlogPage";
-import { ArticlePage } from "features/article/page";
+import { ServicesPage } from "pages/services/page";
+import { BlogPage } from "pages/blog/page/BlogPage";
+import { ArticlePage } from "pages/article/page";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -75,7 +75,7 @@ const App: React.FC = () => {
           <Route path={"/"} element={<HomePage />} />
           <Route path={routes.projects.pathname} element={<ProjectsPage />} />
           <Route path={routes.services.pathname} element={<ServicesPage />} />
-          <Route path={routes.about.pathname} element={<About />} />
+          <Route path={routes.about.pathname} element={<AboutMePage />} />
           <Route
             path={routes.legalNotice.pathname}
             element={<LegalNoticePage />}

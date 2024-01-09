@@ -1,7 +1,7 @@
 import React from "react";
 import { animated, useTransition } from "react-spring";
 
-import { useProjectModalStore } from "features/projects/store/project-modal";
+import { useProjectModalStore } from "pages/projects/store/project-modal";
 import { useMobileMenuStore } from "store/mobileMenu";
 
 import classes from "components/uiElements/Overlay/Overlay.module.scss";

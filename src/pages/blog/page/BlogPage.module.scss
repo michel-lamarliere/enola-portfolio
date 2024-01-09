@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.BlogPage {
+  @include fullPage;
+  /*background: linear-gradient(to bottom, $colorAccent5 10rem, transparent 0%);*/
+}
+
+.content {
+  @include container;
+  /*padding-top: 4rem;*/
+}
+

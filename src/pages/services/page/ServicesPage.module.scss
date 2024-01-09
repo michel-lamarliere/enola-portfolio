@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+.ServicesPage {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  margin-bottom: 4rem;
+}
+
+.linkToProjects {
+  display: flex;
+  margin: -4rem auto 0 auto;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.downloadDescription {
+  @include h3;
+  color: $colorMain2;
+  text-align: center;
+}
+
+.downloadButton {
+  margin: 0 auto;
+}

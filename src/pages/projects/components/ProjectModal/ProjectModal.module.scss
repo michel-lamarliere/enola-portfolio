@@ -1,0 +1,60 @@
+@import '../../../../styles/variables';
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($colorMain, 0.7);
+  overflow-y: scroll;
+  z-index: $zIndexModal;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: calc(100% - 1.4rem);
+  margin: 0.7rem auto 0.7rem 0.7rem;
+  border-radius: $borderRadiusMedium;
+  background-color: $colorMain2;
+  overflow: hidden;
+}
+
+.button {
+  position: fixed;
+  top: 1.4rem;
+  right: 1.4rem;
+  display: grid;
+  place-content: center;
+  width: 2rem;
+  height: 2rem;
+  z-index: $zIndexModal;
+
+  &_img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1000px) {
+  .imageContainer {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 0;
+    overflow: unset;
+  }
+
+  .button {
+    top: 0.4rem;
+    right: 1rem;
+  }
+}

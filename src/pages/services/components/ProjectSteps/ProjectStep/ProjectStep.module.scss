@@ -1,0 +1,41 @@
+@import '../../../../../styles/variables';
+
+.ProjectStep {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  border-radius: $borderRadiusMedium;
+  object-fit: contain;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  &_number {
+    @include h1;
+    color: $colorAccent2;
+  }
+
+  &_text {
+    @include h2;
+  }
+}
+
+.paragraph {
+  @include p1;
+  margin-top: 0.8rem;
+}
+
+
+@media screen and (min-width: 1000px) {
+  .image {
+    max-width: 21rem;
+  }
+}
