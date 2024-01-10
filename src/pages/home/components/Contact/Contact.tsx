@@ -22,7 +22,7 @@ const contactInfo: { text: string; icon: string }[] = [
     icon: emailIcon,
   },
   {
-    text: "+33 06 08 66 01 99",
+    text: "+33 06 17 23 93 57",
     icon: telephoneIcon,
   },
   {
