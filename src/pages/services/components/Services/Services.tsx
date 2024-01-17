@@ -5,6 +5,7 @@ import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
 import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
 
 import classes from "pages/services/components/Services/Services.module.scss";
+import { Container } from "components/Container";
 
 type Props = {
   showDescription?: boolean;
@@ -114,28 +115,34 @@ export const Services = ({ showDescription, children }: Props) => {
   ];
   return (
     <div className={classes.container}>
-      <div className={classes.wrapper}>
-        <h3 className={classes.title}>Mes services</h3>
-        <div className={classes.services}>
-          {services.map((service, index) => (
-            <h4 className={classes.services__item} key={index}>
-              <div className={classes.services__item__icon}>{service.icon}</div>
-              <h5 className={classes.services__item__title}>{service.title}</h5>
-              {showDescription && (
-                <div className={classes.services__item__text}>
-                  <h5 className={classes.services__item__text__subtitle}>
-                    {service.subtitle}
-                  </h5>
-                  <p className={classes.services__item__text__description}>
-                    {service.description}
-                  </p>
+      <Container>
+        <div className={classes.wrapper}>
+          <h3 className={classes.title}>Mes services</h3>
+          <div className={classes.services}>
+            {services.map((service, index) => (
+              <h4 className={classes.services__item} key={index}>
+                <div className={classes.services__item__icon}>
+                  {service.icon}
                 </div>
-              )}
-            </h4>
-          ))}
+                <h5 className={classes.services__item__title}>
+                  {service.title}
+                </h5>
+                {showDescription && (
+                  <div className={classes.services__item__text}>
+                    <h5 className={classes.services__item__text__subtitle}>
+                      {service.subtitle}
+                    </h5>
+                    <p className={classes.services__item__text__description}>
+                      {service.description}
+                    </p>
+                  </div>
+                )}
+              </h4>
+            ))}
+          </div>
+          {children}
         </div>
-        {children}
-      </div>
+      </Container>
     </div>
   );
 };

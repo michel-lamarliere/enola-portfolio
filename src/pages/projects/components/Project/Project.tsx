@@ -2,7 +2,8 @@ import React, { FC } from "react";
 import ContentLoader from "react-content-loader";
 
 import { ProjectType } from "pages/projects/types/project";
-import RoundedButton, {
+import {
+  RoundedButton,
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton/RoundedButton";
 import { useProjectModalStore } from "pages/projects/store/project-modal";

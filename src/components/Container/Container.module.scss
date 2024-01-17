@@ -1,0 +1,24 @@
+.Container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .Container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+
+    &___md {
+      max-width: 54rem;
+    }
+
+    &___lg {
+      max-width: 68.4rem;
+    }
+  }
+}

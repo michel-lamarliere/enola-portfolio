@@ -1,7 +1,6 @@
 @import '../../../../styles/variables';
 
 .wrapper {
-  @include container;
   display: flex;
   flex-direction: column;
 }
@@ -35,7 +34,6 @@
   max-width: 24rem;
   width: 100%;
   height: auto;
-  margin-top: 1rem;
 
   &__img {
     width: 100%;
@@ -55,16 +53,15 @@
 }
 
 .button {
-  margin: 1.75rem auto 0 auto;
+  margin: 3rem auto 3rem auto;
 }
-
 
 @media screen and (min-width: 800px) {
   .wrapper {
-    height: calc(100vh - #{$headerHeightDesktop});
     flex-direction: row;
     gap: 6.2rem;
     width: 100%;
+    height: calc(100vh - #{$headerHeightDesktop});
     align-items: center;
     justify-content: space-between;
   }
@@ -75,6 +72,10 @@
     justify-content: center;
     max-width: 22rem;
     min-width: 14rem;
+  }
+
+  .button {
+    margin-bottom: 0;
   }
 
   .image {

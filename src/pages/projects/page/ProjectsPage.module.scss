@@ -1,7 +1,6 @@
 @import '../../../styles/variables';
 
 .wrapper {
-  @include container;
   @include fullPage;
   display: flex;
   flex-direction: column;

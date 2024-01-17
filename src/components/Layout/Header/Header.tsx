@@ -5,7 +5,7 @@ import DesktopNavbar from "components/Layout/Header/DesktopNavbar/DesktopNavbar"
 
 import classes from "components/Layout/Header/Header.module.scss";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <>
       <DesktopNavbar className={classes.desktop} />

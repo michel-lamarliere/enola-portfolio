@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import RoundedButton, {
+import {
+  RoundedButton,
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton/RoundedButton";
 import Error404Logo from "components/uiElements/svgs/Error404Logo/Error404Logo";

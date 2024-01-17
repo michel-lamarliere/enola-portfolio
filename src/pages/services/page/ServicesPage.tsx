@@ -3,7 +3,8 @@ import React from "react";
 import { Services } from "pages/services/components/Services";
 import { ProjectSteps } from "pages/services/components/ProjectSteps";
 import { FAQ } from "pages/services/components/FAQ";
-import RoundedButton, {
+import {
+  RoundedButton,
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton/RoundedButton";
 import { routes } from "config/routes";

@@ -1,8 +1,9 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
-import classes from "pages/about-me/components/Review/Review.module.scss";
 import { ReviewType } from "pages/about-me/types/review";
+
+import classes from "pages/about-me/components/Review/Review.module.scss";
 
 export const SkeletonReview: React.FC = () => {
   return (

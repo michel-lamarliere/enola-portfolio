@@ -33,7 +33,7 @@ type conditionalProps =
 
 type Props = commonProps & conditionalProps;
 
-const RoundedButton: React.FC<Props> = (props) => {
+export const RoundedButton: React.FC<Props> = (props) => {
   if (props.type === RoundedButtonTypes.LINK) {
     return (
       <Link to={props.to} className={`${classes.wrapper} ${props.className}`}>
@@ -67,5 +67,3 @@ const RoundedButton: React.FC<Props> = (props) => {
     </button>
   );
 };
-
-export default RoundedButton;

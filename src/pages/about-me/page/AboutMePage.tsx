@@ -2,7 +2,8 @@ import React from "react";
 
 import Reviews from "pages/about-me/components/Reviews/Reviews";
 import AboutMe from "pages/about-me/components/AboutMe/AboutMe";
-import RoundedButton, {
+import {
+  RoundedButton,
   RoundedButtonTypes,
 } from "components/uiElements/RoundedButton/RoundedButton";
 import { routes } from "config/routes";

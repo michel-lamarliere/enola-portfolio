@@ -1,62 +1,66 @@
 import React, { useRef } from "react";
+import cn from "classnames";
+
 import { Review, SkeletonReview } from "pages/about-me/components/Review";
 import { useGetReviews } from "pages/about-me/api/get";
+import { Container } from "components/Container";
 
 import leftArrowIcon from "assets/icons/left-arrow-bubble.svg";
 
 import classes from "pages/about-me/components/Reviews/Reviews.module.scss";
-import cn from "classnames";
 
-const Reviews: React.FC = () => {
+const Reviews = () => {
   const { data, isLoading } = useGetReviews();
 
-  const reviewsRef = useRef<null | HTMLDivElement>(null);
+  const reviewsListRef = useRef<null | HTMLDivElement>(null);
 
   const leftButtonHandler = () => {
-    if (reviewsRef.current) {
-      reviewsRef.current.scrollBy({ left: -600, behavior: "smooth" });
+    if (reviewsListRef.current) {
+      reviewsListRef.current.scrollBy({ left: -600, behavior: "smooth" });
     }
   };
 
   const rightButtonHandler = () => {
-    if (reviewsRef.current) {
-      reviewsRef.current.scrollBy({ left: 600, behavior: "smooth" });
+    if (reviewsListRef.current) {
+      reviewsListRef.current.scrollBy({ left: 600, behavior: "smooth" });
     }
   };
 
   return (
-    <div className={classes.wrapper}>
-      <h3 className={classes.title}>
-        Qui de mieux que mes clients, pour parler de mon travail ?
-      </h3>
-      <div className={classes.reviewsWrapper}>
-        <button
-          onClick={leftButtonHandler}
-          className={cn(classes.arrowButton, classes.arrowButton___left)}
-        >
-          <img src={leftArrowIcon} alt={"Aller à gauche"} />
-        </button>
-        <div className={classes.reviews} ref={reviewsRef}>
-          {isLoading &&
-            [...Array(5)].map((_, index) => <SkeletonReview key={index} />)}
-          {data?.map((review, index) => (
-            <Review
-              key={index}
-              client={review.client}
-              image={review.image}
-              name={review.name}
-              review={review.review}
-              projectUrl={review.projectUrl}
-            />
-          ))}
+    <div className={classes.Reviews}>
+      <Container>
+        <h3 className={classes.title}>
+          Qui de mieux que mes clients, pour parler de mon travail ?
+        </h3>
+        <div className={classes.reviews}>
+          <button
+            onClick={leftButtonHandler}
+            className={cn(classes.arrowButton, classes.arrowButton___left)}
+          >
+            <img src={leftArrowIcon} alt={"Aller à gauche"} />
+          </button>
+          <div className={classes.reviews_list} ref={reviewsListRef}>
+            {isLoading &&
+              [...Array(5)].map((_, index) => <SkeletonReview key={index} />)}
+            {data?.map((review, index) => (
+              <Review
+                key={index}
+                client={review.client}
+                image={review.image}
+                name={review.name}
+                review={review.review}
+                projectUrl={review.projectUrl}
+              />
+            ))}
+          </div>
+          <button
+            onClick={rightButtonHandler}
+            className={cn(classes.arrowButton, classes.arrowButton___right)}
+          >
+            <img src={leftArrowIcon} alt={"Aller à droite"} />
+          </button>
         </div>
-        <button
-          onClick={rightButtonHandler}
-          className={cn(classes.arrowButton, classes.arrowButton___right)}
-        >
-          <img src={leftArrowIcon} alt={"Aller à droite"} />
-        </button>
-      </div>
+      </Container>
     </div>
   );
 };

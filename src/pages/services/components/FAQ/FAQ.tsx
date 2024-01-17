@@ -3,6 +3,7 @@ import React from "react";
 import { FAQItem } from "pages/services/components/FAQ/FAQItem/FAQItem";
 
 import styles from "pages/services/components/FAQ/FAQ.module.scss";
+import { Container } from "components/Container";
 
 const faq = [
   {
@@ -42,13 +43,15 @@ export const FAQ = () => {
           Une question ? J’y ai sûrement répondu dans cette FAQ
         </div>
       </div>
-      <div className={styles.listWrapper}>
-        <ul className={styles.list}>
-          {faq.map(({ question, answer }) => (
-            <FAQItem question={question} answer={answer} />
-          ))}
-        </ul>
-      </div>
+      <Container variant={"md"}>
+        <div className={styles.listWrapper}>
+          <ul className={styles.list}>
+            {faq.map(({ question, answer }) => (
+              <FAQItem question={question} answer={answer} />
+            ))}
+          </ul>
+        </div>
+      </Container>
     </div>
   );
 };

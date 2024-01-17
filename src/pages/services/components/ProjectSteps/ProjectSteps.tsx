@@ -10,6 +10,7 @@ import step5Img from "assets/images/project-steps/05.jpg";
 import step6Img from "assets/images/project-steps/06.jpg";
 
 import styles from "pages/services/components/ProjectSteps/ProjectSteps.module.scss";
+import { Container } from "components/Container";
 
 const steps = [
   {
@@ -87,17 +88,19 @@ export const ProjectSteps = () => {
       <div className={styles.title}>
         Les 6 étapes de la réalisation d’un projet
       </div>
-      <div className={styles.boxes}>
-        {steps.map((step, index) => (
-          <ProjectStep
-            key={index}
-            image={step.img}
-            number={index + 1}
-            title={step.title}
-            paragraph={step.paragraph}
-          />
-        ))}
-      </div>
+      <Container>
+        <div className={styles.boxes}>
+          {steps.map((step, index) => (
+            <ProjectStep
+              key={index}
+              image={step.img}
+              number={index + 1}
+              title={step.title}
+              paragraph={step.paragraph}
+            />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 };
