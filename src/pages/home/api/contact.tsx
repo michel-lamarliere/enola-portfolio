@@ -23,7 +23,7 @@ export const contactFormInputsKeys = {
 };
 
 const sendMessage = async (body: ContactFormDTO) => {
-  return await axios.post("/form", body);
+  return await axios.post("/enola/form", body);
 };
 
 export const useSendMessage = () => {
