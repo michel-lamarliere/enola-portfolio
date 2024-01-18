@@ -7,9 +7,9 @@ import { Container } from "components/Container";
 
 import leftArrowIcon from "assets/icons/left-arrow-bubble.svg";
 
-import classes from "pages/about-me/components/Reviews/Reviews.module.scss";
+import styles from "pages/about-me/components/Reviews/Reviews.module.scss";
 
-const Reviews = () => {
+export const Reviews = () => {
   const { data, isLoading } = useGetReviews();
 
   const reviewsListRef = useRef<null | HTMLDivElement>(null);
@@ -27,19 +27,19 @@ const Reviews = () => {
   };
 
   return (
-    <div className={classes.Reviews}>
+    <div className={styles.Reviews}>
       <Container>
-        <h3 className={classes.title}>
+        <h3 className={styles.title}>
           Qui de mieux que mes clients, pour parler de mon travail ?
         </h3>
-        <div className={classes.reviews}>
+        <div className={styles.reviews}>
           <button
             onClick={leftButtonHandler}
-            className={cn(classes.arrowButton, classes.arrowButton___left)}
+            className={cn(styles.arrowButton, styles.arrowButton___left)}
           >
             <img src={leftArrowIcon} alt={"Aller à gauche"} />
           </button>
-          <div className={classes.reviews_list} ref={reviewsListRef}>
+          <div className={styles.reviews_list} ref={reviewsListRef}>
             {isLoading &&
               [...Array(5)].map((_, index) => <SkeletonReview key={index} />)}
             {data?.map((review, index) => (
@@ -55,7 +55,7 @@ const Reviews = () => {
           </div>
           <button
             onClick={rightButtonHandler}
-            className={cn(classes.arrowButton, classes.arrowButton___right)}
+            className={cn(styles.arrowButton, styles.arrowButton___right)}
           >
             <img src={leftArrowIcon} alt={"Aller à droite"} />
           </button>
@@ -64,5 +64,3 @@ const Reviews = () => {
     </div>
   );
 };
-
-export default Reviews;

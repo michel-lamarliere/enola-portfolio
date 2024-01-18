@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
+import cn from "classnames";
 
 import {
   RoundedButton,
   RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
-import Error404Logo from "components/uiElements/svgs/Error404Logo/Error404Logo";
+} from "components/RoundedButton/RoundedButton";
+import { Error404Logo } from "pages/error/components/Error404Logo/Error404Logo";
 
-import classes from "pages/error/page/Error404Page.module.scss";
+import styles from "pages/error/page/Error404Page.module.scss";
 
-const Error404Page: React.FC = () => {
+export const Error404Page = () => {
   const [showAltColor, setShowAltColor] = useState(false);
 
   useEffect(() => {
@@ -16,27 +17,25 @@ const Error404Page: React.FC = () => {
       setShowAltColor((prev) => !prev);
     }, 500);
 
-    return () => {
-      clearInterval(changeColors);
-    };
+    return () => clearInterval(changeColors);
   }, [showAltColor]);
 
   return (
-    <div className={classes.wrapper}>
+    <div className={styles.wrapper}>
       <Error404Logo
-        colorOneClassName={`${classes["logo-color-one"]} ${
-          showAltColor && classes["logo-color-one--alt"]
-        }`}
-        colorTwoClassName={`${classes["logo-color-two"]} ${
-          showAltColor && classes["logo-color-two--alt"]
-        }`}
+        colorOneClassName={cn(styles.logoColorOne, {
+          [styles.logoColorOneAlt]: showAltColor,
+        })}
+        colorTwoClassName={cn(styles.logoColorTwo, {
+          [styles.logoColorTwo__alt]: showAltColor,
+        })}
       />
-      <div className={classes.title}>ERROR 404</div>
-      <div className={classes.description}>
+      <div className={styles.title}>ERROR 404</div>
+      <div className={styles.description}>
         Veuillez nous excuser mais cette page est introuvable.
       </div>
       <RoundedButton
-        className={classes.button}
+        className={styles.button}
         text={"Retourner à l'accueil"}
         type={RoundedButtonTypes.LINK}
         to={"/"}
@@ -44,5 +43,3 @@ const Error404Page: React.FC = () => {
     </div>
   );
 };
-
-export default Error404Page;

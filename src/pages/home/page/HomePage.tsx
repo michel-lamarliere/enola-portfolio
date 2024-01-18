@@ -1,16 +1,15 @@
 import React from "react";
 
-import Hero from "pages/home/components/Hero/Hero";
-
+import { Hero } from "pages/home/components/Hero/Hero";
 import { Contact } from "pages/home/components/Contact/Contact";
 import { Services } from "pages/services/components/Services";
-import { RoundedButtonTypes } from "components/uiElements/RoundedButton";
+import { RoundedButtonTypes } from "components/RoundedButton";
+import { RoundedButton } from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
-import { RoundedButton } from "components/uiElements/RoundedButton/RoundedButton";
 
-import classes from "./HomePage.module.scss";
+import styles from "./HomePage.module.scss";
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <>
       <Hero />
@@ -19,12 +18,10 @@ const HomePage = () => {
           type={RoundedButtonTypes.LINK}
           to={routes.about.url()}
           text={"En savoir plus"}
-          className={classes.showMoreButton}
+          className={styles.showMoreButton}
         />
       </Services>
       <Contact />
     </>
   );
 };
-
-export default HomePage;

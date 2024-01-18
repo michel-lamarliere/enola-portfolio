@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  height: $headerHeightDesktop;
+  background-color: $colorMain2;
+}
+
+.logoLink {
+  width: fit-content;
+  grid-column-start: 1;
+}
+
+.mainLinks {
+  grid-column-start: 2;
+  display: flex;
+  gap: 1rem;
+  justify-self: center;
+}
+
+.secondaryLinks {
+  grid-column-start: 3;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}

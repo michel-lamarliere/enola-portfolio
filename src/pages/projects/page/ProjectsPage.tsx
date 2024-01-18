@@ -1,6 +1,7 @@
 import React from "react";
 
-import Project, {
+import {
+  Project,
   SkeletonProject,
 } from "pages/projects/components/Project/Project";
 import { useGetProjects } from "pages/projects/api/getProjects";
@@ -8,15 +9,15 @@ import { ProjectModal } from "pages/projects/components/ProjectModal";
 import { useProjectModalStore } from "pages/projects/store/project-modal";
 import { Container } from "components/Container";
 
-import classes from "pages/projects/page/ProjectsPage.module.scss";
+import styles from "pages/projects/page/ProjectsPage.module.scss";
 
-const ProjectsPage: React.FC = () => {
+export const ProjectsPage = () => {
   const { data, isLoading } = useGetProjects();
   const projectModal = useProjectModalStore((state) => state);
 
   return (
     <Container>
-      <div className={classes.wrapper}>
+      <div className={styles.wrapper}>
         {isLoading &&
           [...Array(12)].map((skeleton, index) => (
             <SkeletonProject key={index} />
@@ -37,5 +38,3 @@ const ProjectsPage: React.FC = () => {
     </Container>
   );
 };
-
-export default ProjectsPage;

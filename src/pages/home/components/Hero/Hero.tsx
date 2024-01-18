@@ -1,18 +1,19 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import cn from "classnames";
 
 import {
   RoundedButton,
   RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
+} from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
 import { Container } from "components/Container";
 
 import mainImg from "assets/home.jpg";
 
-import classes from "pages/home/components/Hero/Hero.module.scss";
+import styles from "pages/home/components/Hero/Hero.module.scss";
 
-const Hero: React.FC = () => {
+export const Hero = () => {
   const el = useRef<any>(null);
   const typed = useRef<any>(null);
 
@@ -28,28 +29,26 @@ const Hero: React.FC = () => {
 
     typed.current = new Typed(el.current, options);
 
-    return () => {
-      typed.current.destroy();
-    };
+    return () => typed.current.destroy();
   }, []);
 
   return (
     <Container>
-      <div className={classes.wrapper}>
-        <div className={classes["left-container"]}>
-          <h1 className={classes.name}>enola louge</h1>
-          <h2 className={classes.title}>
-            <div className={classes["title--static"]}>Graphiste</div>
-            <span className={classes["title--dynamic"]} ref={el} />
+      <div className={styles.wrapper}>
+        <div className={styles.leftContainer}>
+          <h1 className={styles.name}>enola louge</h1>
+          <h2 className={styles.title}>
+            <div className={styles.title_static}>Graphiste</div>
+            <span className={styles.title_dynamic} ref={el} />
           </h2>
-          <div className={classes.image}>
+          <div className={styles.image}>
             <img
               src={mainImg}
               alt={"Enola Louge"}
-              className={`${classes.image__img} ${classes["image__img--mobile"]}`}
+              className={cn(styles.image_img, styles.image_img__mobile)}
             />
           </div>
-          <div className={classes.description}>
+          <div className={styles.description}>
             Bienvenue sur mon site !
             <br />
             <br />
@@ -69,19 +68,17 @@ const Hero: React.FC = () => {
             type={RoundedButtonTypes.LINK}
             to={routes.projects.url()}
             text={"Voir mes projets"}
-            className={classes.button}
+            className={styles.button}
           />
         </div>
-        <div className={classes.image}>
+        <div className={styles.image}>
           <img
             src={mainImg}
             alt={"Enola Louge"}
-            className={`${classes.image__img} ${classes["image__img--desktop"]}`}
+            className={cn(styles.image_img, styles.image_img__desktop)}
           />
         </div>
       </div>
     </Container>
   );
 };
-
-export default Hero;

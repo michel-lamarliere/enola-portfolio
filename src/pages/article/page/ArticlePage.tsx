@@ -9,16 +9,16 @@ import { useGetArticle } from "pages/article/api/getArticle";
 import {
   RoundedButton,
   RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
+} from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
 import { Articles } from "pages/article/components/Articles/Articles";
 import { ArticleTag } from "pages/article/components/ArticleTag";
-import { Skeleton } from "components/uiElements/Skeleton";
+import { Container } from "components/Container";
 
 import elImg from "assets/about.jpg";
 
 import styles from "pages/article/page/ArticlePage.module.scss";
-import { Container } from "components/Container";
+import { Skeleton } from "libs/react-content-loader";
 
 export const ArticlePage = () => {
   const { id } = useParams();

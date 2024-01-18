@@ -3,24 +3,24 @@ import React from "react";
 import {
   RoundedButton,
   RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
+} from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
 
 import photo from "assets/about.jpg";
 
 import { Container } from "components/Container";
 
-import classes from "pages/about-me/components/AboutMe/AboutMe.module.scss";
+import styles from "pages/about-me/components/AboutMe/AboutMe.module.scss";
 
-const AboutMe = () => {
+export const AboutMe = () => {
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <Container variant={"lg"}>
-        <div className={classes.wrapper}>
-          <img className={classes.image} src={photo} alt={"Enola Louge"} />
-          <div className={classes.text}>
-            <h3 className={classes.text__title}>Me connaître</h3>
-            <p className={classes.text__paragraph}>
+        <div className={styles.wrapper}>
+          <img className={styles.image} src={photo} alt={"Enola Louge"} />
+          <div className={styles.text}>
+            <h3 className={styles.text__title}>Me connaître</h3>
+            <p className={styles.text__paragraph}>
               Hello ! Moi c’est Enola, <br />
               Designer de marque passionnée.
               <br />
@@ -50,7 +50,7 @@ const AboutMe = () => {
             </p>
             <RoundedButton
               type={RoundedButtonTypes.LINK}
-              className={classes.text__button}
+              className={styles.text__button}
               to={routes.services.url()}
               text={"Découvrir mes services"}
             />
@@ -60,5 +60,3 @@ const AboutMe = () => {
     </div>
   );
 };
-
-export default AboutMe;

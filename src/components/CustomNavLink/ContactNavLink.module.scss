@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.wrapper {
+  @include h3;
+  padding: 0.5rem;
+  color: $colorMain;
+  white-space: nowrap;
+
+  &:hover:not(.wrapper__active) {
+    color: $colorAccent3;
+  }
+
+  &__active {
+    color: $colorAccent2;
+  }
+}

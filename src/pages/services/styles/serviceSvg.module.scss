@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+
+.colorOne {
+  fill: $colorAccent2;
+
+  &__alt {
+    fill: $colorMain2;
+  }
+}
+
+.colorTwo {
+  fill: $colorMain2;
+
+  &__alt {
+    fill: $colorAccent2;
+  }
+}

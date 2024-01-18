@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Article } from "pages/article/types/articles";
 import { routes } from "config/routes";
 import { ArticleTag } from "pages/article/components/ArticleTag";
-import { Skeleton } from "components/uiElements/Skeleton";
+import { Skeleton } from "libs/react-content-loader";
 
 import styles from "pages/article/components/ArticlePreview/ArticlePreview.module.scss";
 

@@ -15,14 +15,13 @@
 }
 
 .wrapper {
-
 }
 
 .text {
   @include h3;
   @include input;
 
-  &--error {
+  &__error {
     @include error;
   }
 }
@@ -32,12 +31,12 @@
   @include input;
   resize: none;
 
-  &--error {
+  &__error {
     @include error;
   }
 }
 
-.error-text {
+.errorText {
   @include p4;
   margin-top: 0.25rem;
   color: $colorAccent2;

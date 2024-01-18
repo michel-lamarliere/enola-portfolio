@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.wrapper {
+  @include h3;
+  display: flex;
+  width: fit-content;
+  padding: 0.7rem 1.85rem;
+  background-color: $colorAccent2;
+  border-radius: 2rem;
+  color: $colorMain2;
+
+  &:hover {
+    background-color: $colorMain;
+  }
+}

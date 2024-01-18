@@ -17,12 +17,12 @@
   flex-direction: column;
   height: 4rem;
 
-  &--static {
+  &_static {
     @include h1;
     line-height: 1.25rem;
   }
 
-  &--dynamic {
+  &_dynamic {
     @include h1;
     text-indent: 4rem;
     line-height: 2.25rem;
@@ -35,13 +35,13 @@
   width: 100%;
   height: auto;
 
-  &__img {
+  &_img {
     width: 100%;
     height: 100%;
     border-radius: $borderRadiusMedium;
     object-fit: contain;
 
-    &--desktop {
+    &__desktop {
       display: none;
     }
   }
@@ -66,7 +66,7 @@
     justify-content: space-between;
   }
 
-  .left-container {
+  .leftContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,12 +82,12 @@
     max-width: 38rem;
     margin-top: 0;
 
-    &__img {
-      &--mobile {
+    &_img {
+      &__mobile {
         display: none;
       }
 
-      &--desktop {
+      &__desktop {
         display: flex;
       }
     }

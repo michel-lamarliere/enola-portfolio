@@ -84,11 +84,11 @@ const steps = [
 
 export const ProjectSteps = () => {
   return (
-    <div className={styles.ProjectSteps}>
-      <div className={styles.title}>
-        Les 6 étapes de la réalisation d’un projet
-      </div>
-      <Container>
+    <Container>
+      <div className={styles.ProjectSteps}>
+        <div className={styles.title}>
+          Les 6 étapes de la réalisation d’un projet
+        </div>
         <div className={styles.boxes}>
           {steps.map((step, index) => (
             <ProjectStep
@@ -100,7 +100,7 @@ export const ProjectSteps = () => {
             />
           ))}
         </div>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };

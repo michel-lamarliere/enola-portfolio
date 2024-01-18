@@ -3,12 +3,13 @@ import { Formik } from "formik";
 import { useLocation } from "react-router-dom";
 import { object, string } from "yup";
 import { ClipLoader } from "react-spinners";
+import cn from "classnames";
 
-import Input, { InputTypes } from "pages/home/components/Contact/Input/Input";
+import { Input, InputTypes } from "pages/home/components/Contact/Input/Input";
 import {
   RoundedButton,
   RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
+} from "components/RoundedButton/RoundedButton";
 import { contactFormInputsKeys, useSendMessage } from "pages/home/api/contact";
 import { Container } from "components/Container";
 
@@ -16,7 +17,7 @@ import emailIcon from "assets/icons/email.svg";
 import telephoneIcon from "assets/icons/telephone.svg";
 import addressIcon from "assets/icons/address.svg";
 
-import classes from "pages/home/components/Contact/Contact.module.scss";
+import styles from "pages/home/components/Contact/Contact.module.scss";
 
 const contactInfo: { text: string; icon: string }[] = [
   {
@@ -33,7 +34,7 @@ const contactInfo: { text: string; icon: string }[] = [
   },
 ];
 
-export const Contact: React.FC = () => {
+export const Contact = () => {
   const location = useLocation();
   const formRef = useRef<any>(null);
 
@@ -83,35 +84,32 @@ export const Contact: React.FC = () => {
 
   return (
     <Container>
-      <div className={classes.wrapper} ref={formRef}>
-        <div className={classes.details}>
-          <div className={classes.details__title}>
+      <div className={styles.wrapper} ref={formRef}>
+        <div className={styles.details}>
+          <div className={styles.details_title}>
             N’hésitez-pas à me contacter !
           </div>
-          <div className={classes.details__description}>
+          <div className={styles.details_description}>
             Vous souhaitez me parler de vive voix ? Je serai ravie de vous
             proposer un appel, une visio ou une rencontre !
           </div>
-          <div className={classes["details__contact-info"]}>
+          <div className={styles.details_contactInfo}>
             {contactInfo.map((info, index) => (
-              <div
-                className={classes["details__contact-info__item"]}
-                key={+index}
-              >
+              <div className={styles.details_contactInfo_item} key={+index}>
                 <img
                   src={info.icon}
                   alt={info.text}
-                  className={classes["details__contact-info__item__icon"]}
+                  className={styles.details_contactInfo_item_icon}
                 />
-                <div className={classes["details__contact-info__item__text"]}>
+                <div className={styles.details_contactInfo_item_text}>
                   {info.text}
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className={classes.form}>
-          <div className={classes.form__title}>
+        <div className={styles.form}>
+          <div className={styles.form_title}>
             Besoin d’un renseignement ou d’un devis ? Dites-moi tout !
           </div>
           <Formik
@@ -133,7 +131,7 @@ export const Contact: React.FC = () => {
               touched,
               handleSubmit,
             }) => (
-              <form className={classes.form__form}>
+              <form className={styles.form_form}>
                 <Input
                   type={InputTypes.TEXT}
                   name={"Name"}
@@ -166,17 +164,17 @@ export const Contact: React.FC = () => {
                 />
                 {serverResponse && (
                   <div
-                    className={`${classes["form__form__server-response"]} ${
-                      !mutation.isError &&
-                      classes["form__form__server-response--error"]
-                    }`}
+                    className={cn(styles.form_form_serverResponse, {
+                      [styles.form_form_serverResponse__error]:
+                        mutation.isError,
+                    })}
                   >
                     {serverResponse}
                   </div>
                 )}
-                <div className={classes["form__form__button-spinner"]}>
+                <div className={styles.form_form_buttonSpinner}>
                   <RoundedButton
-                    className={classes["form__form__button-spinner__button"]}
+                    className={styles.form_form_buttonSpinner__button}
                     text={"Envoyer"}
                     type={RoundedButtonTypes.BUTTON}
                     onClick={handleSubmit}
@@ -186,7 +184,7 @@ export const Contact: React.FC = () => {
                     <ClipLoader
                       color={"#FF96D6"}
                       size={25}
-                      className={classes["form__form__button-spinner__spinner"]}
+                      className={styles.form_form_buttonSpinner__spinner}
                     />
                   )}
                 </div>

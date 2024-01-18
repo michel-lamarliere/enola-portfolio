@@ -1,11 +1,11 @@
 import React, { ReactElement, useEffect, useState } from "react";
 
-import VisualIdentityLogo from "components/uiElements/svgs/services/VisualIdentityLogo";
-import WebDesignLogo from "components/uiElements/svgs/services/WebDesignLogo";
-import PackagingLogo from "components/uiElements/svgs/services/PackagingLogo";
-
-import classes from "pages/services/components/Services/Services.module.scss";
+import { VisualIdentitySvg } from "pages/services/components/VisualIdentityLogo/VisualIdentitySvg";
+import { WebDesignSvg } from "pages/services/components/WebDesignLogo/WebDesignSvg";
+import { PackagingSvg } from "pages/services/components/PackagingLogo/PackagingSvg";
 import { Container } from "components/Container";
+
+import styles from "pages/services/components/Services/Services.module.scss";
 
 type Props = {
   showDescription?: boolean;
@@ -56,7 +56,7 @@ export const Services = ({ showDescription, children }: Props) => {
     description: string | React.ReactNode;
   }[] = [
     {
-      icon: <VisualIdentityLogo useAltColor={visualIdentityAltColor} />,
+      icon: <VisualIdentitySvg useAltColor={visualIdentityAltColor} />,
       title: "Identité visuelle & logo",
       subtitle: "Pour vous démarquer et atteindre votre cible rêvée",
       description: (
@@ -76,7 +76,7 @@ export const Services = ({ showDescription, children }: Props) => {
     },
     {
       title: "Supports réseaux sociaux",
-      icon: <WebDesignLogo useAltColor={webDesignAltColor} />,
+      icon: <WebDesignSvg useAltColor={webDesignAltColor} />,
       subtitle:
         "Pour gagner en visibilité et faciliter votre création de contenu.",
       description: (
@@ -95,7 +95,7 @@ export const Services = ({ showDescription, children }: Props) => {
     },
     {
       title: "À la carte",
-      icon: <PackagingLogo useAltColor={packagingAltColor} />,
+      icon: <PackagingSvg useAltColor={packagingAltColor} />,
       subtitle:
         "Que ce soit pour le web ou l’impression, voici un petit zoom de mes services à la carte",
       description: (
@@ -114,25 +114,21 @@ export const Services = ({ showDescription, children }: Props) => {
     },
   ];
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <Container>
-        <div className={classes.wrapper}>
-          <h3 className={classes.title}>Mes services</h3>
-          <div className={classes.services}>
+        <div className={styles.wrapper}>
+          <h3 className={styles.title}>Mes services</h3>
+          <div className={styles.services}>
             {services.map((service, index) => (
-              <h4 className={classes.services__item} key={index}>
-                <div className={classes.services__item__icon}>
-                  {service.icon}
-                </div>
-                <h5 className={classes.services__item__title}>
-                  {service.title}
-                </h5>
+              <h4 className={styles.services_item} key={index}>
+                <div className={styles.services_item_icon}>{service.icon}</div>
+                <h5 className={styles.services_item_title}>{service.title}</h5>
                 {showDescription && (
-                  <div className={classes.services__item__text}>
-                    <h5 className={classes.services__item__text__subtitle}>
+                  <div className={styles.services_item_text}>
+                    <h5 className={styles.services_item_text__subtitle}>
                       {service.subtitle}
                     </h5>
-                    <p className={classes.services__item__text__description}>
+                    <p className={styles.services_item_text__description}>
                       {service.description}
                     </p>
                   </div>

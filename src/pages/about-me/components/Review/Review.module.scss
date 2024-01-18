@@ -8,7 +8,7 @@
   border-radius: $borderRadiusMedium;
   box-shadow: $boxShadow;
 
-  &--skeleton {
+  &__skeleton {
     width: 13.5rem;
     height: 27.0525rem;
   }
@@ -68,7 +68,7 @@
   width: 100%;
   margin-top: 1.5rem;
 
-  &__img {
+  &_img {
     @include h3;
     width: 100%;
     border-radius: $borderRadiusMedium;
@@ -82,7 +82,7 @@
   width: 100%;
   margin-top: 1.5rem;
 
-  &__text {
+  &_text {
     @include p4;
   }
 }
@@ -91,7 +91,7 @@
   .wrapper {
     width: 14.5rem;
 
-    &--skeleton {
+    &__skeleton {
       width: 14.5rem;
       height: 28.2rem;
     }
@@ -126,5 +126,4 @@
   .text {
     height: 10rem;
   }
-
 }

@@ -5,27 +5,27 @@ import { ProjectType } from "pages/projects/types/project";
 
 import closeIcon from "assets/icons/close-button.svg";
 
-import classes from "pages/projects/components/ProjectModal/ProjectModal.module.scss";
+import styles from "pages/projects/components/ProjectModal/ProjectModal.module.scss";
 
 export const ProjectModal: FC<Pick<ProjectType, "images">> = ({ images }) => {
   const projectModal = useProjectModalStore((state) => state);
 
   return (
-    <div className={classes.wrapper} onClick={() => projectModal.close()}>
-      <button className={classes.button} onClick={() => projectModal.close()}>
+    <div className={styles.wrapper} onClick={() => projectModal.close()}>
+      <button className={styles.button} onClick={() => projectModal.close()}>
         <img
           src={closeIcon}
           alt={"Fermer projet"}
-          className={classes.button_img}
+          className={styles.button_img}
         />
       </button>
       <div
-        className={classes.imageContainer}
+        className={styles.imageContainer}
         onClick={(event) => event.stopPropagation()}
       >
         {images?.map((image, index) => (
           <img
-            className={classes.image}
+            className={styles.image}
             key={`project-${image}-${index}`}
             src={image}
             alt={`projet-${image}-${index}`}

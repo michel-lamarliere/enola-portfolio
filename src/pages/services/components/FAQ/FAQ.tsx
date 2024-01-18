@@ -39,9 +39,11 @@ export const FAQ = () => {
   return (
     <div>
       <div className={styles.banner}>
-        <div className={styles.banner_title}>
-          Une question ? J’y ai sûrement répondu dans cette FAQ
-        </div>
+        <Container variant={"md"}>
+          <div className={styles.banner_title}>
+            Une question ? J’y ai sûrement répondu dans cette FAQ
+          </div>
+        </Container>
       </div>
       <Container variant={"md"}>
         <div className={styles.listWrapper}>

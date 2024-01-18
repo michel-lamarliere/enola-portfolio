@@ -2,35 +2,35 @@ import React, { ReactNode } from "react";
 
 import { Container } from "components/Container";
 
-import classes from "pages/legal-notice/page/LegalNoticePage.module.scss";
+import styles from "pages/legal-notice/page/LegalNoticePage.module.scss";
 
-interface Props {
+type Props = {
   text: ReactNode | string;
-}
-
-const Heading: React.FC<Props> = (props) => {
-  return <div className={classes.heading}>{props.text}</div>;
 };
 
-const SubHeading: React.FC<Props> = (props) => {
-  return <div className={classes.subheading}>{props.text}</div>;
+const Heading = ({ text }: Props) => {
+  return <div className={styles.heading}>{text}</div>;
 };
 
-const Paragraph: React.FC<Props> = (props) => {
-  return <div className={classes.paragraph}>{props.text}</div>;
+const SubHeading = ({ text }: Props) => {
+  return <div className={styles.subheading}>{text}</div>;
 };
 
-const LegalNoticePage: React.FC = () => {
+const Paragraph = ({ text }: Props) => {
+  return <div className={styles.paragraph}>{text}</div>;
+};
+
+export const LegalNoticePage = () => {
   return (
     <Container>
-      <div className={classes.wrapper}>
-        <div className={classes.title}>Mentions légales</div>
-        <div className={classes.text}>
-          <div className={classes.text__section}>
+      <div className={styles.wrapper}>
+        <div className={styles.title}>Mentions légales</div>
+        <div className={styles.text}>
+          <div className={styles.text_section}>
             <Heading text={"1. Présentation du site internet"} />
             <Paragraph
               text={
-                <span className={classes.paragraph}>
+                <span className={styles.paragraph}>
                   En vertu de l’article 6 de la loi n° 2004-575 du 21 juin 2004
                   pour la confiance dans l’économie numérique, il est précisé
                   aux utilisateurs du site internet www.enolalouge.com
@@ -59,7 +59,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading
               text={
                 "2. Conditions générales d’utilisation du site et des services proposés"
@@ -71,7 +71,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading text={"3. Description des services fournis"} />
             <Paragraph
               text={
@@ -79,7 +79,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading
               text={"4. Limitations contractuelles sur les données techniques"}
             />
@@ -89,7 +89,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading text={"5. Propriété intellectuelle et contrefaçons"} />
             <Paragraph
               text={
@@ -97,7 +97,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading text={"6. Limitations de responsabilité"} />
             <Paragraph
               text={
@@ -105,7 +105,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading text={"7. Gestion des données personnelles"} />
             <Paragraph
               text={
@@ -143,7 +143,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading text={"8. Notification d’incident"} />
             <Paragraph
               text={
@@ -151,7 +151,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading
               text={
                 "9. Liens hypertextes « cookies » et balises (“tags”) internet"
@@ -175,7 +175,7 @@ const LegalNoticePage: React.FC = () => {
               }
             />
           </div>
-          <div className={classes.text__section}>
+          <div className={styles.text_section}>
             <Heading
               text={"10. Droit applicable et attribution de juridiction"}
             />
@@ -190,5 +190,3 @@ const LegalNoticePage: React.FC = () => {
     </Container>
   );
 };
-
-export default LegalNoticePage;

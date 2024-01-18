@@ -1,0 +1,136 @@
+@import '../../styles/variables';
+
+.footer {
+  min-height: $footerHeightMobile;
+  background-color: $colorMain;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1.25rem 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  &_elLogo {
+    width: 2rem;
+  }
+
+  &_socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    & > img {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+  }
+}
+
+.legalMentions {
+  @include h3;
+  color: $colorMain2;
+
+  &__desktop {
+    display: none;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &_credits {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &_text {
+      @include p4;
+      color: $colorAccent3;
+    }
+  }
+
+  &_rights {
+    @include p2;
+    color: $colorMain2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .footer {
+    max-height: none;
+    height: $footerHeightDesktop;
+    flex-direction: column;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1363px;
+    margin: 0 auto;
+    padding: 4rem 0 2rem 0;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+
+    &_elLogo {
+      width: 2.7rem;
+    }
+
+    &_socials {
+      flex-direction: row;
+      justify-self: center;
+    }
+  }
+
+  .legalMentions {
+    justify-self: flex-end;
+
+    &__mobile {
+      display: none;
+    }
+
+    &__desktop {
+      display: flex;
+    }
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+
+
+    &_rights {
+      display: grid;
+      grid-column-start: 2;
+      justify-self: center;
+    }
+
+    &_credits {
+      display: grid;
+      align-self: flex-end;
+      justify-self: flex-end;
+      grid-column-start: 3;
+
+      &_text {
+        text-align: end;
+      }
+    }
+  }
+}

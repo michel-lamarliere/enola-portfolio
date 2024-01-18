@@ -6,7 +6,7 @@ import { FAQ } from "pages/services/components/FAQ";
 import {
   RoundedButton,
   RoundedButtonTypes,
-} from "components/uiElements/RoundedButton/RoundedButton";
+} from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
 
 import styles from "pages/services/page/ServicesPage.module.scss";

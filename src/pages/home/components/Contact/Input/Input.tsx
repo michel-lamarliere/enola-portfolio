@@ -1,13 +1,14 @@
 import React from "react";
+import cn from "classnames";
 
-import classes from "pages/home/components/Contact/Input/Input.module.scss";
+import styles from "pages/home/components/Contact/Input/Input.module.scss";
 
 export enum InputTypes {
   TEXT = "text",
   TEXTAREA = "textarea",
 }
 
-interface Props {
+type Props = {
   type: InputTypes;
   name: string;
   placeholder: string;
@@ -16,55 +17,62 @@ interface Props {
   onBlur: (event: React.FocusEvent) => void;
   touched: boolean;
   errorText: string;
-}
+};
 
-const Input: React.FC<Props> = (props) => {
-  const showError = props.touched && props.errorText.length > 0;
+export const Input = ({
+  type,
+  name,
+  placeholder,
+  value,
+  onChange,
+  onBlur,
+  touched,
+  errorText,
+}: Props) => {
+  const showError = touched && errorText.length > 0;
 
   let content;
 
-  switch (props.type) {
+  switch (type) {
     case InputTypes.TEXT:
       content = (
         <input
-          className={`${classes.text} ${showError && classes["text--error"]}`}
+          className={cn(styles.text, {
+            [styles.text__error]: showError,
+          })}
           type={"text"}
-          name={props.name}
-          placeholder={props.placeholder}
-          value={props.value}
-          onChange={props.onChange}
-          onBlur={props.onBlur}
-          id={props.name}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          id={name}
         />
       );
       break;
     case InputTypes.TEXTAREA:
       content = (
         <textarea
-          className={`${classes.textarea} ${
-            showError && classes["textarea--error"]
-          }`}
+          className={cn(styles.textarea, {
+            [styles.textarea__error]: showError,
+          })}
           rows={6}
-          name={props.name}
-          placeholder={props.placeholder}
-          value={props.value}
-          onChange={props.onChange}
-          onBlur={props.onBlur}
-          id={props.name}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          id={name}
         />
       );
       break;
   }
 
   return (
-    <div className={classes.wrapper}>
-      <label htmlFor={props.name} />
+    <div className={styles.wrapper}>
+      <label htmlFor={name} />
       {content}
-      <div className={classes["error-text"]}>
-        {showError && props.errorText}
-      </div>
+      <div className={styles.errorText}>{showError && errorText}</div>
     </div>
   );
 };
-
-export default Input;
