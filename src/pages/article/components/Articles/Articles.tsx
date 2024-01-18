@@ -6,7 +6,7 @@ import {
 } from "pages/article/components/ArticlePreview";
 import { useGetArticles } from "pages/blog/api/getArticles";
 
-import styles from "pages/article/components/Articles/Articles.module.scss";
+import styles from "./Articles.module.scss";
 
 type Props = {
   limit?: number;

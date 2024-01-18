@@ -9,7 +9,7 @@ import { ProjectModal } from "pages/projects/components/ProjectModal";
 import { useProjectModalStore } from "pages/projects/store/project-modal";
 import { Container } from "components/Container";
 
-import styles from "pages/projects/page/ProjectsPage.module.scss";
+import styles from "./ProjectsPage.module.scss";
 
 export const ProjectsPage = () => {
   const { data, isLoading } = useGetProjects();

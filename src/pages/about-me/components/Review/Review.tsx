@@ -4,7 +4,7 @@ import cn from "classnames";
 
 import { ReviewType } from "pages/about-me/types/review";
 
-import styles from "pages/about-me/components/Review/Review.module.scss";
+import styles from "./Review.module.scss";
 
 export const SkeletonReview = () => {
   return (

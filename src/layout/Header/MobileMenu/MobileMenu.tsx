@@ -6,7 +6,7 @@ import { ContactLink } from "components/ContactLink/ContactLink";
 import { useMobileMenuStore } from "store/mobileMenu";
 import { getRoutes } from "utils/getRoutes";
 
-import styles from "layout/Header/MobileMenu/MobileMenu.module.scss";
+import styles from "./MobileMenu.module.scss";
 
 export const MobileMenu = () => {
   const mobileMenu = useMobileMenuStore((state) => state);

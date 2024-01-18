@@ -2,7 +2,7 @@ import React from "react";
 
 import { useMobileMenuStore } from "store/mobileMenu";
 
-import styles from "layout/Header/HamburgerButton/HamburgerButton.module.scss";
+import styles from "./HamburgerButton.module.scss";
 
 export const HamburgerButton = () => {
   const mobileMenu = useMobileMenuStore((state) => state);

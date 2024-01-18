@@ -17,7 +17,7 @@ import { Container } from "components/Container";
 
 import elImg from "assets/about.jpg";
 
-import styles from "pages/article/page/ArticlePage.module.scss";
+import styles from "./ArticlePage.module.scss";
 import { Skeleton } from "libs/react-content-loader";
 
 export const ArticlePage = () => {

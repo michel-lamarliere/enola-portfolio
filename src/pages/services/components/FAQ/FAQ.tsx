@@ -1,9 +1,9 @@
 import React from "react";
 
 import { FAQItem } from "pages/services/components/FAQ/FAQItem/FAQItem";
-
-import styles from "pages/services/components/FAQ/FAQ.module.scss";
 import { Container } from "components/Container";
+
+import styles from "./FAQ.module.scss";
 
 const faq = [
   {

@@ -6,7 +6,7 @@ import { HamburgerButton } from "layout/Header/HamburgerButton/HamburgerButton";
 
 import logoE from "assets/icons/e_logo.svg";
 
-import styles from "layout/Header/MobileNavbar/MobileNavbar.module.scss";
+import styles from "./MobileNavbar.module.scss";
 
 type Props = {
   className: string;

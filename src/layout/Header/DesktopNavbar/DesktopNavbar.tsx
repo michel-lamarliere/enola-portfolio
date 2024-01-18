@@ -9,7 +9,7 @@ import { routes } from "config/routes";
 import { getRoutes } from "utils/getRoutes";
 import { Container } from "components/Container";
 
-import styles from "layout/Header/DesktopNavbar/DesktopNavbar.module.scss";
+import styles from "./DesktopNavbar.module.scss";
 
 type Props = {
   className: string;

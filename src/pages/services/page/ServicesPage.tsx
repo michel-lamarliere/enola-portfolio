@@ -9,7 +9,7 @@ import {
 } from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
 
-import styles from "pages/services/page/ServicesPage.module.scss";
+import styles from "./ServicesPage.module.scss";
 
 export const ServicesPage = () => {
   return (

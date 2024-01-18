@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 
-import styles from "components/CustomNavLink/ContactNavLink.module.scss";
+import styles from "./ContactNavLink.module.scss";
 
 type Props = {
   to: string;

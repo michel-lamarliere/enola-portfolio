@@ -10,7 +10,7 @@ import behanceIcon from "assets/icons/behance.svg";
 import instagramIcon from "assets/icons/instagram.svg";
 import linkedinIcon from "assets/icons/linkedin.svg";
 
-import styles from "layout/Footer/Footer.module.scss";
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   return (

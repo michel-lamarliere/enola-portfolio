@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import styles from "pages/services/components/ProjectSteps/ProjectStep/ProjectStep.module.scss";
+import styles from "./ProjectStep.module.scss";
 
 type Props = {
   image: string;

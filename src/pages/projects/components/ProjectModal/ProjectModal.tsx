@@ -5,7 +5,7 @@ import { ProjectType } from "pages/projects/types/project";
 
 import closeIcon from "assets/icons/close-button.svg";
 
-import styles from "pages/projects/components/ProjectModal/ProjectModal.module.scss";
+import styles from "./ProjectModal.module.scss";
 
 export const ProjectModal: FC<Pick<ProjectType, "images">> = ({ images }) => {
   const projectModal = useProjectModalStore((state) => state);

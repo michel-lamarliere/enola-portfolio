@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ProjectStep } from "pages/services/components/ProjectSteps/ProjectStep";
+import { Container } from "components/Container";
 
 import step1Img from "assets/images/project-steps/01.jpg";
 import step2Img from "assets/images/project-steps/02.jpg";
@@ -9,8 +10,7 @@ import step4Img from "assets/images/project-steps/04.jpg";
 import step5Img from "assets/images/project-steps/05.jpg";
 import step6Img from "assets/images/project-steps/06.jpg";
 
-import styles from "pages/services/components/ProjectSteps/ProjectSteps.module.scss";
-import { Container } from "components/Container";
+import styles from "./ProjectSteps.module.scss";
 
 const steps = [
   {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { animated, useTransition } from "react-spring";
 
-import styles from "pages/services/components/FAQ/FAQItem/FAQItem.module.scss";
+import styles from "./FAQItem.module.scss";
 
 type Props = {
   question: string;

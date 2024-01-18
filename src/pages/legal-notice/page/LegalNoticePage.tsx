@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 import { Container } from "components/Container";
 
-import styles from "pages/legal-notice/page/LegalNoticePage.module.scss";
+import styles from "./LegalNoticePage.module.scss";
 
 type Props = {
   text: ReactNode | string;

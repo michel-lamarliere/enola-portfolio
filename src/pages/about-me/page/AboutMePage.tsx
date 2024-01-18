@@ -8,7 +8,7 @@ import {
 } from "components/RoundedButton/RoundedButton";
 import { routes } from "config/routes";
 
-import styles from "pages/about-me/page/AboutMePage.module.scss";
+import styles from "./AboutMePage.module.scss";
 
 export const AboutMePage = () => {
   return (

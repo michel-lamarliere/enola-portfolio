@@ -8,7 +8,7 @@ import {
 } from "components/RoundedButton/RoundedButton";
 import { useProjectModalStore } from "pages/projects/store/project-modal";
 
-import styles from "pages/projects/components/Project/Project.module.scss";
+import styles from "./Project.module.scss";
 
 export const SkeletonProject = () => {
   return (

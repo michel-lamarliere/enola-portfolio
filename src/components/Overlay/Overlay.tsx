@@ -4,7 +4,7 @@ import { animated, useTransition } from "react-spring";
 import { useProjectModalStore } from "pages/projects/store/project-modal";
 import { useMobileMenuStore } from "store/mobileMenu";
 
-import styles from "components/Overlay/Overlay.module.scss";
+import styles from "./Overlay.module.scss";
 
 export const Overlay = () => {
   const mobileMenu = useMobileMenuStore((state) => state);

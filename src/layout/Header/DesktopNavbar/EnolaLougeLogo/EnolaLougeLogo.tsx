@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "layout/Header/DesktopNavbar/EnolaLougeLogo/EnolaLougeLogo.module.scss";
+import styles from "./EnolaLougeLogo.module.scss";
 
 export const EnolaLougeLogo = () => {
   return (

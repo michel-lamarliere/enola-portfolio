@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "pages/article/components/ArticleTag/ArticleTag.module.scss";
+import styles from "./ArticleTag.module.scss";
 
 type Props = {
   text: string;

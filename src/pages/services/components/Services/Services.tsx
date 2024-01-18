@@ -5,7 +5,7 @@ import { WebDesignSvg } from "pages/services/components/WebDesignLogo/WebDesignS
 import { PackagingSvg } from "pages/services/components/PackagingLogo/PackagingSvg";
 import { Container } from "components/Container";
 
-import styles from "pages/services/components/Services/Services.module.scss";
+import styles from "./Services.module.scss";
 
 type Props = {
   showDescription?: boolean;

@@ -6,7 +6,7 @@ import { routes } from "config/routes";
 import { ArticleTag } from "pages/article/components/ArticleTag";
 import { Skeleton } from "libs/react-content-loader";
 
-import styles from "pages/article/components/ArticlePreview/ArticlePreview.module.scss";
+import styles from "./ArticlePreview.module.scss";
 
 export const ArticlePreviewSkeleton = () => {
   return (

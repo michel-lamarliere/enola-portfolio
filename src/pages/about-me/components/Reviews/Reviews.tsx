@@ -7,7 +7,7 @@ import { Container } from "components/Container";
 
 import leftArrowIcon from "assets/icons/left-arrow-bubble.svg";
 
-import styles from "pages/about-me/components/Reviews/Reviews.module.scss";
+import styles from "./Reviews.module.scss";
 
 export const Reviews = () => {
   const { data, isLoading } = useGetReviews();

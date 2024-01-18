@@ -10,7 +10,7 @@ import photo from "assets/about.jpg";
 
 import { Container } from "components/Container";
 
-import styles from "pages/about-me/components/AboutMe/AboutMe.module.scss";
+import styles from "./AboutMe.module.scss";
 
 export const AboutMe = () => {
   return (

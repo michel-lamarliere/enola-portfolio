@@ -3,7 +3,7 @@ import React from "react";
 import { MobileNavbar } from "layout/Header/MobileNavbar/MobileNavbar";
 import { DesktopNavbar } from "layout/Header/DesktopNavbar/DesktopNavbar";
 
-import styles from "layout/Header/Header.module.scss";
+import styles from "./Header.module.scss";
 
 export const Header = () => {
   return (

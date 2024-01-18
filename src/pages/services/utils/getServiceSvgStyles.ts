@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import styles from "pages/services/styles/serviceSvg.module.scss";
+import styles from "../styles/serviceSvg.module.scss";
 
 export const getServiceSvgStyles = (useAltColor?: boolean) => {
   const colorOneStyles = cn(styles.colorOne, {

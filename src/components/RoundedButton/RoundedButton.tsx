@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
-import styles from "components/RoundedButton/RoundedButton.module.scss";
+import styles from "./RoundedButton.module.scss";
 
 export enum RoundedButtonTypes {
   ANCHOR = "anchor",

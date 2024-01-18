@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { routes } from "config/routes";
 
-import styles from "components/ContactLink/ContactLink.module.scss";
+import styles from "./ContactLink.module.scss";
 
 export const ContactLink = () => {
   return (
