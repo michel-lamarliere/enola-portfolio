@@ -58,8 +58,8 @@ export const Hero = () => {
             <br />
             Mon univers graphique est coloré, lumineux, simplifié, joyeux,
             mémorable et en constante évolution. J’accorde également beaucoup
-            d’’importance à l'expérience client : communication, adaptation,
-            flexibilité et qualité sont mes motos !
+            d’importance à l'expérience client : communication, adaptation et
+            qualité sont mes mottos !
             <br />
             <br />
             Ensemble, faisons de votre marque une expérience visuelle unique !

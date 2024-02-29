@@ -16,7 +16,7 @@ export const HomePage = () => {
       <Services showDescription={false}>
         <RoundedButton
           type={RoundedButtonTypes.LINK}
-          to={routes.about.url()}
+          to={routes.services.url()}
           text={"En savoir plus"}
           className={styles.showMoreButton}
         />

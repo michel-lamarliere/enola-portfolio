@@ -100,15 +100,16 @@ export const Services = ({ showDescription, children }: Props) => {
         "Que ce soit pour le web ou l’impression, voici un petit zoom de mes services à la carte",
       description: (
         <>
-          Ma partie préférée, évidemment !
+          Pour le web : set d’icônes, signature e-mail, bannière web,
+          newsletter, etc.
           <br />
           <br />
-          Mon savoir-faire et ma créativité vont me permettre de concevoir des
-          propositions graphiques pertinentes.
+          Pour le print : carte de visite, menu, brochure, emballage produit,
+          étiquette, couverture de livre, etc.
           <br />
           <br />
-          Suite à vos retours, je fais d’éventuelles modifications pour que tout
-          soit parfait.
+          Mais encore : des illustrations, de la retouche photo, du montage
+          vidéo…
         </>
       ),
     },
